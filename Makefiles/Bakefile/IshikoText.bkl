@@ -1,0 +1,36 @@
+toolsets = gnu vs2017 vs2015 vs2013;
+
+gnu.makefile = ../GNUmakefile/GNUmakefile;
+vs2017.solutionfile = ../VC15/IshikoText.sln;
+vs2015.solutionfile = ../VC14/IshikoText.sln;
+vs2013.solutionfile = ../VC12/IshikoText.sln;
+
+library IshikoText
+{
+    archs = x86 x86_64;
+
+    includedirs += ../../Include/Ishiko/Text;
+
+    if ($(toolset) == gnu)
+    {
+        cxx-compiler-options = "-std=c++11";
+        outputdir = ../../Lib;
+    }
+
+    if ($(toolset) != gnu)
+    {
+        outputdir = ../../Lib/$(arch);
+    }
+
+    if ($(config) == Debug)
+    {
+        basename = IshikoText-d;
+    }
+
+    headers
+    {
+        ../../Include/Ishiko/Text.h
+
+        ../../Include/Ishiko/Text/linkoptions.h
+    }
+}
