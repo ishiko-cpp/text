@@ -1,0 +1,41 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: ishikocpp/gcc-boost:10.1.0-1.73.0
+    steps:
+      - run: 
+          name: "Set ISHIKO_CPP environment variable and create directory"
+          command: mkdir /Ishiko-cpp && echo 'export ISHIKO_CPP="/Ishiko-cpp"' >> $BASH_ENV
+      - run:
+          name: "Checkout Ishiko-cpp/Platform dependency"
+          command: cd /Ishiko-cpp && git clone https://github.com/Ishiko-cpp/Platform.git
+      - checkout:
+          path: /Ishiko-cpp/Text
+      - run:
+          name: Build
+          command: cd /Ishiko-cpp/Text/Makefiles/GNUmakefile && make
+      - run:
+          name: "Checkout Ishiko-cpp/Errors test dependency"
+          command: cd /Ishiko-cpp && git clone https://github.com/Ishiko-cpp/Errors.git
+      - run:
+          name: "Checkout Ishiko-cpp/Process test dependency"
+          command: cd /Ishiko-cpp && git clone https://github.com/Ishiko-cpp/Process.git
+      - run:
+          name: "Checkout Ishiko-cpp/TestFramework test dependency"
+          command: cd /Ishiko-cpp && git clone https://github.com/Ishiko-cpp/TestFramework.git
+      - run:
+          name: "Build Ishiko-cpp/Errors test dependency"
+          command: cd /Ishiko-cpp/Errors/Makefiles/GNUmakefile && make
+      - run:
+          name: "Build Ishiko-cpp/Process test dependency"
+          command: cd /Ishiko-cpp/Process/Makefiles/GNUmakefile && make
+      - run:
+          name: "Build Ishiko-cpp/TestFramework test dependency"
+          command: cd /Ishiko-cpp/TestFramework/Core/Makefiles/GNUmakefile && make
+      - run:
+          name: Test build
+          command: cd /Ishiko-cpp/Text/Tests/Makefiles/GNUmakefile && make
+      - run:
+          name: Run the tests
+          command: cd /Ishiko-cpp/Text/Tests/Makefiles/GNUmakefile && ./IshikoTextTests
