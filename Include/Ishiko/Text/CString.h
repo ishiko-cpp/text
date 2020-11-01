@@ -7,4 +7,17 @@
 #ifndef _ISHIKO_TEXT_CSTRING_H_
 #define _ISHIKO_TEXT_CSTRING_H_
 
+namespace Ishiko
+{
+
+class CString
+{
+public:
+    static char* Duplicate(const char* str);
+};
+
+}
+
+#include "linkoptions.h"
+
 #endif

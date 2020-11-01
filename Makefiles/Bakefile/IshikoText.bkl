@@ -1,3 +1,6 @@
+ishikopath = envvar("ISHIKO_CPP");
+import $(ishikopath)/Platform/Include/Ishiko/Platform.bkl;
+
 toolsets = gnu vs2017 vs2015 vs2013;
 
 gnu.makefile = ../GNUmakefile/GNUmakefile;
@@ -5,7 +8,7 @@ vs2017.solutionfile = ../VC15/IshikoText.sln;
 vs2015.solutionfile = ../VC14/IshikoText.sln;
 vs2013.solutionfile = ../VC12/IshikoText.sln;
 
-library IshikoText
+library IshikoText : IshikoPlatform
 {
     archs = x86 x86_64;
 

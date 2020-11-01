@@ -7,6 +7,8 @@
 #ifndef _ISHIKO_TEXT_H_
 #define _ISHIKO_TEXT_H_
 
+#include "Text/CString.h"
+
 #include "Text/linkoptions.h"
 
 #endif

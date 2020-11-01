@@ -5,3 +5,21 @@
 */
 
 #include "CString.h"
+#include <Ishiko/Platform/Compilers.h>
+#include <string.h>
+
+namespace Ishiko
+{
+
+char* CString::Duplicate(const char* str)
+{
+#if ISHIKO_COMPILER == ISHIKO_COMPILER_GCC
+    return strdup(str);
+#elif ISHIKO_COMPILER == ISHIKO_COMPILER_MSVC
+    return _strdup(str);
+#else
+    #error Unsupported or unrecognized compiler
+#endif
+}
+
+}

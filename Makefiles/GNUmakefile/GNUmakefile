@@ -33,6 +33,11 @@ override CXXFLAGS += -O2
 else ifneq (,$(config))
 $(warning Unknown configuration "$(config)")
 endif
+#
+# Additionally, this makefile is customizable with the following
+# settings:
+#
+#      ISHIKO_CPP_PLATFORM_ROOT  Path to the Ishiko Platform installation
 
 # Use "make RANLIB=''" for platforms without ranlib.
 RANLIB ?= ranlib
@@ -54,6 +59,16 @@ _builddir := $(if $(findstring $(abspath $(builddir)),$(builddir)),,../../)$(bui
 _builddir_error := $(shell mkdir -p $(_builddir) 2>&1)
 $(if $(_builddir_error),$(error Failed to create build directory: $(_builddir_error)))
 endif
+
+# ------------
+# Configurable settings:
+# 
+
+# Path to the Ishiko Platform installation
+ISHIKO_CPP_PLATFORM_ROOT ?= $(ISHIKO_CPP)/Platform
+
+# ------------
+
 all: ../Bakefile/../../Lib/lib$(if $(call _equal,$(config),Debug),IshikoText-d,IshikoText).a
 
 ../Bakefile/../../Lib/lib$(if $(call _equal,$(config),Debug),IshikoText-d,IshikoText).a: $(_builddir)IshikoText_CString.o
@@ -61,7 +76,7 @@ all: ../Bakefile/../../Lib/lib$(if $(call _equal,$(config),Debug),IshikoText-d,I
 	$(RANLIB) $@
 
 $(_builddir)IshikoText_CString.o: ../../Source/CString.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../Include/Ishiko/Text -std=c++11 ../../Source/CString.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_PLATFORM_ROOT)/Include -I../../Include/Ishiko/Text -std=c++11 ../../Source/CString.cpp
 
 clean:
 	rm -f $(_builddir)*.o

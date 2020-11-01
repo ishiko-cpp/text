@@ -2,6 +2,7 @@
 !/Lib/README.md
 Makefiles/VC15/.vs/
 Makefiles/VC15/x64/
+Makefiles/VC15/*.user
 Tests/Makefiles/VC15/.vs/
 Tests/Makefiles/VC15/x64/
 Tests/Makefiles/VC15/*.user

@@ -13,6 +13,9 @@ class CStringTests : public Ishiko::Tests::TestSequence
 {
 public:
     CStringTests(const Ishiko::Tests::TestNumber& number, const Ishiko::Tests::TestEnvironment& environment);
+
+private:
+    static void DuplicateTest1(Ishiko::Tests::Test& test);
 };
 
 #endif
