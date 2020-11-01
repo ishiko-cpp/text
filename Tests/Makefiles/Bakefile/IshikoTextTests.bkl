@@ -22,8 +22,14 @@ program IshikoTextTests : IshikoText, IshikoTestFrameworkCore
         archs = x86 x86_64;
     }
 
+    headers
+    {
+        ../../Source/CStringTests.h
+    }
+
     sources
     {
+        ../../Source/CStringTests.cpp
         ../../Source/main.cpp
     }
 }
