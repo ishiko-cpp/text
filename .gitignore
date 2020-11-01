@@ -1,2 +1,4 @@
+/Lib/*
+!/Lib/README.md
 Makefiles/VC15/.vs/
 Makefiles/VC15/x64/

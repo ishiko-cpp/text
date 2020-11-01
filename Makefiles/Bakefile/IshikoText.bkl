@@ -32,5 +32,11 @@ library IshikoText
         ../../Include/Ishiko/Text.h
 
         ../../Include/Ishiko/Text/linkoptions.h
+        ../../Include/Ishiko/Text/CString.h
+    }
+
+    sources
+    {
+        ../../Source/CString.cpp
     }
 }

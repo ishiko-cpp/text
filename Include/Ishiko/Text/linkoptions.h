@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2016-2020 Xavier Leclercq
+    Copyright (c) 2020 Xavier Leclercq
     Released under the MIT License
     See https://github.com/Ishiko-cpp/Text/blob/master/LICENSE.txt
 */
