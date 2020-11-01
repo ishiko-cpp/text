@@ -1,0 +1,20 @@
+setting ISHIKO_CPP_TEXT_ROOT
+{
+    help = "Path to the Ishiko/Text installation";
+    default = '$(ISHIKO_CPP)/Text';
+}
+
+template IshikoText
+{
+    includedirs += $(ISHIKO_CPP_TEXT_ROOT)/Include;
+
+    if ($(toolset) == gnu)
+    {
+        libdirs += $(ISHIKO_CPP_TEXT_ROOT)/Lib;
+    }
+
+    if ($(toolset) != gnu)
+    {
+        libdirs += $(ISHIKO_CPP_TEXT_ROOT)/Lib/$(arch);
+    }
+}
