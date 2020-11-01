@@ -1,0 +1,20 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: ishikocpp/gcc-boost:10.1.0-1.73.0
+    steps:
+      - run: 
+          name: "Set ISHIKO_CPP environment variable and create directory"
+          command: mkdir /Ishiko-cpp && echo 'export ISHIKO_CPP="/Ishiko-cpp"' >> $BASH_ENV
+      - checkout:
+          path: /Ishiko-cpp/Text
+      - run:
+          name: Build
+          command: cd /Ishiko-cpp/Text/Makefiles/GNUmakefile && make
+      - run:
+          name: Test build
+          command: cd /Ishiko-cpp/Text/Tests/Makefiles/GNUmakefile && make
+      - run:
+          name: Run the tests
+          command: cd /Ishiko-cpp/Text/Tests/Makefiles/GNUmakefile && ./IshikoTextTests
