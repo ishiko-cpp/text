@@ -16,9 +16,6 @@ jobs:
           name: Build
           command: cd /Ishiko-cpp/Text/Makefiles/GNUmakefile && make
       - run:
-          name: "Checkout Ishiko-cpp/Platform test dependency"
-          command: cd /Ishiko-cpp && git clone https://github.com/Ishiko-cpp/Platform.git
-      - run:
           name: "Checkout Ishiko-cpp/Errors test dependency"
           command: cd /Ishiko-cpp && git clone https://github.com/Ishiko-cpp/Errors.git
       - run:
@@ -27,9 +24,6 @@ jobs:
       - run:
           name: "Checkout Ishiko-cpp/TestFramework test dependency"
           command: cd /Ishiko-cpp && git clone https://github.com/Ishiko-cpp/TestFramework.git
-      - run:
-          name: "Build Ishiko-cpp/Platform test dependency"
-          command: cd /Ishiko-cpp/Platform/Makefiles/GNUmakefile && make
       - run:
           name: "Build Ishiko-cpp/Errors test dependency"
           command: cd /Ishiko-cpp/Errors/Makefiles/GNUmakefile && make
