@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2020 Xavier Leclercq
+    Copyright (c) 2020-2021 Xavier Leclercq
     Released under the MIT License
     See https://github.com/Ishiko-cpp/Text/blob/master/LICENSE.txt
 */
@@ -8,6 +8,7 @@
 #include "Ishiko/Text/CString.h"
 
 using namespace Ishiko::Tests;
+using namespace Ishiko::Text;
 
 CStringTests::CStringTests(const TestNumber& number, const TestEnvironment& environment)
     : TestSequence(number, "CString tests", environment)
@@ -17,7 +18,7 @@ CStringTests::CStringTests(const TestNumber& number, const TestEnvironment& envi
 
 void CStringTests::DuplicateTest1(Test& test)
 {
-    char* str = Ishiko::CString::Duplicate("string");
+    char* str = CString::Duplicate("string");
 
     ISHTF_FAIL_IF_STR_NEQ(str, "string");
 

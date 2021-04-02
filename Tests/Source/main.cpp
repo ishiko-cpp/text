@@ -4,6 +4,7 @@
     See https://github.com/Ishiko-cpp/Text/blob/master/LICENSE.txt
 */
 
+#include "ASCIITests.h"
 #include "CStringTests.h"
 #include <Ishiko/TestFramework/TestFrameworkCore.h>
 
@@ -14,6 +15,7 @@ int main(int argc, char* argv[])
     TestHarness theTestHarness("IshikoText");
 
     TestSequence& theTests = theTestHarness.tests();
+    theTests.append<ASCIITests>();
     theTests.append<CStringTests>();
 
     return theTestHarness.run();
