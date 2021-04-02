@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2020 Xavier Leclercq
+    Copyright (c) 2020-2021 Xavier Leclercq
     Released under the MIT License
     See https://github.com/Ishiko-cpp/Text/blob/master/LICENSE.txt
 */
@@ -9,6 +9,8 @@
 
 namespace Ishiko
 {
+namespace Text
+{
 
 class CString
 {
@@ -16,6 +18,7 @@ public:
     static char* Duplicate(const char* str);
 };
 
+}
 }
 
 #include "linkoptions.h"
