@@ -35,11 +35,13 @@ library IshikoText : IshikoPlatform
         ../../Include/Ishiko/Text.h
 
         ../../Include/Ishiko/Text/linkoptions.h
+        ../../Include/Ishiko/Text/ASCII.h
         ../../Include/Ishiko/Text/CString.h
     }
 
     sources
     {
+        ../../Source/ASCII.cpp
         ../../Source/CString.cpp
     }
 }
