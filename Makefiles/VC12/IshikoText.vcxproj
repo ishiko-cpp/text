@@ -150,11 +150,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\ASCII.cpp" />
     <ClCompile Include="..\..\Source\CString.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Include\Ishiko\Text.h" />
     <ClInclude Include="..\..\Include\Ishiko\Text\linkoptions.h" />
+    <ClInclude Include="..\..\Include\Ishiko\Text\ASCII.h" />
     <ClInclude Include="..\..\Include\Ishiko\Text\CString.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

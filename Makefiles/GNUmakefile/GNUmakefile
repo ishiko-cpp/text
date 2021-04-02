@@ -71,9 +71,12 @@ ISHIKO_CPP_PLATFORM_ROOT ?= $(ISHIKO_CPP)/Platform
 
 all: ../Bakefile/../../Lib/lib$(if $(call _equal,$(config),Debug),IshikoText-d,IshikoText).a
 
-../Bakefile/../../Lib/lib$(if $(call _equal,$(config),Debug),IshikoText-d,IshikoText).a: $(_builddir)IshikoText_CString.o
-	$(AR) rc $@ $(_builddir)IshikoText_CString.o
+../Bakefile/../../Lib/lib$(if $(call _equal,$(config),Debug),IshikoText-d,IshikoText).a: $(_builddir)IshikoText_ASCII.o $(_builddir)IshikoText_CString.o
+	$(AR) rc $@ $(_builddir)IshikoText_ASCII.o $(_builddir)IshikoText_CString.o
 	$(RANLIB) $@
+
+$(_builddir)IshikoText_ASCII.o: ../../Source/ASCII.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_PLATFORM_ROOT)/Include -I../../Include/Ishiko/Text -std=c++11 ../../Source/ASCII.cpp
 
 $(_builddir)IshikoText_CString.o: ../../Source/CString.cpp
 	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_PLATFORM_ROOT)/Include -I../../Include/Ishiko/Text -std=c++11 ../../Source/CString.cpp
