@@ -86,7 +86,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
-      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/Text\Include;$(ISHIKO_CPP)/Errors\Include;$(BOOST);$(ISHIKO_CPP)/Process\Include;$(ISHIKO_CPP)/TestFramework\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/Text\Include;$(ISHIKO_CPP)/Errors\Include;$(ISHIKO_CPP)/Platform\Include;$(BOOST);$(ISHIKO_CPP)/Process\Include;$(ISHIKO_CPP)/TestFramework\Include</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -102,7 +102,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
-      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/Text\Include;$(ISHIKO_CPP)/Errors\Include;$(BOOST);$(ISHIKO_CPP)/Process\Include;$(ISHIKO_CPP)/TestFramework\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/Text\Include;$(ISHIKO_CPP)/Errors\Include;$(ISHIKO_CPP)/Platform\Include;$(BOOST);$(ISHIKO_CPP)/Process\Include;$(ISHIKO_CPP)/TestFramework\Include</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -120,7 +120,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
-      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/Text\Include;$(ISHIKO_CPP)/Errors\Include;$(BOOST);$(ISHIKO_CPP)/Process\Include;$(ISHIKO_CPP)/TestFramework\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/Text\Include;$(ISHIKO_CPP)/Errors\Include;$(ISHIKO_CPP)/Platform\Include;$(BOOST);$(ISHIKO_CPP)/Process\Include;$(ISHIKO_CPP)/TestFramework\Include</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -140,7 +140,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
-      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/Text\Include;$(ISHIKO_CPP)/Errors\Include;$(BOOST);$(ISHIKO_CPP)/Process\Include;$(ISHIKO_CPP)/TestFramework\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/Text\Include;$(ISHIKO_CPP)/Errors\Include;$(ISHIKO_CPP)/Platform\Include;$(BOOST);$(ISHIKO_CPP)/Process\Include;$(ISHIKO_CPP)/TestFramework\Include</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
