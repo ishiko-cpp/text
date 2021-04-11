@@ -13,6 +13,9 @@ jobs:
       - checkout:
           path: /Ishiko-cpp/Text
       - run:
+          name: "Build Ishiko-cpp/Platform dependency"
+          command: cd /Ishiko-cpp/Platform/Makefiles/GNUmakefile && make
+      - run:
           name: Build
           command: cd /Ishiko-cpp/Text/Makefiles/GNUmakefile && make
       - run:

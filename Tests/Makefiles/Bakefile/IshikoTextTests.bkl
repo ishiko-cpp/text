@@ -1,5 +1,5 @@
+import ../../../Include/Ishiko/Text.bkl;
 ishikopath = envvar("ISHIKO_CPP");
-import $(ishikopath)/Text/Include/Ishiko/Text.bkl;
 import $(ishikopath)/TestFramework/Include/Ishiko/TestFramework/TestFrameworkCore.bkl;
 
 toolsets = gnu vs2017 vs2015 vs2013;
