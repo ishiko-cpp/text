@@ -13,8 +13,107 @@ using namespace Ishiko::Text;
 ASCIITests::ASCIITests(const TestNumber& number, const TestEnvironment& environment)
     : TestSequence(number, "ASCII tests", environment)
 {
+    append<HeapAllocationErrorsTest>("Split test 1", SplitTest1);
+    append<HeapAllocationErrorsTest>("Split test 2", SplitTest2);
+    append<HeapAllocationErrorsTest>("Split test 3", SplitTest3);
+    append<HeapAllocationErrorsTest>("Split test 4", SplitTest4);
+    append<HeapAllocationErrorsTest>("Split test 5", SplitTest5);
+    append<HeapAllocationErrorsTest>("Split test 6", SplitTest6);
+    append<HeapAllocationErrorsTest>("Split test 7", SplitTest7);
+    append<HeapAllocationErrorsTest>("Split test 8", SplitTest8);
+    append<HeapAllocationErrorsTest>("Split test 9", SplitTest9);
+    append<HeapAllocationErrorsTest>("Split test 10", SplitTest10);
+    append<HeapAllocationErrorsTest>("Split test 11", SplitTest11);
     append<HeapAllocationErrorsTest>("ToLowerCase test 1", ToLowerCaseTest1);
     append<HeapAllocationErrorsTest>("ToUpperCase test 1", ToUpperCaseTest1);
+}
+
+void ASCIITests::SplitTest1(Test& test)
+{
+    std::vector<std::string> tokens = ASCII::Split("");
+
+    ISHTF_FAIL_IF_NEQ(tokens.size(), 0);
+    ISHTF_PASS();
+}
+
+void ASCIITests::SplitTest2(Test& test)
+{
+    std::vector<std::string> tokens = ASCII::Split("a");
+
+    ISHTF_FAIL_IF_NEQ(tokens, std::vector<std::string>({ "a" }));
+    ISHTF_PASS();
+}
+
+void ASCIITests::SplitTest3(Test& test)
+{
+    std::vector<std::string> tokens = ASCII::Split("abc");
+
+    ISHTF_FAIL_IF_NEQ(tokens, std::vector<std::string>({ "abc" }));
+    ISHTF_PASS();
+}
+
+void ASCIITests::SplitTest4(Test& test)
+{
+    std::vector<std::string> tokens = ASCII::Split("one two");
+
+    ISHTF_FAIL_IF_NEQ(tokens, std::vector<std::string>({ "one", "two" }));
+    ISHTF_PASS();
+}
+
+void ASCIITests::SplitTest5(Test& test)
+{
+    std::vector<std::string> tokens = ASCII::Split("one two three");
+
+    ISHTF_FAIL_IF_NEQ(tokens, std::vector<std::string>({ "one", "two", "three" }));
+    ISHTF_PASS();
+}
+
+void ASCIITests::SplitTest6(Test& test)
+{
+    std::vector<std::string> tokens = ASCII::Split(" ");
+
+    ISHTF_FAIL_IF_NEQ(tokens.size(), 0);
+    ISHTF_PASS();
+}
+
+void ASCIITests::SplitTest7(Test& test)
+{
+    std::vector<std::string> tokens = ASCII::Split("   ");
+
+    ISHTF_FAIL_IF_NEQ(tokens.size(), 0);
+    ISHTF_PASS();
+}
+
+void ASCIITests::SplitTest8(Test& test)
+{
+    std::vector<std::string> tokens = ASCII::Split("a ");
+
+    ISHTF_FAIL_IF_NEQ(tokens, std::vector<std::string>({ "a" }));
+    ISHTF_PASS();
+}
+
+void ASCIITests::SplitTest9(Test& test)
+{
+    std::vector<std::string> tokens = ASCII::Split("a   ");
+
+    ISHTF_FAIL_IF_NEQ(tokens, std::vector<std::string>({ "a" }));
+    ISHTF_PASS();
+}
+
+void ASCIITests::SplitTest10(Test& test)
+{
+    std::vector<std::string> tokens = ASCII::Split(" a ");
+
+    ISHTF_FAIL_IF_NEQ(tokens, std::vector<std::string>({ "a" }));
+    ISHTF_PASS();
+}
+
+void ASCIITests::SplitTest11(Test& test)
+{
+    std::vector<std::string> tokens = ASCII::Split(" one  two   three ");
+
+    ISHTF_FAIL_IF_NEQ(tokens, std::vector<std::string>({ "one", "two", "three" }));
+    ISHTF_PASS();
 }
 
 void ASCIITests::ToLowerCaseTest1(Test& test)

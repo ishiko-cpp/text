@@ -15,6 +15,17 @@ public:
     ASCIITests(const Ishiko::Tests::TestNumber& number, const Ishiko::Tests::TestEnvironment& environment);
 
 private:
+    static void SplitTest1(Ishiko::Tests::Test& test);
+    static void SplitTest2(Ishiko::Tests::Test& test);
+    static void SplitTest3(Ishiko::Tests::Test& test);
+    static void SplitTest4(Ishiko::Tests::Test& test);
+    static void SplitTest5(Ishiko::Tests::Test& test);
+    static void SplitTest6(Ishiko::Tests::Test& test);
+    static void SplitTest7(Ishiko::Tests::Test& test);
+    static void SplitTest8(Ishiko::Tests::Test& test);
+    static void SplitTest9(Ishiko::Tests::Test& test);
+    static void SplitTest10(Ishiko::Tests::Test& test);
+    static void SplitTest11(Ishiko::Tests::Test& test);
     static void ToLowerCaseTest1(Ishiko::Tests::Test& test);
     static void ToUpperCaseTest1(Ishiko::Tests::Test& test);
 };
