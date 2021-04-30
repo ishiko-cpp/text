@@ -26,6 +26,17 @@ ASCIITests::ASCIITests(const TestNumber& number, const TestEnvironment& environm
     append<HeapAllocationErrorsTest>("Split test 11", SplitTest11);
     append<HeapAllocationErrorsTest>("ToLowerCase test 1", ToLowerCaseTest1);
     append<HeapAllocationErrorsTest>("ToUpperCase test 1", ToUpperCaseTest1);
+    append<HeapAllocationErrorsTest>("Trim test 1", TrimTest1);
+    append<HeapAllocationErrorsTest>("Trim test 2", TrimTest2);
+    append<HeapAllocationErrorsTest>("Trim test 3", TrimTest3);
+    append<HeapAllocationErrorsTest>("Trim test 4", TrimTest4);
+    append<HeapAllocationErrorsTest>("Trim test 5", TrimTest5);
+    append<HeapAllocationErrorsTest>("Trim test 6", TrimTest6);
+    append<HeapAllocationErrorsTest>("Trim test 7", TrimTest7);
+    append<HeapAllocationErrorsTest>("Trim test 8", TrimTest8);
+    append<HeapAllocationErrorsTest>("Trim test 9", TrimTest9);
+    append<HeapAllocationErrorsTest>("Trim test 10", TrimTest10);
+    append<HeapAllocationErrorsTest>("Trim test 11", TrimTest11);
 }
 
 void ASCIITests::SplitTest1(Test& test)
@@ -133,5 +144,115 @@ void ASCIITests::ToUpperCaseTest1(Test& test)
     ASCII::ToUpperCase(str);
 
     ISHTF_FAIL_IF_NEQ(str, "HELLO WORLD!");
+    ISHTF_PASS();
+}
+
+void ASCIITests::TrimTest1(Test& test)
+{
+    std::string str = "";
+
+    ASCII::Trim(str);
+
+    ISHTF_FAIL_IF_NEQ(str, "");
+    ISHTF_PASS();
+}
+
+void ASCIITests::TrimTest2(Test& test)
+{
+    std::string str = "a";
+
+    ASCII::Trim(str);
+
+    ISHTF_FAIL_IF_NEQ(str, "a");
+    ISHTF_PASS();
+}
+
+void ASCIITests::TrimTest3(Test& test)
+{
+    std::string str = "abc";
+
+    ASCII::Trim(str);
+
+    ISHTF_FAIL_IF_NEQ(str, "abc");
+    ISHTF_PASS();
+}
+
+void ASCIITests::TrimTest4(Test& test)
+{
+    std::string str = " ";
+
+    ASCII::Trim(str);
+
+    ISHTF_FAIL_IF_NEQ(str, "");
+    ISHTF_PASS();
+}
+
+void ASCIITests::TrimTest5(Test& test)
+{
+    std::string str = "   ";
+
+    ASCII::Trim(str);
+
+    ISHTF_FAIL_IF_NEQ(str, "");
+    ISHTF_PASS();
+}
+
+void ASCIITests::TrimTest6(Test& test)
+{
+    std::string str = " a";
+
+    ASCII::Trim(str);
+
+    ISHTF_FAIL_IF_NEQ(str, "a");
+    ISHTF_PASS();
+}
+
+void ASCIITests::TrimTest7(Test& test)
+{
+    std::string str = "   a";
+
+    ASCII::Trim(str);
+
+    ISHTF_FAIL_IF_NEQ(str, "a");
+    ISHTF_PASS();
+}
+
+void ASCIITests::TrimTest8(Test& test)
+{
+    std::string str = "a ";
+
+    ASCII::Trim(str);
+
+    ISHTF_FAIL_IF_NEQ(str, "a");
+    ISHTF_PASS();
+}
+
+void ASCIITests::TrimTest9(Test& test)
+{
+    std::string str = "a   ";
+
+    ASCII::Trim(str);
+
+    ISHTF_FAIL_IF_NEQ(str, "a");
+    ISHTF_PASS();
+}
+
+void ASCIITests::TrimTest10(Test& test)
+{
+    std::string str = " a ";
+
+    ASCII::Trim(str);
+
+    ISHTF_FAIL_IF_NEQ(str, "a");
+    ISHTF_PASS();
+}
+
+void ASCIITests::TrimTest11(Test& test)
+{
+    std::string str = "  a   ";
+
+    ASCII::Trim(str);
+
+    ISHTF_FAIL_IF_NEQ(str, "a");
     ISHTF_PASS();
 }

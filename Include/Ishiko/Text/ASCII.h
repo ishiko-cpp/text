@@ -23,6 +23,9 @@ public:
     static std::vector<std::string> Split(const std::string& str);
     static void ToLowerCase(std::string& str);
     static void ToUpperCase(std::string& str);
+    // TODO: at the moment this only trims spaces and not other whitespace characters,
+    // allow to pass list of characters that can be trimmed, also allow to trim front or back
+    static void Trim(std::string& str);
 };
 
 }

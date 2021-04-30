@@ -66,5 +66,27 @@ void ASCII::ToUpperCase(std::string& str)
     }
 }
 
+void ASCII::Trim(std::string& str)
+{
+    if (!str.empty())
+    {
+        std::string::const_iterator begin = str.begin();
+        std::string::const_iterator it = str.begin();
+        std::string::const_iterator end = str.end();
+        while ((it != end) && (*it == ' '))
+        {
+            ++it;
+        }
+        std::string::const_iterator startIt = it;
+        it = end;
+        while ((it != startIt) && (*(it - 1) == ' '))
+        {
+            --it;
+        }
+        str.erase(it, end);
+        str.erase(begin, startIt);
+    }
+}
+
 }
 }
