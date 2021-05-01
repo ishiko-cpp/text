@@ -24,6 +24,19 @@ ASCIITests::ASCIITests(const TestNumber& number, const TestEnvironment& environm
     append<HeapAllocationErrorsTest>("Split test 9", SplitTest9);
     append<HeapAllocationErrorsTest>("Split test 10", SplitTest10);
     append<HeapAllocationErrorsTest>("Split test 11", SplitTest11);
+    append<HeapAllocationErrorsTest>("GetLines test 1", GetLinesTest1);
+    append<HeapAllocationErrorsTest>("GetLines test 2", GetLinesTest2);
+    append<HeapAllocationErrorsTest>("GetLines test 3", GetLinesTest3);
+    append<HeapAllocationErrorsTest>("GetLines test 4", GetLinesTest4);
+    append<HeapAllocationErrorsTest>("GetLines test 5", GetLinesTest5);
+    append<HeapAllocationErrorsTest>("GetLines test 6", GetLinesTest6);
+    append<HeapAllocationErrorsTest>("GetLines test 7", GetLinesTest7);
+    append<HeapAllocationErrorsTest>("GetLines test 8", GetLinesTest8);
+    append<HeapAllocationErrorsTest>("GetLines test 9", GetLinesTest9);
+    append<HeapAllocationErrorsTest>("GetLines test 10", GetLinesTest10);
+    append<HeapAllocationErrorsTest>("GetLines test 11", GetLinesTest11);
+    append<HeapAllocationErrorsTest>("GetLines test 12", GetLinesTest12);
+    append<HeapAllocationErrorsTest>("GetLines test 13", GetLinesTest13);
     append<HeapAllocationErrorsTest>("ToLowerCase test 1", ToLowerCaseTest1);
     append<HeapAllocationErrorsTest>("ToUpperCase test 1", ToUpperCaseTest1);
     append<HeapAllocationErrorsTest>("Trim test 1", TrimTest1);
@@ -124,6 +137,110 @@ void ASCIITests::SplitTest11(Test& test)
     std::vector<std::string> tokens = ASCII::Split(" one  two   three ");
 
     ISHTF_FAIL_IF_NEQ(tokens, std::vector<std::string>({ "one", "two", "three" }));
+    ISHTF_PASS();
+}
+
+void ASCIITests::GetLinesTest1(Test& test)
+{
+    std::vector<std::string> lines = ASCII::GetLines("");
+
+    ISHTF_FAIL_IF_NEQ(lines.size(), 0);
+    ISHTF_PASS();
+}
+
+void ASCIITests::GetLinesTest2(Test& test)
+{
+    std::vector<std::string> lines = ASCII::GetLines("a");
+
+    ISHTF_FAIL_IF_NEQ(lines, std::vector<std::string>({ "a" }));
+    ISHTF_PASS();
+}
+
+void ASCIITests::GetLinesTest3(Test& test)
+{
+    std::vector<std::string> lines = ASCII::GetLines("a sentence");
+
+    ISHTF_FAIL_IF_NEQ(lines, std::vector<std::string>({ "a sentence" }));
+    ISHTF_PASS();
+}
+
+void ASCIITests::GetLinesTest4(Test& test)
+{
+    std::vector<std::string> lines = ASCII::GetLines("\r\n");
+
+    ISHTF_FAIL_IF_NEQ(lines, std::vector<std::string>({ "" }));
+    ISHTF_PASS();
+}
+
+void ASCIITests::GetLinesTest5(Test& test)
+{
+    std::vector<std::string> lines = ASCII::GetLines("\n");
+
+    ISHTF_FAIL_IF_NEQ(lines, std::vector<std::string>({ "" }));
+    ISHTF_PASS();
+}
+
+void ASCIITests::GetLinesTest6(Test& test)
+{
+    std::vector<std::string> lines = ASCII::GetLines("\r\n\r\n");
+
+    ISHTF_FAIL_IF_NEQ(lines, std::vector<std::string>({ "", "" }));
+    ISHTF_PASS();
+}
+
+void ASCIITests::GetLinesTest7(Test& test)
+{
+    std::vector<std::string> lines = ASCII::GetLines("\n\n");
+
+    ISHTF_FAIL_IF_NEQ(lines, std::vector<std::string>({ "", "" }));
+    ISHTF_PASS();
+}
+
+void ASCIITests::GetLinesTest8(Test& test)
+{
+    std::vector<std::string> lines = ASCII::GetLines("a sentence\r\n");
+
+    ISHTF_FAIL_IF_NEQ(lines, std::vector<std::string>({ "a sentence" }));
+    ISHTF_PASS();
+}
+
+void ASCIITests::GetLinesTest9(Test& test)
+{
+    std::vector<std::string> lines = ASCII::GetLines("a sentence\n");
+
+    ISHTF_FAIL_IF_NEQ(lines, std::vector<std::string>({ "a sentence" }));
+    ISHTF_PASS();
+}
+
+void ASCIITests::GetLinesTest10(Test& test)
+{
+    std::vector<std::string> lines = ASCII::GetLines("one line\r\nanother line");
+
+    ISHTF_FAIL_IF_NEQ(lines, std::vector<std::string>({ "one line", "another line" }));
+    ISHTF_PASS();
+}
+
+void ASCIITests::GetLinesTest11(Test& test)
+{
+    std::vector<std::string> lines = ASCII::GetLines("one line\nanother line");
+
+    ISHTF_FAIL_IF_NEQ(lines, std::vector<std::string>({ "one line", "another line" }));
+    ISHTF_PASS();
+}
+
+void ASCIITests::GetLinesTest12(Test& test)
+{
+    std::vector<std::string> lines = ASCII::GetLines("one line\r\nanother line\r\n");
+
+    ISHTF_FAIL_IF_NEQ(lines, std::vector<std::string>({ "one line", "another line" }));
+    ISHTF_PASS();
+}
+
+void ASCIITests::GetLinesTest13(Test& test)
+{
+    std::vector<std::string> lines = ASCII::GetLines("one line\nanother line\n");
+
+    ISHTF_FAIL_IF_NEQ(lines, std::vector<std::string>({ "one line", "another line" }));
     ISHTF_PASS();
 }
 

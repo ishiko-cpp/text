@@ -18,6 +18,7 @@ namespace Text
 class ASCII
 {
 public:
+    static std::vector<std::string> GetLines(const std::string& str);
     // TODO: this function splits only based on the space character, update it to take
     // on which character(s) to split
     static std::vector<std::string> Split(const std::string& str);
