@@ -17,16 +17,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Include\Ishiko\Text.h">
+    <ClInclude Include="..\..\include\Ishiko\Text.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Include\Ishiko\Text\linkoptions.h">
+    <ClInclude Include="..\..\include\Ishiko\Text\linkoptions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Include\Ishiko\Text\ASCII.h">
+    <ClInclude Include="..\..\include\Ishiko\Text\ASCII.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Include\Ishiko\Text\CString.h">
+    <ClInclude Include="..\..\include\Ishiko\Text\CString.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
