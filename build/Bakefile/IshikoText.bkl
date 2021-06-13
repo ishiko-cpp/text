@@ -12,7 +12,7 @@ library IshikoText : IshikoPlatform
 {
     archs = x86 x86_64;
 
-    includedirs += ../../Include/Ishiko/Text;
+    includedirs += ../../include/Ishiko/Text;
 
     if ($(toolset) == gnu)
     {
@@ -32,11 +32,11 @@ library IshikoText : IshikoPlatform
 
     headers
     {
-        ../../Include/Ishiko/Text.h
+        ../../include/Ishiko/Text.h
 
-        ../../Include/Ishiko/Text/linkoptions.h
-        ../../Include/Ishiko/Text/ASCII.h
-        ../../Include/Ishiko/Text/CString.h
+        ../../include/Ishiko/Text/linkoptions.h
+        ../../include/Ishiko/Text/ASCII.h
+        ../../include/Ishiko/Text/CString.h
     }
 
     sources
