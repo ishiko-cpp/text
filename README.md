@@ -1,4 +1,4 @@
-# Ishiko/C++ - Text
+# Ishiko/C++ Text
 
 Text utilities.
 
@@ -12,7 +12,7 @@ Text utilities.
 
 # Project Status
 
-[![Ishiko-cpp](https://circleci.com/gh/Ishiko-cpp/Text.svg?style=shield)](https://circleci.com/gh/Ishiko-cpp/Text)
+[![ishiko-cpp](https://circleci.com/gh/ishiko-cpp/text.svg?style=shield)](https://circleci.com/gh/ishiko-cpp/text)
 
 This project is intended for use by its author only.
 
