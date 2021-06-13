@@ -11,10 +11,10 @@ jobs:
           name: "Install build dependency: Ishiko/C++ Platform"
           command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/platform.git && cd platform/build/GNUmakefile && make
       - checkout:
-          path: /Ishiko-cpp/Text
+          path: /projects/ishiko/cpp/text
       - run:
           name: Build
-          command: cd /Ishiko-cpp/Text/Makefiles/GNUmakefile && make
+          command: cd /projects/ishiko/cpp/text/build/GNUmakefile && make
       - run:
           name: "Checkout Ishiko-cpp/Errors test dependency"
           command: cd /Ishiko-cpp && git clone https://github.com/Ishiko-cpp/Errors.git
