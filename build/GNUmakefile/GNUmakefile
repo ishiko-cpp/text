@@ -75,11 +75,11 @@ all: ../Bakefile/../../Lib/lib$(if $(call _equal,$(config),Debug),IshikoText-d,I
 	$(AR) rc $@ $(_builddir)IshikoText_ASCII.o $(_builddir)IshikoText_CString.o
 	$(RANLIB) $@
 
-$(_builddir)IshikoText_ASCII.o: ../../Source/ASCII.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_PLATFORM_ROOT)/include -I../../include/Ishiko/Text -std=c++11 ../../Source/ASCII.cpp
+$(_builddir)IshikoText_ASCII.o: ../../src/ASCII.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_PLATFORM_ROOT)/include -I../../include/Ishiko/Text -std=c++11 ../../src/ASCII.cpp
 
-$(_builddir)IshikoText_CString.o: ../../Source/CString.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_PLATFORM_ROOT)/include -I../../include/Ishiko/Text -std=c++11 ../../Source/CString.cpp
+$(_builddir)IshikoText_CString.o: ../../src/CString.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_PLATFORM_ROOT)/include -I../../include/Ishiko/Text -std=c++11 ../../src/CString.cpp
 
 clean:
 	rm -f $(_builddir)*.o

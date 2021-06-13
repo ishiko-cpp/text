@@ -1,12 +1,12 @@
 setting ISHIKO_CPP_TEXT_ROOT
 {
     help = "Path to the Ishiko/Text installation";
-    default = '$(ISHIKO_CPP)/Text';
+    default = '$(ISHIKO_CPP)/text';
 }
 
 template IshikoText
 {
-    includedirs += $(ISHIKO_CPP_TEXT_ROOT)/Include;
+    includedirs += $(ISHIKO_CPP_TEXT_ROOT)/include;
 
     if ($(toolset) == gnu)
     {

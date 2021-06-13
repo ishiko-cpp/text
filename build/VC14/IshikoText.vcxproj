@@ -150,8 +150,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\ASCII.cpp" />
-    <ClCompile Include="..\..\Source\CString.cpp" />
+    <ClCompile Include="..\..\src\ASCII.cpp" />
+    <ClCompile Include="..\..\src\CString.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Ishiko\Text.h" />
