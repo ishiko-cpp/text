@@ -31,10 +31,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\ASCII.cpp">
+    <ClCompile Include="..\..\src\ASCII.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\CString.cpp">
+    <ClCompile Include="..\..\src\CString.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
