@@ -64,17 +64,17 @@ endif
 # 
 
 # Path to the Ishiko/Text installation
-ISHIKO_CPP_TEXT_ROOT ?= $(ISHIKO_CPP)/Text
+ISHIKO_CPP_TEXT_ROOT ?= $(ISHIKO_CPP)/text
 # Path to the Ishiko Errors installation
-ISHIKO_CPP_ERRORS_ROOT ?= $(ISHIKO_CPP)/Errors
+ISHIKO_CPP_ERRORS_ROOT ?= $(ISHIKO_CPP)/errors
 # Path to the Ishiko Platform installation
-ISHIKO_CPP_PLATFORM_ROOT ?= $(ISHIKO_CPP)/Platform
+ISHIKO_CPP_PLATFORM_ROOT ?= $(ISHIKO_CPP)/platform
 # Path to the Boost installation
 ISHIKO_CPP_BOOST_ROOT ?= $(ISHIKO_CPP_THIRD_PARTY_BOOST)
 # Path to the Ishiko Process installation
-ISHIKO_CPP_PROCESS_ROOT ?= $(ISHIKO_CPP)/Process
+ISHIKO_CPP_PROCESS_ROOT ?= $(ISHIKO_CPP)/process
 # Path to the Ishiko TestFramework installation
-ISHIKO_CPP_TESTFRAMEWORK_ROOT ?= $(ISHIKO_CPP)/TestFramework
+ISHIKO_CPP_TESTFRAMEWORK_ROOT ?= $(ISHIKO_CPP)/test
 
 # ------------
 
@@ -84,13 +84,13 @@ $(_builddir)IshikoTextTests: $(_builddir)IshikoTextTests_ASCIITests.o $(_builddi
 	$(CXX) -o $@ $(LDFLAGS) $(_builddir)IshikoTextTests_ASCIITests.o $(_builddir)IshikoTextTests_CStringTests.o $(_builddir)IshikoTextTests_main.o -L$(ISHIKO_CPP_TEXT_ROOT)/Lib -L$(ISHIKO_CPP_ERRORS_ROOT)/Lib -L$(ISHIKO_CPP_BOOST_ROOT)/lib -L$(ISHIKO_CPP_PROCESS_ROOT)/Lib -L$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/Lib -lIshikoText -lIshikoTestFrameworkCore -lIshikoProcess -lIshikoErrors -lboost_filesystem -pthread
 
 $(_builddir)IshikoTextTests_ASCIITests.o: ../../Source/ASCIITests.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread -I$(ISHIKO_CPP_TEXT_ROOT)/Include -I$(ISHIKO_CPP_ERRORS_ROOT)/Include -I$(ISHIKO_CPP_PLATFORM_ROOT)/Include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_PROCESS_ROOT)/Include -I$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/Include -std=c++11 ../../Source/ASCIITests.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_PLATFORM_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_PROCESS_ROOT)/include -I$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/include -std=c++11 ../../Source/ASCIITests.cpp
 
 $(_builddir)IshikoTextTests_CStringTests.o: ../../Source/CStringTests.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread -I$(ISHIKO_CPP_TEXT_ROOT)/Include -I$(ISHIKO_CPP_ERRORS_ROOT)/Include -I$(ISHIKO_CPP_PLATFORM_ROOT)/Include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_PROCESS_ROOT)/Include -I$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/Include -std=c++11 ../../Source/CStringTests.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_PLATFORM_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_PROCESS_ROOT)/include -I$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/include -std=c++11 ../../Source/CStringTests.cpp
 
 $(_builddir)IshikoTextTests_main.o: ../../Source/main.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread -I$(ISHIKO_CPP_TEXT_ROOT)/Include -I$(ISHIKO_CPP_ERRORS_ROOT)/Include -I$(ISHIKO_CPP_PLATFORM_ROOT)/Include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_PROCESS_ROOT)/Include -I$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/Include -std=c++11 ../../Source/main.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_PLATFORM_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_PROCESS_ROOT)/include -I$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/include -std=c++11 ../../Source/main.cpp
 
 clean:
 	rm -f $(_builddir)*.o
