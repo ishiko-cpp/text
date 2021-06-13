@@ -1,5 +1,5 @@
 ishikopath = envvar("ISHIKO_CPP");
-import $(ishikopath)/Platform/Include/Ishiko/Platform.bkl;
+import $(ishikopath)/platform/include/Ishiko/Platform.bkl;
 
 toolsets = gnu vs2017 vs2015 vs2013;
 
@@ -41,7 +41,7 @@ library IshikoText : IshikoPlatform
 
     sources
     {
-        ../../Source/ASCII.cpp
-        ../../Source/CString.cpp
+        ../../src/ASCII.cpp
+        ../../src/CString.cpp
     }
 }
