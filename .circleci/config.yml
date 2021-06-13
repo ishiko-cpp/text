@@ -19,20 +19,14 @@ jobs:
           name: "Install test dependency: Ishiko/C++ Errors"
           command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/errors.git && cd errors/build/GNUmakefile && make
       - run:
-          name: "Checkout Ishiko-cpp/Process test dependency"
-          command: cd /Ishiko-cpp && git clone https://github.com/Ishiko-cpp/Process.git
+          name: "Install test dependency: Ishiko/C++ Process"
+          command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/process.git && cd process/build/GNUmakefile && make
       - run:
-          name: "Checkout Ishiko-cpp/TestFramework test dependency"
-          command: cd /Ishiko-cpp && git clone https://github.com/Ishiko-cpp/TestFramework.git
-      - run:
-          name: "Build Ishiko-cpp/Process test dependency"
-          command: cd /Ishiko-cpp/Process/Makefiles/GNUmakefile && make
-      - run:
-          name: "Build Ishiko-cpp/TestFramework test dependency"
-          command: cd /Ishiko-cpp/TestFramework/Core/Makefiles/GNUmakefile && make
+          name: "Install test dependency: Ishiko/C++ Test"
+          command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/test.git && cd test/core/build/GNUmakefile && make
       - run:
           name: Test build
-          command: cd /Ishiko-cpp/Text/Tests/Makefiles/GNUmakefile && make
+          command: cd /projects/ishiko/cpp/text/Tests/Makefiles/GNUmakefile && make
       - run:
           name: Run the tests
-          command: cd /Ishiko-cpp/Text/Tests/Makefiles/GNUmakefile && ./IshikoTextTests
+          command: cd /projects/ishiko/cpp/text/Tests/Makefiles/GNUmakefile && ./IshikoTextTests
