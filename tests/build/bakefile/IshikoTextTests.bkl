@@ -1,0 +1,37 @@
+import ../../../include/Ishiko/Text.bkl;
+ishikopath = envvar("ISHIKO_CPP");
+import $(ishikopath)/tests/include/Ishiko/Tests/Core.bkl;
+
+toolsets = gnu vs2017 vs2015 vs2013;
+
+gnu.makefile = ../gnumake/GNUmakefile;
+vs2017.solutionfile = ../vc15/IshikoTextTests.sln;
+vs2015.solutionfile = ../vc14/IshikoTextTests.sln;
+vs2013.solutionfile = ../vc12/IshikoTextTests.sln;
+
+program IshikoTextTests : IshikoText, IshikoTestsCore
+{
+    if ($(toolset) == gnu)
+    {
+        cxx-compiler-options = "-std=c++11";
+        libs += IshikoText IshikoTestsCore IshikoProcess IshikoErrors boost_filesystem;
+    }
+
+    if ($(toolset) != gnu)
+    {
+        archs = x86 x86_64;
+    }
+
+    headers
+    {
+        ../../src/ASCIITests.h
+        ../../src/CStringTests.h
+    }
+
+    sources
+    {
+        ../../src/ASCIITests.cpp
+        ../../src/CStringTests.cpp
+        ../../src/main.cpp
+    }
+}
