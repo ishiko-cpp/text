@@ -9,21 +9,24 @@ jobs:
           command: mkdir -p /projects/ishiko/cpp && echo 'export ISHIKO_CPP="/projects/ishiko/cpp"' >> $BASH_ENV
       - run:
           name: "Install build dependency: Ishiko/C++ Platform"
-          command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/platform.git && cd platform/build/GNUmakefile && make
+          command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/platform.git && cd platform/build/gnumake && make
       - checkout:
           path: /projects/ishiko/cpp/text
       - run:
           name: Build
-          command: cd /projects/ishiko/cpp/text/build/GNUmakefile && make
+          command: cd /projects/ishiko/cpp/text/build/gnumake && make
       - run:
           name: "Install test dependency: Ishiko/C++ Errors"
-          command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/errors.git && cd errors/build/GNUmakefile && make
+          command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/errors.git && cd errors/build/gnumake && make
       - run:
           name: "Install test dependency: Ishiko/C++ Process"
-          command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/process.git && cd process/build/GNUmakefile && make
+          command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/process.git && cd process/build/gnumake && make
+      - run:
+          name: "Install test dependency: Ishiko/C++ Diff"
+          command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/diff.git && cd diff/core/build/gnumake && make
       - run:
           name: "Install test dependency: Ishiko/C++ Test"
-          command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/test.git && cd test/core/build/GNUmakefile && make
+          command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/test.git && cd test/core/build/gnumake && make
       - run:
           name: Test build
           command: cd /projects/ishiko/cpp/text/Tests/Makefiles/GNUmakefile && make
