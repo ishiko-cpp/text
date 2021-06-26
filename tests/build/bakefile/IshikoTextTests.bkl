@@ -24,14 +24,14 @@ program IshikoTextTests : IshikoText, IshikoTestsCore
 
     headers
     {
-        ../../Source/ASCIITests.h
-        ../../Source/CStringTests.h
+        ../../src/ASCIITests.h
+        ../../src/CStringTests.h
     }
 
     sources
     {
-        ../../Source/ASCIITests.cpp
-        ../../Source/CStringTests.cpp
-        ../../Source/main.cpp
+        ../../src/ASCIITests.cpp
+        ../../src/CStringTests.cpp
+        ../../src/main.cpp
     }
 }

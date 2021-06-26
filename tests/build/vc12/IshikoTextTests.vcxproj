@@ -152,13 +152,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\ASCIITests.cpp" />
-    <ClCompile Include="..\..\Source\CStringTests.cpp" />
-    <ClCompile Include="..\..\Source\main.cpp" />
+    <ClCompile Include="..\..\src\ASCIITests.cpp" />
+    <ClCompile Include="..\..\src\CStringTests.cpp" />
+    <ClCompile Include="..\..\src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\ASCIITests.h" />
-    <ClInclude Include="..\..\Source\CStringTests.h" />
+    <ClInclude Include="..\..\src\ASCIITests.h" />
+    <ClInclude Include="..\..\src\CStringTests.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
