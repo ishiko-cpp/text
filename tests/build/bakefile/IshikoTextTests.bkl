@@ -4,10 +4,10 @@ import $(ishikopath)/tests/include/Ishiko/Tests/Core.bkl;
 
 toolsets = gnu vs2017 vs2015 vs2013;
 
-gnu.makefile = ../GNUmakefile/GNUmakefile;
-vs2017.solutionfile = ../VC15/IshikoTextTests.sln;
-vs2015.solutionfile = ../VC14/IshikoTextTests.sln;
-vs2013.solutionfile = ../VC12/IshikoTextTests.sln;
+gnu.makefile = ../gnumake/GNUmakefile;
+vs2017.solutionfile = ../vc15/IshikoTextTests.sln;
+vs2015.solutionfile = ../vc14/IshikoTextTests.sln;
+vs2013.solutionfile = ../vc12/IshikoTextTests.sln;
 
 program IshikoTextTests : IshikoText, IshikoTestsCore
 {
