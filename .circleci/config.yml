@@ -38,7 +38,7 @@ jobs:
           command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/tests.git && cd tests/core/build/gnumake && make
       - run:
           name: Test build
-          command: cd /projects/ishiko/cpp/text/tests/build/GNUmakefile && make
+          command: cd /projects/ishiko/cpp/text/tests/build/gnumake && make
       - run:
           name: Run the tests
-          command: cd /projects/ishiko/cpp/text/tests/build/GNUmakefile && ./IshikoTextTests
+          command: cd /projects/ishiko/cpp/text/tests/build/gnumake && ./IshikoTextTests
