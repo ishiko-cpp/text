@@ -15,6 +15,10 @@ ASCIITests::ASCIITests(const TestNumber& number, const TestEnvironment& environm
 {
     append<HeapAllocationErrorsTest>("IsAlpha test 1", IsAlphaTest1);
     append<HeapAllocationErrorsTest>("IsAlpha test 2", IsAlphaTest2);
+    append<HeapAllocationErrorsTest>("IsNumeric test 1", IsNumericTest1);
+    append<HeapAllocationErrorsTest>("IsNumeric test 2", IsNumericTest2);
+    append<HeapAllocationErrorsTest>("IsAlphanumeric test 1", IsAlphanumericTest1);
+    append<HeapAllocationErrorsTest>("IsAlphanumeric test 2", IsAlphanumericTest2);
     append<HeapAllocationErrorsTest>("IsWhitespace test 1", IsWhitespaceTest1);
     append<HeapAllocationErrorsTest>("IsWhitespace test 2", IsWhitespaceTest2);
     append<HeapAllocationErrorsTest>("Split test 1", SplitTest1);
@@ -88,6 +92,76 @@ void ASCIITests::IsAlphaTest2(Test& test)
     ISHTF_FAIL_IF(alpha2);
     ISHTF_FAIL_IF(alpha3);
     ISHTF_FAIL_IF(alpha4);
+
+    ISHTF_PASS();
+}
+
+void ASCIITests::IsNumericTest1(Test& test)
+{
+    bool num1 = ASCII::IsNumeric('0');
+    bool num2 = ASCII::IsNumeric('4');
+    bool num3 = ASCII::IsNumeric('9');
+
+    ISHTF_FAIL_IF_NOT(num1);
+    ISHTF_FAIL_IF_NOT(num2);
+    ISHTF_FAIL_IF_NOT(num3);
+
+    ISHTF_PASS();
+}
+
+void ASCIITests::IsNumericTest2(Test& test)
+{
+    bool num1 = ASCII::IsNumeric(0);
+    bool num2 = ASCII::IsNumeric('a');
+    bool num3 = ASCII::IsNumeric('.');
+
+    ISHTF_FAIL_IF(num1);
+    ISHTF_FAIL_IF(num2);
+    ISHTF_FAIL_IF(num3);
+
+    ISHTF_PASS();
+}
+
+void ASCIITests::IsAlphanumericTest1(Test& test)
+{
+    bool alphanum1 = ASCII::IsAlphanumeric('a');
+    bool alphanum2 = ASCII::IsAlphanumeric('d');
+    bool alphanum3 = ASCII::IsAlphanumeric('z');
+
+    ISHTF_FAIL_IF_NOT(alphanum1);
+    ISHTF_FAIL_IF_NOT(alphanum2);
+    ISHTF_FAIL_IF_NOT(alphanum3);
+
+    bool alphanum4 = ASCII::IsAlphanumeric('a');
+    bool alphanum5 = ASCII::IsAlphanumeric('d');
+    bool alphanum6 = ASCII::IsAlphanumeric('z');
+
+    ISHTF_FAIL_IF_NOT(alphanum4);
+    ISHTF_FAIL_IF_NOT(alphanum5);
+    ISHTF_FAIL_IF_NOT(alphanum6);
+
+    bool alphanum7 = ASCII::IsAlphanumeric('0');
+    bool alphanum8 = ASCII::IsAlphanumeric('4');
+    bool alphanum9 = ASCII::IsAlphanumeric('9');
+
+    ISHTF_FAIL_IF_NOT(alphanum7);
+    ISHTF_FAIL_IF_NOT(alphanum8);
+    ISHTF_FAIL_IF_NOT(alphanum9);
+
+    ISHTF_PASS();
+}
+
+void ASCIITests::IsAlphanumericTest2(Test& test)
+{
+    bool alphanum1 = ASCII::IsAlphanumeric(0);
+    bool alphanum2 = ASCII::IsAlphanumeric('.');
+    bool alphanum3 = ASCII::IsAlphanumeric('!');
+    bool alphanum4 = ASCII::IsAlphanumeric(' ');
+
+    ISHTF_FAIL_IF(alphanum1);
+    ISHTF_FAIL_IF(alphanum2);
+    ISHTF_FAIL_IF(alphanum3);
+    ISHTF_FAIL_IF(alphanum4);
 
     ISHTF_PASS();
 }

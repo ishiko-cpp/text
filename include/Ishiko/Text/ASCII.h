@@ -19,6 +19,8 @@ class ASCII
 {
 public:
     static bool IsAlpha(char c);
+    static bool IsNumeric(char c);
+    static bool IsAlphanumeric(char c);
     static bool IsWhitespace(char c);
 
     static std::vector<std::string> GetLines(const std::string& str);
