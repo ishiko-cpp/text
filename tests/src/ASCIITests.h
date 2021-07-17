@@ -15,6 +15,8 @@ public:
     ASCIITests(const Ishiko::Tests::TestNumber& number, const Ishiko::Tests::TestEnvironment& environment);
 
 private:
+    static void IsAlphaTest1(Ishiko::Tests::Test& test);
+    static void IsAlphaTest2(Ishiko::Tests::Test& test);
     static void SplitTest1(Ishiko::Tests::Test& test);
     static void SplitTest2(Ishiko::Tests::Test& test);
     static void SplitTest3(Ishiko::Tests::Test& test);

@@ -11,6 +11,11 @@ namespace Ishiko
 namespace Text
 {
 
+bool ASCII::IsAlpha(char c)
+{
+    return ((c >= 'a') && (c <= 'z')) || ((c >= 'A') && (c <= 'Z'));
+}
+
 std::vector<std::string> ASCII::GetLines(const std::string& str)
 {
     std::vector<std::string> result;

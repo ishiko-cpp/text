@@ -13,6 +13,8 @@ using namespace Ishiko::Text;
 ASCIITests::ASCIITests(const TestNumber& number, const TestEnvironment& environment)
     : TestSequence(number, "ASCII tests", environment)
 {
+    append<HeapAllocationErrorsTest>("IsAlpha test 1", IsAlphaTest1);
+    append<HeapAllocationErrorsTest>("IsAlpha test 2", IsAlphaTest2);
     append<HeapAllocationErrorsTest>("Split test 1", SplitTest1);
     append<HeapAllocationErrorsTest>("Split test 2", SplitTest2);
     append<HeapAllocationErrorsTest>("Split test 3", SplitTest3);
@@ -50,6 +52,42 @@ ASCIITests::ASCIITests(const TestNumber& number, const TestEnvironment& environm
     append<HeapAllocationErrorsTest>("Trim test 9", TrimTest9);
     append<HeapAllocationErrorsTest>("Trim test 10", TrimTest10);
     append<HeapAllocationErrorsTest>("Trim test 11", TrimTest11);
+}
+
+void ASCIITests::IsAlphaTest1(Test& test)
+{
+    bool alpha1 = ASCII::IsAlpha('a');
+    bool alpha2 = ASCII::IsAlpha('d');
+    bool alpha3 = ASCII::IsAlpha('z');
+
+    ISHTF_FAIL_IF_NOT(alpha1);
+    ISHTF_FAIL_IF_NOT(alpha2);
+    ISHTF_FAIL_IF_NOT(alpha3);
+
+    bool alpha4 = ASCII::IsAlpha('A');
+    bool alpha5 = ASCII::IsAlpha('D');
+    bool alpha6 = ASCII::IsAlpha('Z');
+
+    ISHTF_FAIL_IF_NOT(alpha4);
+    ISHTF_FAIL_IF_NOT(alpha5);
+    ISHTF_FAIL_IF_NOT(alpha6);
+
+    ISHTF_PASS();
+}
+
+void ASCIITests::IsAlphaTest2(Test& test)
+{
+    bool alpha1 = ASCII::IsAlpha(0);
+    bool alpha2 = ASCII::IsAlpha('\r');
+    bool alpha3 = ASCII::IsAlpha('!');
+    bool alpha4 = ASCII::IsAlpha('.');
+
+    ISHTF_FAIL_IF(alpha1);
+    ISHTF_FAIL_IF(alpha2);
+    ISHTF_FAIL_IF(alpha3);
+    ISHTF_FAIL_IF(alpha4);
+
+    ISHTF_PASS();
 }
 
 void ASCIITests::SplitTest1(Test& test)
