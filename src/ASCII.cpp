@@ -16,6 +16,16 @@ bool ASCII::IsAlpha(char c)
     return ((c >= 'a') && (c <= 'z')) || ((c >= 'A') && (c <= 'Z'));
 }
 
+bool ASCII::IsNumeric(char c)
+{
+    return ((c >= '0') && (c <= '9'));
+}
+
+bool ASCII::IsAlphanumeric(char c)
+{
+    return (IsAlpha(c) || IsNumeric(c));
+}
+
 bool ASCII::IsWhitespace(char c)
 {
     return ((c == ' ') || (c == '\r') || (c == '\n') || (c == '\t') || (c == '\v'));

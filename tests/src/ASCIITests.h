@@ -17,6 +17,10 @@ public:
 private:
     static void IsAlphaTest1(Ishiko::Tests::Test& test);
     static void IsAlphaTest2(Ishiko::Tests::Test& test);
+    static void IsNumericTest1(Ishiko::Tests::Test& test);
+    static void IsNumericTest2(Ishiko::Tests::Test& test);
+    static void IsAlphanumericTest1(Ishiko::Tests::Test& test);
+    static void IsAlphanumericTest2(Ishiko::Tests::Test& test);
     static void IsWhitespaceTest1(Ishiko::Tests::Test& test);
     static void IsWhitespaceTest2(Ishiko::Tests::Test& test);
     static void SplitTest1(Ishiko::Tests::Test& test);
