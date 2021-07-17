@@ -16,6 +16,11 @@ bool ASCII::IsAlpha(char c)
     return ((c >= 'a') && (c <= 'z')) || ((c >= 'A') && (c <= 'Z'));
 }
 
+bool ASCII::IsWhitespace(char c)
+{
+    return ((c == ' ') || (c == '\r') || (c == '\n') || (c == '\t') || (c == '\v'));
+}
+
 std::vector<std::string> ASCII::GetLines(const std::string& str)
 {
     std::vector<std::string> result;
