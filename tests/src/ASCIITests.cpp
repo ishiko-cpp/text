@@ -15,6 +15,8 @@ ASCIITests::ASCIITests(const TestNumber& number, const TestEnvironment& environm
 {
     append<HeapAllocationErrorsTest>("IsAlpha test 1", IsAlphaTest1);
     append<HeapAllocationErrorsTest>("IsAlpha test 2", IsAlphaTest2);
+    append<HeapAllocationErrorsTest>("IsWhitespace test 1", IsWhitespaceTest1);
+    append<HeapAllocationErrorsTest>("IsWhitespace test 2", IsWhitespaceTest2);
     append<HeapAllocationErrorsTest>("Split test 1", SplitTest1);
     append<HeapAllocationErrorsTest>("Split test 2", SplitTest2);
     append<HeapAllocationErrorsTest>("Split test 3", SplitTest3);
@@ -86,6 +88,36 @@ void ASCIITests::IsAlphaTest2(Test& test)
     ISHTF_FAIL_IF(alpha2);
     ISHTF_FAIL_IF(alpha3);
     ISHTF_FAIL_IF(alpha4);
+
+    ISHTF_PASS();
+}
+
+void ASCIITests::IsWhitespaceTest1(Test& test)
+{
+    bool ws1 = ASCII::IsWhitespace(' ');
+    bool ws2 = ASCII::IsWhitespace('\r');
+    bool ws3 = ASCII::IsWhitespace('\n');
+    bool ws4 = ASCII::IsWhitespace('\t');
+    bool ws5 = ASCII::IsWhitespace('\v');
+
+    ISHTF_FAIL_IF_NOT(ws1);
+    ISHTF_FAIL_IF_NOT(ws2);
+    ISHTF_FAIL_IF_NOT(ws3);
+    ISHTF_FAIL_IF_NOT(ws4);
+    ISHTF_FAIL_IF_NOT(ws5);
+
+    ISHTF_PASS();
+}
+
+void ASCIITests::IsWhitespaceTest2(Test& test)
+{
+    bool ws1 = ASCII::IsWhitespace(0);
+    bool ws2 = ASCII::IsWhitespace('a');
+    bool ws3 = ASCII::IsWhitespace('.');
+
+    ISHTF_FAIL_IF(ws1);
+    ISHTF_FAIL_IF(ws2);
+    ISHTF_FAIL_IF(ws3);
 
     ISHTF_PASS();
 }
