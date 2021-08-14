@@ -5,7 +5,7 @@
 */
 
 #include "CString.h"
-#include <Ishiko/Platform/Compilers.h>
+#include <Ishiko/BasePlatform/Compilers.h>
 #include <string.h>
 
 namespace Ishiko
