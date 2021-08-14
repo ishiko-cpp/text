@@ -20,9 +20,9 @@ void CStringTests::DuplicateTest1(Test& test)
 {
     char* str = CString::Duplicate("string");
 
-    ISHTF_FAIL_IF_STR_NEQ(str, "string");
+    ISHIKO_FAIL_IF_STR_NEQ(str, "string");
 
     delete[] str;
 
-    ISHTF_PASS();
+    ISHIKO_PASS();
 }
