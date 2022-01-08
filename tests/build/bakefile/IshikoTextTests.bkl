@@ -25,8 +25,8 @@ program IshikoTextTests : IshikoText, IshikoTestsCore
 
     headers
     {
-        ../../src/ASCIITests.h
-        ../../src/CStringTests.h
+        ../../src/ASCIITests.hpp
+        ../../src/CStringTests.hpp
     }
 
     sources

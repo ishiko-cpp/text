@@ -157,8 +157,8 @@
     <ClCompile Include="..\..\src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\ASCIITests.h" />
-    <ClInclude Include="..\..\src\CStringTests.h" />
+    <ClInclude Include="..\..\src\ASCIITests.hpp" />
+    <ClInclude Include="..\..\src\CStringTests.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,11 +1,11 @@
 /*
-    Copyright (c) 2021 Xavier Leclercq
+    Copyright (c) 2021-2022 Xavier Leclercq
     Released under the MIT License
     See https://github.com/ishiko-cpp/text/blob/main/LICENSE.txt
 */
 
-#ifndef _ISHIKO_TEXT_ASCII_H_
-#define _ISHIKO_TEXT_ASCII_H_
+#ifndef _ISHIKO_CPP_TEXT_ASCII_HPP_
+#define _ISHIKO_CPP_TEXT_ASCII_HPP_
 
 #include <string>
 #include <vector>
@@ -36,7 +36,5 @@ public:
 
 }
 }
-
-#include "linkoptions.h"
 
 #endif
