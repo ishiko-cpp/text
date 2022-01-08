@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2021 Xavier Leclercq
+    Copyright (c) 2021-2022 Xavier Leclercq
     Released under the MIT License
     See https://github.com/ishiko-cpp/text/blob/main/LICENSE.txt
 */
@@ -198,7 +198,7 @@ void ASCIITests::IsWhitespaceTest2(Test& test)
 
 void ASCIITests::SplitTest1(Test& test)
 {
-    std::vector<std::string> tokens = ASCII::Split("");
+    std::vector<std::string> tokens = ASCII::Split("", ' ');
 
     ISHIKO_FAIL_IF_NEQ(tokens.size(), 0);
     ISHIKO_PASS();
@@ -206,7 +206,7 @@ void ASCIITests::SplitTest1(Test& test)
 
 void ASCIITests::SplitTest2(Test& test)
 {
-    std::vector<std::string> tokens = ASCII::Split("a");
+    std::vector<std::string> tokens = ASCII::Split("a", ' ');
 
     ISHIKO_FAIL_IF_NEQ(tokens, std::vector<std::string>({ "a" }));
     ISHIKO_PASS();
@@ -214,7 +214,7 @@ void ASCIITests::SplitTest2(Test& test)
 
 void ASCIITests::SplitTest3(Test& test)
 {
-    std::vector<std::string> tokens = ASCII::Split("abc");
+    std::vector<std::string> tokens = ASCII::Split("abc", ' ');
 
     ISHIKO_FAIL_IF_NEQ(tokens, std::vector<std::string>({ "abc" }));
     ISHIKO_PASS();
@@ -222,7 +222,7 @@ void ASCIITests::SplitTest3(Test& test)
 
 void ASCIITests::SplitTest4(Test& test)
 {
-    std::vector<std::string> tokens = ASCII::Split("one two");
+    std::vector<std::string> tokens = ASCII::Split("one two", ' ');
 
     ISHIKO_FAIL_IF_NEQ(tokens, std::vector<std::string>({ "one", "two" }));
     ISHIKO_PASS();
@@ -230,7 +230,7 @@ void ASCIITests::SplitTest4(Test& test)
 
 void ASCIITests::SplitTest5(Test& test)
 {
-    std::vector<std::string> tokens = ASCII::Split("one two three");
+    std::vector<std::string> tokens = ASCII::Split("one two three", ' ');
 
     ISHIKO_FAIL_IF_NEQ(tokens, std::vector<std::string>({ "one", "two", "three" }));
     ISHIKO_PASS();
@@ -238,7 +238,7 @@ void ASCIITests::SplitTest5(Test& test)
 
 void ASCIITests::SplitTest6(Test& test)
 {
-    std::vector<std::string> tokens = ASCII::Split(" ");
+    std::vector<std::string> tokens = ASCII::Split(" ", ' ');
 
     ISHIKO_FAIL_IF_NEQ(tokens.size(), 0);
     ISHIKO_PASS();
@@ -246,7 +246,7 @@ void ASCIITests::SplitTest6(Test& test)
 
 void ASCIITests::SplitTest7(Test& test)
 {
-    std::vector<std::string> tokens = ASCII::Split("   ");
+    std::vector<std::string> tokens = ASCII::Split("   ", ' ');
 
     ISHIKO_FAIL_IF_NEQ(tokens.size(), 0);
     ISHIKO_PASS();
@@ -254,7 +254,7 @@ void ASCIITests::SplitTest7(Test& test)
 
 void ASCIITests::SplitTest8(Test& test)
 {
-    std::vector<std::string> tokens = ASCII::Split("a ");
+    std::vector<std::string> tokens = ASCII::Split("a ", ' ');
 
     ISHIKO_FAIL_IF_NEQ(tokens, std::vector<std::string>({ "a" }));
     ISHIKO_PASS();
@@ -262,7 +262,7 @@ void ASCIITests::SplitTest8(Test& test)
 
 void ASCIITests::SplitTest9(Test& test)
 {
-    std::vector<std::string> tokens = ASCII::Split("a   ");
+    std::vector<std::string> tokens = ASCII::Split("a   ", ' ');
 
     ISHIKO_FAIL_IF_NEQ(tokens, std::vector<std::string>({ "a" }));
     ISHIKO_PASS();
@@ -270,7 +270,7 @@ void ASCIITests::SplitTest9(Test& test)
 
 void ASCIITests::SplitTest10(Test& test)
 {
-    std::vector<std::string> tokens = ASCII::Split(" a ");
+    std::vector<std::string> tokens = ASCII::Split(" a ", ' ');
 
     ISHIKO_FAIL_IF_NEQ(tokens, std::vector<std::string>({ "a" }));
     ISHIKO_PASS();
@@ -278,7 +278,7 @@ void ASCIITests::SplitTest10(Test& test)
 
 void ASCIITests::SplitTest11(Test& test)
 {
-    std::vector<std::string> tokens = ASCII::Split(" one  two   three ");
+    std::vector<std::string> tokens = ASCII::Split(" one  two   three ", ' ');
 
     ISHIKO_FAIL_IF_NEQ(tokens, std::vector<std::string>({ "one", "two", "three" }));
     ISHIKO_PASS();
