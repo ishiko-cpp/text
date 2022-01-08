@@ -4,8 +4,8 @@
     See https://github.com/ishiko-cpp/text/blob/main/LICENSE.txt
 */
 
-#include "ASCIITests.h"
-#include "Ishiko/Text/ASCII.h"
+#include "ASCIITests.hpp"
+#include <Ishiko/Text/ASCII.hpp>
 
 using namespace Ishiko::Tests;
 using namespace Ishiko::Text;

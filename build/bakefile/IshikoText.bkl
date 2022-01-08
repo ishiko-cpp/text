@@ -33,10 +33,10 @@ library IshikoText : IshikoBasePlatform
 
     headers
     {
-        ../../include/Ishiko/Text.h
-        ../../include/Ishiko/Text/ASCII.h
-        ../../include/Ishiko/Text/CString.h
-        ../../include/Ishiko/Text/linkoptions.h
+        ../../include/Ishiko/Text.hpp
+        ../../include/Ishiko/Text/ASCII.hpp
+        ../../include/Ishiko/Text/CString.hpp
+        ../../include/Ishiko/Text/linkoptions.hpp
     }
 
     sources

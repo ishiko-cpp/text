@@ -1,11 +1,11 @@
 /*
-    Copyright (c) 2020-2021 Xavier Leclercq
+    Copyright (c) 2020-2022 Xavier Leclercq
     Released under the MIT License
     See https://github.com/ishiko-cpp/text/blob/main/LICENSE.txt
 */
 
-#include "CStringTests.h"
-#include "Ishiko/Text/CString.h"
+#include "CStringTests.hpp"
+#include <Ishiko/Text/CString.hpp>
 
 using namespace Ishiko::Tests;
 using namespace Ishiko::Text;
