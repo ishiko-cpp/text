@@ -24,9 +24,7 @@ public:
     static bool IsWhitespace(char c);
 
     static std::vector<std::string> GetLines(const std::string& str);
-    // TODO: this function splits only based on the space character, update it to take
-    // on which character(s) to split
-    static std::vector<std::string> Split(const std::string& str);
+    static std::vector<std::string> Split(const std::string& str, char separator);
     static void ToLowerCase(std::string& str);
     static void ToUpperCase(std::string& str);
     // TODO: at the moment this only trims spaces and not other whitespace characters,
