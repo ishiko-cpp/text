@@ -6,6 +6,8 @@
 
 #include "ASCII.hpp"
 
+using namespace std;
+
 namespace Ishiko
 {
 namespace Text
@@ -31,13 +33,13 @@ bool ASCII::IsWhitespace(char c)
     return ((c == ' ') || (c == '\r') || (c == '\n') || (c == '\t') || (c == '\v'));
 }
 
-std::vector<std::string> ASCII::GetLines(const std::string& str)
+vector<string> ASCII::GetLines(const std::string& str)
 {
-    std::vector<std::string> result;
+    vector<string> result;
 
-    std::string::const_iterator it = str.begin();
-    std::string::const_iterator end = str.end();
-    std::string::const_iterator previousIt = it;
+    string::const_iterator it = str.begin();
+    string::const_iterator end = str.end();
+    string::const_iterator previousIt = it;
     while (it != end)
     {
         if ((*it != '\r') && (*it != '\n'))
@@ -72,16 +74,16 @@ std::vector<std::string> ASCII::GetLines(const std::string& str)
     return result;
 }
 
-std::vector<std::string> ASCII::Split(const std::string& str)
+vector<string> ASCII::Split(const std::string& str, char separator)
 {
-    std::vector<std::string> result;
+    vector<string> result;
 
-    std::string::const_iterator it = str.begin();
-    std::string::const_iterator end = str.end();
-    std::string::const_iterator previousIt = it;
+    string::const_iterator it = str.begin();
+    string::const_iterator end = str.end();
+    string::const_iterator previousIt = it;
     while (it != end)
     {
-        if (*it != ' ')
+        if (*it != separator)
         {
             ++it;
         }
@@ -105,7 +107,7 @@ std::vector<std::string> ASCII::Split(const std::string& str)
     return result;
 }
 
-void ASCII::ToLowerCase(std::string& str)
+void ASCII::ToLowerCase(string& str)
 {
     for (char& c : str)
     {
@@ -116,7 +118,7 @@ void ASCII::ToLowerCase(std::string& str)
     }
 }
 
-void ASCII::ToUpperCase(std::string& str)
+void ASCII::ToUpperCase(string& str)
 {
     for (char& c : str)
     {
@@ -127,18 +129,18 @@ void ASCII::ToUpperCase(std::string& str)
     }
 }
 
-void ASCII::Trim(std::string& str)
+void ASCII::Trim(string& str)
 {
     if (!str.empty())
     {
-        std::string::const_iterator begin = str.begin();
-        std::string::const_iterator it = str.begin();
-        std::string::const_iterator end = str.end();
+        string::const_iterator begin = str.begin();
+        string::const_iterator it = str.begin();
+        string::const_iterator end = str.end();
         while ((it != end) && (*it == ' '))
         {
             ++it;
         }
-        std::string::const_iterator startIt = it;
+        string::const_iterator startIt = it;
         it = end;
         while ((it != startIt) && (*(it - 1) == ' '))
         {
