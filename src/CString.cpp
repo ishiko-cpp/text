@@ -1,10 +1,10 @@
 /*
-    Copyright (c) 2020-2021 Xavier Leclercq
+    Copyright (c) 2020-2022 Xavier Leclercq
     Released under the MIT License
     See https://github.com/ishiko-cpp/text/blob/main/LICENSE.txt
 */
 
-#include "CString.h"
+#include "CString.hpp"
 #include <Ishiko/BasePlatform/Compilers.h>
 #include <string.h>
 
