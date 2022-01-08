@@ -4,9 +4,10 @@
     See https://github.com/ishiko-cpp/text/blob/main/LICENSE.txt
 */
 
-#include "ASCIITests.h"
-#include "CStringTests.h"
+#include "ASCIITests.hpp"
+#include "CStringTests.hpp"
 #include <Ishiko/Tests/Core.hpp>
+#include <Ishiko/Text/linkoptions.hpp>
 
 using namespace Ishiko::Tests;
 

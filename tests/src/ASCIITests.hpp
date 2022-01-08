@@ -4,8 +4,8 @@
     See https://github.com/ishiko-cpp/text/blob/main/LICENSE.txt
 */
 
-#ifndef _ISHIKO_CPP_TEXT_TESTS_ASCIITESTS_H_
-#define _ISHIKO_CPP_TEXT_TESTS_ASCIITESTS_H_
+#ifndef _ISHIKO_CPP_TEXT_TESTS_ASCIITESTS_HPP_
+#define _ISHIKO_CPP_TEXT_TESTS_ASCIITESTS_HPP_
 
 #include <Ishiko/Tests/Core.hpp>
 
