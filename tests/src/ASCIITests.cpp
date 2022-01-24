@@ -10,8 +10,8 @@
 using namespace Ishiko::Tests;
 using namespace Ishiko::Text;
 
-ASCIITests::ASCIITests(const TestNumber& number, const TestEnvironment& environment)
-    : TestSequence(number, "ASCII tests", environment)
+ASCIITests::ASCIITests(const TestNumber& number, const TestContext& context)
+    : TestSequence(number, "ASCII tests", context)
 {
     append<HeapAllocationErrorsTest>("IsAlpha test 1", IsAlphaTest1);
     append<HeapAllocationErrorsTest>("IsAlpha test 2", IsAlphaTest2);

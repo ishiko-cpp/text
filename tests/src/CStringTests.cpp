@@ -10,8 +10,8 @@
 using namespace Ishiko::Tests;
 using namespace Ishiko::Text;
 
-CStringTests::CStringTests(const TestNumber& number, const TestEnvironment& environment)
-    : TestSequence(number, "CString tests", environment)
+CStringTests::CStringTests(const TestNumber& number, const TestContext& context)
+    : TestSequence(number, "CString tests", context)
 {
     append<HeapAllocationErrorsTest>("Duplicate test 1", DuplicateTest1);
 }
