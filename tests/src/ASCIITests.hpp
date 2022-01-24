@@ -12,7 +12,7 @@
 class ASCIITests : public Ishiko::Tests::TestSequence
 {
 public:
-    ASCIITests(const Ishiko::Tests::TestNumber& number, const Ishiko::Tests::TestEnvironment& environment);
+    ASCIITests(const Ishiko::Tests::TestNumber& number, const Ishiko::Tests::TestContext& context);
 
 private:
     static void IsAlphaTest1(Ishiko::Tests::Test& test);
