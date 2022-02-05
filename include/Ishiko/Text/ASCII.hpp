@@ -24,7 +24,7 @@ public:
     static bool IsWhitespace(char c);
 
     static std::vector<std::string> GetLines(const std::string& str);
-    static std::vector<std::string> Split(const std::string& str, char separator);
+    static std::vector<std::string> Split(const std::string& str, char separator, bool conflateAdjacentSeparators);
     static void ToLowerCase(std::string& str);
     static void ToUpperCase(std::string& str);
     // TODO: at the moment this only trims spaces and not other whitespace characters,
