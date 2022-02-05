@@ -74,7 +74,7 @@ vector<string> ASCII::GetLines(const std::string& str)
     return result;
 }
 
-vector<string> ASCII::Split(const std::string& str, char separator)
+vector<string> ASCII::Split(const std::string& str, char separator, bool conflateAdjacentSeparators)
 {
     vector<string> result;
 
@@ -89,7 +89,7 @@ vector<string> ASCII::Split(const std::string& str, char separator)
         }
         else
         {
-            if (previousIt != it)
+            if (!conflateAdjacentSeparators || (previousIt != it))
             {
                 result.emplace_back(previousIt, it);
             }
@@ -99,7 +99,7 @@ vector<string> ASCII::Split(const std::string& str, char separator)
             previousIt = it;
         }
     }
-    if (previousIt != it)
+    if (!conflateAdjacentSeparators || (previousIt != it))
     {
         result.emplace_back(previousIt, it);
     }

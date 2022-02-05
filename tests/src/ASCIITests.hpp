@@ -34,6 +34,9 @@ private:
     static void SplitTest9(Ishiko::Tests::Test& test);
     static void SplitTest10(Ishiko::Tests::Test& test);
     static void SplitTest11(Ishiko::Tests::Test& test);
+    static void SplitTest12(Ishiko::Tests::Test& test);
+    static void SplitTest13(Ishiko::Tests::Test& test);
+    static void SplitTest14(Ishiko::Tests::Test& test);
     static void GetLinesTest1(Ishiko::Tests::Test& test);
     static void GetLinesTest2(Ishiko::Tests::Test& test);
     static void GetLinesTest3(Ishiko::Tests::Test& test);
