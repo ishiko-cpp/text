@@ -74,8 +74,8 @@ ISHIKO_CPP_ERRORS_ROOT ?= $(ISHIKO_CPP)/errors
 
 all: ../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoText-d,IshikoText).a
 
-../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoText-d,IshikoText).a: $(_builddir)IshikoText_ASCII.o $(_builddir)IshikoText_CString.o
-	$(AR) rc $@ $(_builddir)IshikoText_ASCII.o $(_builddir)IshikoText_CString.o
+../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoText-d,IshikoText).a: $(_builddir)IshikoText_ASCII.o $(_builddir)IshikoText_CString.o $(_builddir)IshikoText_ErrorCategory.o
+	$(AR) rc $@ $(_builddir)IshikoText_ASCII.o $(_builddir)IshikoText_CString.o $(_builddir)IshikoText_ErrorCategory.o
 	$(RANLIB) $@
 
 $(_builddir)IshikoText_ASCII.o: ../../src/ASCII.cpp
@@ -83,6 +83,9 @@ $(_builddir)IshikoText_ASCII.o: ../../src/ASCII.cpp
 
 $(_builddir)IshikoText_CString.o: ../../src/CString.cpp
 	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I../../include/Ishiko/Text -std=c++11 ../../src/CString.cpp
+
+$(_builddir)IshikoText_ErrorCategory.o: ../../src/ErrorCategory.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I../../include/Ishiko/Text -std=c++11 ../../src/ErrorCategory.cpp
 
 clean:
 	rm -f $(_builddir)*.o

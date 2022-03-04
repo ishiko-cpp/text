@@ -152,11 +152,13 @@
   <ItemGroup>
     <ClCompile Include="..\..\src\ASCII.cpp" />
     <ClCompile Include="..\..\src\CString.cpp" />
+    <ClCompile Include="..\..\src\ErrorCategory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Ishiko\Text.hpp" />
     <ClInclude Include="..\..\include\Ishiko\Text\ASCII.hpp" />
     <ClInclude Include="..\..\include\Ishiko\Text\CString.hpp" />
+    <ClInclude Include="..\..\include\Ishiko\Text\ErrorCategory.hpp" />
     <ClInclude Include="..\..\include\Ishiko\Text\linkoptions.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

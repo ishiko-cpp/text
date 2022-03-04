@@ -37,6 +37,7 @@ library IshikoText : IshikoErrors, IshikoBasePlatform
         ../../include/Ishiko/Text.hpp
         ../../include/Ishiko/Text/ASCII.hpp
         ../../include/Ishiko/Text/CString.hpp
+        ../../include/Ishiko/Text/ErrorCategory.hpp
         ../../include/Ishiko/Text/linkoptions.hpp
     }
 
@@ -44,5 +45,6 @@ library IshikoText : IshikoErrors, IshikoBasePlatform
     {
         ../../src/ASCII.cpp
         ../../src/CString.cpp
+        ../../src/ErrorCategory.cpp
     }
 }
