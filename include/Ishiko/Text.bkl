@@ -1,10 +1,14 @@
+ishikopath = envvar("ISHIKO_CPP");
+import $(ishikopath)/base-platform/include/Ishiko/BasePlatform.bkl;
+import $(ishikopath)/errors/include/Ishiko/Errors.bkl;
+
 setting ISHIKO_CPP_TEXT_ROOT
 {
     help = "Path to the Ishiko/Text installation";
     default = '$(ISHIKO_CPP)/text';
 }
 
-template IshikoText
+template IshikoText : IshikoErrors, IshikoBasePlatform
 {
     includedirs += $(ISHIKO_CPP_TEXT_ROOT)/include;
 

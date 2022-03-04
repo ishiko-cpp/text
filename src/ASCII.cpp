@@ -5,6 +5,7 @@
 */
 
 #include "ASCII.hpp"
+#include "ErrorCategory.hpp"
 
 using namespace std;
 
@@ -149,6 +150,110 @@ void ASCII::Trim(string& str)
         str.erase(it, end);
         str.erase(begin, startIt);
     }
+}
+
+void ASCII::Convert(string::const_iterator begin, string::const_iterator end, char& c, Error& error)
+{
+    if (begin == end)
+    {
+        // TODO: better error
+        Fail(error, ErrorCategory::Value::generic);
+        return;
+    }
+
+    bool negative = false;
+    if (*begin == '+')
+    {
+        ++begin;
+        if (begin == end)
+        {
+            // TODO: better error
+            Fail(error, ErrorCategory::Value::generic);
+            return;
+        }
+    }
+    else if (*begin == '-')
+    {
+        negative = true;
+        ++begin;
+        if (begin == end)
+        {
+            // TODO: better error
+            Fail(error, ErrorCategory::Value::generic);
+            return;
+        }
+    }
+    int result = 0;
+    while ((begin != end) && (result < 128))
+    {
+        char c = *begin;
+        if (!IsNumeric(c))
+        {
+            // TODO: better error
+            Fail(error, ErrorCategory::Value::generic);
+            return;
+        }
+        result = ((10 * result) + (c - '0'));
+        ++begin;
+    }
+    if (negative)
+    {
+        result = -result;
+    }
+    if ((result <= -129) || (result >= 128))
+    {
+        // TODO: better error
+        Fail(error, ErrorCategory::Value::generic);
+        return;
+    }
+    c = static_cast<unsigned char>(result);
+}
+
+void ASCII::Convert(string::const_iterator begin, string::const_iterator end, unsigned char& c, Error& error)
+{
+    if (begin == end)
+    {
+        // TODO: better error
+        Fail(error, ErrorCategory::Value::generic);
+        return;
+    }
+
+    if (*begin == '+')
+    {
+        ++begin;
+        if (begin == end)
+        {
+            // TODO: better error
+            Fail(error, ErrorCategory::Value::generic);
+            return;
+        }
+    }
+    else if (*begin == '-')
+    {
+        // TODO: better error
+        Fail(error, ErrorCategory::Value::generic);
+        return;
+    }
+    unsigned int result = 0;
+    while ((begin != end) && (result < 256))
+    {
+        char c = *begin;
+        if (!IsNumeric(c))
+        {
+            // TODO: better error
+            Fail(error, ErrorCategory::Value::generic);
+            return;
+        }
+        result = ((10 * result) + (c - '0'));
+        ++begin;
+    }
+    if (result >= 256)
+    {
+        // TODO: better error
+        Fail(error, ErrorCategory::Value::generic);
+        return;
+    }
+    c = static_cast<unsigned char>(result);
 }
 
 }

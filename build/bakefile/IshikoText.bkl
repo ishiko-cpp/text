@@ -1,5 +1,6 @@
 ishikopath = envvar("ISHIKO_CPP");
 import $(ishikopath)/base-platform/include/Ishiko/BasePlatform.bkl;
+import $(ishikopath)/errors/include/Ishiko/Errors.bkl;
 
 toolsets = gnu vs2019 vs2017 vs2015 vs2013;
 
@@ -9,7 +10,7 @@ vs2017.solutionfile = ../vc15/IshikoText.sln;
 vs2015.solutionfile = ../vc14/IshikoText.sln;
 vs2013.solutionfile = ../vc12/IshikoText.sln;
 
-library IshikoText : IshikoBasePlatform
+library IshikoText : IshikoErrors, IshikoBasePlatform
 {
     archs = x86 x86_64;
 
@@ -36,6 +37,7 @@ library IshikoText : IshikoBasePlatform
         ../../include/Ishiko/Text.hpp
         ../../include/Ishiko/Text/ASCII.hpp
         ../../include/Ishiko/Text/CString.hpp
+        ../../include/Ishiko/Text/ErrorCategory.hpp
         ../../include/Ishiko/Text/linkoptions.hpp
     }
 
@@ -43,5 +45,6 @@ library IshikoText : IshikoBasePlatform
     {
         ../../src/ASCII.cpp
         ../../src/CString.cpp
+        ../../src/ErrorCategory.cpp
     }
 }
