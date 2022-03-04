@@ -38,6 +38,7 @@ endif
 # settings:
 #
 #      ISHIKO_CPP_BASEPLATFORM_ROOT  Path to the Ishiko BasePlatform installation
+#      ISHIKO_CPP_ERRORS_ROOT        Path to the Ishiko Errors installation
 
 # Use "make RANLIB=''" for platforms without ranlib.
 RANLIB ?= ranlib
@@ -66,6 +67,8 @@ endif
 
 # Path to the Ishiko BasePlatform installation
 ISHIKO_CPP_BASEPLATFORM_ROOT ?= $(ISHIKO_CPP)/base-platform
+# Path to the Ishiko Errors installation
+ISHIKO_CPP_ERRORS_ROOT ?= $(ISHIKO_CPP)/errors
 
 # ------------
 
@@ -76,10 +79,10 @@ all: ../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoText-d,I
 	$(RANLIB) $@
 
 $(_builddir)IshikoText_ASCII.o: ../../src/ASCII.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I../../include/Ishiko/Text -std=c++11 ../../src/ASCII.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I../../include/Ishiko/Text -std=c++11 ../../src/ASCII.cpp
 
 $(_builddir)IshikoText_CString.o: ../../src/CString.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I../../include/Ishiko/Text -std=c++11 ../../src/CString.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I../../include/Ishiko/Text -std=c++11 ../../src/CString.cpp
 
 clean:
 	rm -f $(_builddir)*.o
