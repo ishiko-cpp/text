@@ -10,14 +10,14 @@ jobs:
       - run:
           name: "Install build dependency: Ishiko/C++ BasePlatform"
           command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/base-platform.git && cd base-platform/build/gnumake && make
+      - run:
+          name: "Install build dependency: Ishiko/C++ Errors"
+          command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/errors.git && cd errors/build/gnumake && make
       - checkout:
           path: /projects/ishiko/cpp/text
       - run:
           name: Build
           command: cd /projects/ishiko/cpp/text/build/gnumake && make
-      - run:
-          name: "Install test dependency: Ishiko/C++ Errors"
-          command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/errors.git && cd errors/build/gnumake && make
       - run:
           name: "Install test dependency: Ishiko/C++ Types"
           command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/types.git && cd types/build/gnumake && make
