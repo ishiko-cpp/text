@@ -9,7 +9,7 @@
 #include <Ishiko/Tests/Core.hpp>
 #include <Ishiko/Text/linkoptions.hpp>
 
-using namespace Ishiko::Tests;
+using namespace Ishiko;
 
 int main(int argc, char* argv[])
 {

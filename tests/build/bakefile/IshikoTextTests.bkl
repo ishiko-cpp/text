@@ -1,6 +1,6 @@
 ishikopath = envvar("ISHIKO_CPP");
 import $(ishikopath)/text/include/Ishiko/Text.bkl;
-import $(ishikopath)/tests/include/Ishiko/Tests/Core.bkl;
+import $(ishikopath)/test-framework/include/Ishiko/Tests/Core.bkl;
 
 toolsets = gnu vs2019 vs2017 vs2015 vs2013;
 

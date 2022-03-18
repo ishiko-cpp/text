@@ -9,65 +9,65 @@
 
 #include <Ishiko/Tests/Core.hpp>
 
-class ASCIITests : public Ishiko::Tests::TestSequence
+class ASCIITests : public Ishiko::TestSequence
 {
 public:
-    ASCIITests(const Ishiko::Tests::TestNumber& number, const Ishiko::Tests::TestContext& context);
+    ASCIITests(const Ishiko::TestNumber& number, const Ishiko::TestContext& context);
 
 private:
-    static void IsAlphaTest1(Ishiko::Tests::Test& test);
-    static void IsAlphaTest2(Ishiko::Tests::Test& test);
-    static void IsNumericTest1(Ishiko::Tests::Test& test);
-    static void IsNumericTest2(Ishiko::Tests::Test& test);
-    static void IsAlphanumericTest1(Ishiko::Tests::Test& test);
-    static void IsAlphanumericTest2(Ishiko::Tests::Test& test);
-    static void IsWhitespaceTest1(Ishiko::Tests::Test& test);
-    static void IsWhitespaceTest2(Ishiko::Tests::Test& test);
-    static void SplitTest1(Ishiko::Tests::Test& test);
-    static void SplitTest2(Ishiko::Tests::Test& test);
-    static void SplitTest3(Ishiko::Tests::Test& test);
-    static void SplitTest4(Ishiko::Tests::Test& test);
-    static void SplitTest5(Ishiko::Tests::Test& test);
-    static void SplitTest6(Ishiko::Tests::Test& test);
-    static void SplitTest7(Ishiko::Tests::Test& test);
-    static void SplitTest8(Ishiko::Tests::Test& test);
-    static void SplitTest9(Ishiko::Tests::Test& test);
-    static void SplitTest10(Ishiko::Tests::Test& test);
-    static void SplitTest11(Ishiko::Tests::Test& test);
-    static void SplitTest12(Ishiko::Tests::Test& test);
-    static void SplitTest13(Ishiko::Tests::Test& test);
-    static void SplitTest14(Ishiko::Tests::Test& test);
-    static void GetLinesTest1(Ishiko::Tests::Test& test);
-    static void GetLinesTest2(Ishiko::Tests::Test& test);
-    static void GetLinesTest3(Ishiko::Tests::Test& test);
-    static void GetLinesTest4(Ishiko::Tests::Test& test);
-    static void GetLinesTest5(Ishiko::Tests::Test& test);
-    static void GetLinesTest6(Ishiko::Tests::Test& test);
-    static void GetLinesTest7(Ishiko::Tests::Test& test);
-    static void GetLinesTest8(Ishiko::Tests::Test& test);
-    static void GetLinesTest9(Ishiko::Tests::Test& test);
-    static void GetLinesTest10(Ishiko::Tests::Test& test);
-    static void GetLinesTest11(Ishiko::Tests::Test& test);
-    static void GetLinesTest12(Ishiko::Tests::Test& test);
-    static void GetLinesTest13(Ishiko::Tests::Test& test);
-    static void ToLowerCaseTest1(Ishiko::Tests::Test& test);
-    static void ToUpperCaseTest1(Ishiko::Tests::Test& test);
-    static void TrimTest1(Ishiko::Tests::Test& test);
-    static void TrimTest2(Ishiko::Tests::Test& test);
-    static void TrimTest3(Ishiko::Tests::Test& test);
-    static void TrimTest4(Ishiko::Tests::Test& test);
-    static void TrimTest5(Ishiko::Tests::Test& test);
-    static void TrimTest6(Ishiko::Tests::Test& test);
-    static void TrimTest7(Ishiko::Tests::Test& test);
-    static void TrimTest8(Ishiko::Tests::Test& test);
-    static void TrimTest9(Ishiko::Tests::Test& test);
-    static void TrimTest10(Ishiko::Tests::Test& test);
-    static void TrimTest11(Ishiko::Tests::Test& test);
-    static void ConvertTest1(Ishiko::Tests::Test& test);
-    static void ConvertTest2(Ishiko::Tests::Test& test);
-    static void ConvertTest3(Ishiko::Tests::Test& test);
-    static void ConvertTest4(Ishiko::Tests::Test& test);
-    static void ConvertTest5(Ishiko::Tests::Test& test);
+    static void IsAlphaTest1(Ishiko::Test& test);
+    static void IsAlphaTest2(Ishiko::Test& test);
+    static void IsNumericTest1(Ishiko::Test& test);
+    static void IsNumericTest2(Ishiko::Test& test);
+    static void IsAlphanumericTest1(Ishiko::Test& test);
+    static void IsAlphanumericTest2(Ishiko::Test& test);
+    static void IsWhitespaceTest1(Ishiko::Test& test);
+    static void IsWhitespaceTest2(Ishiko::Test& test);
+    static void SplitTest1(Ishiko::Test& test);
+    static void SplitTest2(Ishiko::Test& test);
+    static void SplitTest3(Ishiko::Test& test);
+    static void SplitTest4(Ishiko::Test& test);
+    static void SplitTest5(Ishiko::Test& test);
+    static void SplitTest6(Ishiko::Test& test);
+    static void SplitTest7(Ishiko::Test& test);
+    static void SplitTest8(Ishiko::Test& test);
+    static void SplitTest9(Ishiko::Test& test);
+    static void SplitTest10(Ishiko::Test& test);
+    static void SplitTest11(Ishiko::Test& test);
+    static void SplitTest12(Ishiko::Test& test);
+    static void SplitTest13(Ishiko::Test& test);
+    static void SplitTest14(Ishiko::Test& test);
+    static void GetLinesTest1(Ishiko::Test& test);
+    static void GetLinesTest2(Ishiko::Test& test);
+    static void GetLinesTest3(Ishiko::Test& test);
+    static void GetLinesTest4(Ishiko::Test& test);
+    static void GetLinesTest5(Ishiko::Test& test);
+    static void GetLinesTest6(Ishiko::Test& test);
+    static void GetLinesTest7(Ishiko::Test& test);
+    static void GetLinesTest8(Ishiko::Test& test);
+    static void GetLinesTest9(Ishiko::Test& test);
+    static void GetLinesTest10(Ishiko::Test& test);
+    static void GetLinesTest11(Ishiko::Test& test);
+    static void GetLinesTest12(Ishiko::Test& test);
+    static void GetLinesTest13(Ishiko::Test& test);
+    static void ToLowerCaseTest1(Ishiko::Test& test);
+    static void ToUpperCaseTest1(Ishiko::Test& test);
+    static void TrimTest1(Ishiko::Test& test);
+    static void TrimTest2(Ishiko::Test& test);
+    static void TrimTest3(Ishiko::Test& test);
+    static void TrimTest4(Ishiko::Test& test);
+    static void TrimTest5(Ishiko::Test& test);
+    static void TrimTest6(Ishiko::Test& test);
+    static void TrimTest7(Ishiko::Test& test);
+    static void TrimTest8(Ishiko::Test& test);
+    static void TrimTest9(Ishiko::Test& test);
+    static void TrimTest10(Ishiko::Test& test);
+    static void TrimTest11(Ishiko::Test& test);
+    static void ConvertTest1(Ishiko::Test& test);
+    static void ConvertTest2(Ishiko::Test& test);
+    static void ConvertTest3(Ishiko::Test& test);
+    static void ConvertTest4(Ishiko::Test& test);
+    static void ConvertTest5(Ishiko::Test& test);
 };
 
 #endif
