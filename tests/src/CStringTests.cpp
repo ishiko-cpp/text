@@ -7,8 +7,7 @@
 #include "CStringTests.hpp"
 #include <Ishiko/Text/CString.hpp>
 
-using namespace Ishiko::Tests;
-using namespace Ishiko::Text;
+using namespace Ishiko;
 
 CStringTests::CStringTests(const TestNumber& number, const TestContext& context)
     : TestSequence(number, "CString tests", context)
@@ -20,9 +19,9 @@ void CStringTests::DuplicateTest1(Test& test)
 {
     char* str = CString::Duplicate("string");
 
-    ISHIKO_FAIL_IF_STR_NEQ(str, "string");
+    ISHIKO_TEST_FAIL_IF_STR_NEQ(str, "string");
 
     delete[] str;
 
-    ISHIKO_PASS();
+    ISHIKO_TEST_PASS();
 }

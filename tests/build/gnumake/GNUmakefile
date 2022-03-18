@@ -83,7 +83,7 @@ ISHIKO_CPP_DIFF_ROOT ?= $(ISHIKO_CPP)/diff
 # Path to the Ishiko Process installation
 ISHIKO_CPP_PROCESS_ROOT ?= $(ISHIKO_CPP)/process
 # Path to the Ishiko TestFramework installation
-ISHIKO_CPP_TESTFRAMEWORK_ROOT ?= $(ISHIKO_CPP)/tests
+ISHIKO_CPP_TESTFRAMEWORK_ROOT ?= $(ISHIKO_CPP)/test-framework
 
 # ------------
 
