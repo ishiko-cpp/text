@@ -4,7 +4,7 @@
     See https://github.com/ishiko-cpp/text/blob/main/LICENSE.txt
 */
 
-#include "ErrorCategory.hpp"
+#include "TextErrorCategory.hpp"
 
 namespace Ishiko
 {

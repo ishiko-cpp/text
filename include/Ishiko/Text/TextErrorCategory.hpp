@@ -4,8 +4,8 @@
     See https://github.com/ishiko-cpp/text/blob/main/LICENSE.txt
 */
 
-#ifndef _ISHIKO_CPP_TEXT_ERRORCATEGORY_HPP_
-#define _ISHIKO_CPP_TEXT_ERRORCATEGORY_HPP_
+#ifndef _ISHIKO_CPP_TEXT_TEXTERRORCATEGORY_HPP_
+#define _ISHIKO_CPP_TEXT_TEXTERRORCATEGORY_HPP_
 
 #include <Ishiko/Errors.hpp>
 
