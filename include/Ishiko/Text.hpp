@@ -9,6 +9,7 @@
 
 #include "Text/ASCII.hpp"
 #include "Text/CString.hpp"
+#include "Text/TextErrorCategory.hpp"
 
 #include "Text/linkoptions.hpp"
 

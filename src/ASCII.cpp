@@ -5,7 +5,7 @@
 */
 
 #include "ASCII.hpp"
-#include "ErrorCategory.hpp"
+#include "TextErrorCategory.hpp"
 
 using namespace std;
 
