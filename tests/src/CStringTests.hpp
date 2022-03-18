@@ -9,13 +9,13 @@
 
 #include <Ishiko/Tests/Core.hpp>
 
-class CStringTests : public Ishiko::Tests::TestSequence
+class CStringTests : public Ishiko::TestSequence
 {
 public:
-    CStringTests(const Ishiko::Tests::TestNumber& number, const Ishiko::Tests::TestContext& context);
+    CStringTests(const Ishiko::TestNumber& number, const Ishiko::TestContext& context);
 
 private:
-    static void DuplicateTest1(Ishiko::Tests::Test& test);
+    static void DuplicateTest1(Ishiko::Test& test);
 };
 
 #endif
