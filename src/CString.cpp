@@ -10,8 +10,6 @@
 
 namespace Ishiko
 {
-namespace Text
-{
 
 char* CString::Duplicate(const char* str)
 {
@@ -24,5 +22,4 @@ char* CString::Duplicate(const char* str)
 #endif
 }
 
-}
 }

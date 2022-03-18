@@ -8,24 +8,21 @@
 
 namespace Ishiko
 {
-namespace Text
-{
 
-const ErrorCategory& ErrorCategory::Get() noexcept
+const TextErrorCategory& TextErrorCategory::Get() noexcept
 {
-    static ErrorCategory theCategory;
+    static TextErrorCategory theCategory;
     return theCategory;
 }
 
 const char* ErrorCategory::name() const noexcept
 {
-    return "Ishiko::Text::ErrorCategory";
+    return "Ishiko::TextErrorCategory";
 }
 
-void Fail(Error& error, ErrorCategory::Value value) noexcept
+void Fail(Error& error, TextErrorCategory::Value value) noexcept
 {
-    error.fail(static_cast<int>(value), ErrorCategory::Get());
+    error.fail(static_cast<int>(value), TextErrorCategory::Get());
 }
 
-}
 }

@@ -11,8 +11,6 @@ using namespace std;
 
 namespace Ishiko
 {
-namespace Text
-{
 
 bool ASCII::IsAlpha(char c)
 {
@@ -157,7 +155,7 @@ void ASCII::Convert(string::const_iterator begin, string::const_iterator end, ch
     if (begin == end)
     {
         // TODO: better error
-        Fail(error, ErrorCategory::Value::generic);
+        Fail(error, TextErrorCategory::Value::generic);
         return;
     }
 
@@ -168,7 +166,7 @@ void ASCII::Convert(string::const_iterator begin, string::const_iterator end, ch
         if (begin == end)
         {
             // TODO: better error
-            Fail(error, ErrorCategory::Value::generic);
+            Fail(error, TextErrorCategory::Value::generic);
             return;
         }
     }
@@ -179,7 +177,7 @@ void ASCII::Convert(string::const_iterator begin, string::const_iterator end, ch
         if (begin == end)
         {
             // TODO: better error
-            Fail(error, ErrorCategory::Value::generic);
+            Fail(error, TextErrorCategory::Value::generic);
             return;
         }
     }
@@ -190,7 +188,7 @@ void ASCII::Convert(string::const_iterator begin, string::const_iterator end, ch
         if (!IsNumeric(c))
         {
             // TODO: better error
-            Fail(error, ErrorCategory::Value::generic);
+            Fail(error, TextErrorCategory::Value::generic);
             return;
         }
         result = ((10 * result) + (c - '0'));
@@ -203,7 +201,7 @@ void ASCII::Convert(string::const_iterator begin, string::const_iterator end, ch
     if ((result <= -129) || (result >= 128))
     {
         // TODO: better error
-        Fail(error, ErrorCategory::Value::generic);
+        Fail(error, TextErrorCategory::Value::generic);
         return;
     }
     c = static_cast<unsigned char>(result);
@@ -214,7 +212,7 @@ void ASCII::Convert(string::const_iterator begin, string::const_iterator end, un
     if (begin == end)
     {
         // TODO: better error
-        Fail(error, ErrorCategory::Value::generic);
+        Fail(error, TextErrorCategory::Value::generic);
         return;
     }
 
@@ -224,14 +222,14 @@ void ASCII::Convert(string::const_iterator begin, string::const_iterator end, un
         if (begin == end)
         {
             // TODO: better error
-            Fail(error, ErrorCategory::Value::generic);
+            Fail(error, TextErrorCategory::Value::generic);
             return;
         }
     }
     else if (*begin == '-')
     {
         // TODO: better error
-        Fail(error, ErrorCategory::Value::generic);
+        Fail(error, TextErrorCategory::Value::generic);
         return;
     }
     unsigned int result = 0;
@@ -241,7 +239,7 @@ void ASCII::Convert(string::const_iterator begin, string::const_iterator end, un
         if (!IsNumeric(c))
         {
             // TODO: better error
-            Fail(error, ErrorCategory::Value::generic);
+            Fail(error, TextErrorCategory::Value::generic);
             return;
         }
         result = ((10 * result) + (c - '0'));
@@ -250,11 +248,10 @@ void ASCII::Convert(string::const_iterator begin, string::const_iterator end, un
     if (result >= 256)
     {
         // TODO: better error
-        Fail(error, ErrorCategory::Value::generic);
+        Fail(error, TextErrorCategory::Value::generic);
         return;
     }
     c = static_cast<unsigned char>(result);
 }
 
-}
 }
