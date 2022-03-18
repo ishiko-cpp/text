@@ -4,17 +4,15 @@
     See https://github.com/ishiko-cpp/text/blob/main/LICENSE.txt
 */
 
-#ifndef _ISHIKO_CPP_TEXT_ERRORCATEGORY_HPP_
-#define _ISHIKO_CPP_TEXT_ERRORCATEGORY_HPP_
+#ifndef _ISHIKO_CPP_TEXT_TEXTERRORCATEGORY_HPP_
+#define _ISHIKO_CPP_TEXT_TEXTERRORCATEGORY_HPP_
 
 #include <Ishiko/Errors.hpp>
 
 namespace Ishiko
 {
-namespace Text
-{
 
-class ErrorCategory : public Ishiko::ErrorCategory
+class TextErrorCategory : public Ishiko::ErrorCategory
 {
 public:
     enum class Value
@@ -22,17 +20,16 @@ public:
         generic = -1
     };
 
-    static const ErrorCategory& Get() noexcept;
+    static const TextErrorCategory& Get() noexcept;
 
     const char* name() const noexcept override;
 
 private:
-    ErrorCategory() noexcept = default;
+    TextErrorCategory() noexcept = default;
 };
 
-void Fail(Error& error, ErrorCategory::Value value) noexcept;
+void Fail(Error& error, TextErrorCategory::Value value) noexcept;
 
-}
 }
 
 #endif

@@ -13,8 +13,6 @@
 
 namespace Ishiko
 {
-namespace Text
-{
 
 class ASCII
 {
@@ -37,7 +35,6 @@ public:
         Error& error);
 };
 
-}
 }
 
 #endif
