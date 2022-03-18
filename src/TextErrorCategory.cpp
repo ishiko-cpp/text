@@ -15,7 +15,7 @@ const TextErrorCategory& TextErrorCategory::Get() noexcept
     return theCategory;
 }
 
-const char* ErrorCategory::name() const noexcept
+const char* TextErrorCategory::name() const noexcept
 {
     return "Ishiko::TextErrorCategory";
 }
