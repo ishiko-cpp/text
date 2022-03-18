@@ -26,10 +26,10 @@
     <ClInclude Include="..\..\include\Ishiko\Text\CString.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Ishiko\Text\ErrorCategory.hpp">
+    <ClInclude Include="..\..\include\Ishiko\Text\linkoptions.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Ishiko\Text\linkoptions.hpp">
+    <ClInclude Include="..\..\include\Ishiko\Text\TextErrorCategory.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -40,7 +40,7 @@
     <ClCompile Include="..\..\src\CString.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\ErrorCategory.cpp">
+    <ClCompile Include="..\..\src\TextErrorCategory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

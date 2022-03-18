@@ -9,8 +9,6 @@
 
 namespace Ishiko
 {
-namespace Text
-{
 
 class CString
 {
@@ -18,7 +16,6 @@ public:
     static char* Duplicate(const char* str);
 };
 
-}
 }
 
 #endif
