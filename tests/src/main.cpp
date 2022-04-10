@@ -6,7 +6,7 @@
 
 #include "ASCIITests.hpp"
 #include "CStringTests.hpp"
-#include <Ishiko/Tests/Core.hpp>
+#include <Ishiko/TestFramework/Core.hpp>
 #include <Ishiko/Text/linkoptions.hpp>
 
 using namespace Ishiko;
