@@ -1,6 +1,6 @@
 ishikopath = envvar("ISHIKO_CPP");
 import $(ishikopath)/text/include/Ishiko/Text.bkl;
-import $(ishikopath)/test-framework/include/Ishiko/Tests/Core.bkl;
+import $(ishikopath)/test-framework/include/Ishiko/TestFramework/Core.bkl;
 
 toolsets = gnu vs2019 vs2017 vs2015 vs2013;
 
@@ -10,12 +10,12 @@ vs2017.solutionfile = ../vc15/IshikoTextTests.sln;
 vs2015.solutionfile = ../vc14/IshikoTextTests.sln;
 vs2013.solutionfile = ../vc12/IshikoTextTests.sln;
 
-program IshikoTextTests : IshikoText, IshikoTestsCore
+program IshikoTextTests : IshikoText, IshikoTestFrameworkCore
 {
     if ($(toolset) == gnu)
     {
         cxx-compiler-options = "-std=c++11";
-        libs += IshikoText IshikoTestsCore IshikoProcess IshikoErrors boost_filesystem;
+        libs += IshikoText IshikoTestFrameworkCore IshikoProcess IshikoErrors boost_filesystem;
     }
 
     if ($(toolset) != gnu)
