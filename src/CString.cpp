@@ -22,4 +22,32 @@ char* CString::Duplicate(const char* str)
 #endif
 }
 
+std::string CString::Substring(const char* str, size_t begin)
+{
+    return std::string(str + begin);
+}
+
+std::string CString::Substring(const char* str, size_t begin, size_t end)
+{
+    return std::string(str + begin, str + end);
+}
+
+size_t CString::Find(const char* str, const char* substring)
+{
+    const char* ptr = strstr(str, substring);
+    if (ptr == nullptr)
+    {
+        return std::string::npos;
+    }
+    else
+    {
+        return (ptr - str);
+    }
+}
+
+bool CString::StartsWith(const char* str, const char* prefix)
+{
+    return (strncmp(str, prefix, strlen(prefix)) == 0);
+}
+
 }
