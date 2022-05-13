@@ -150,7 +150,12 @@ void ASCII::Trim(string& str)
     }
 }
 
-void ASCII::Convert(string::const_iterator begin, string::const_iterator end, char& c, Error& error)
+void ASCII::Convert(const std::string& str, int8_t& number, Error& error)
+{
+    Convert(str.begin(), str.end(), number, error);
+}
+
+void ASCII::Convert(string::const_iterator begin, string::const_iterator end, int8_t& number, Error& error)
 {
     if (begin == end)
     {
@@ -204,10 +209,15 @@ void ASCII::Convert(string::const_iterator begin, string::const_iterator end, ch
         Fail(error, TextErrorCategory::Value::generic);
         return;
     }
-    c = static_cast<unsigned char>(result);
+    number = static_cast<int8_t>(result);
 }
 
-void ASCII::Convert(string::const_iterator begin, string::const_iterator end, unsigned char& c, Error& error)
+void ASCII::Convert(const std::string& str, uint8_t& number, Error& error)
+{
+    Convert(str.begin(), str.end(), number, error);
+}
+
+void ASCII::Convert(string::const_iterator begin, string::const_iterator end, uint8_t& number, Error& error)
 {
     if (begin == end)
     {
@@ -251,7 +261,121 @@ void ASCII::Convert(string::const_iterator begin, string::const_iterator end, un
         Fail(error, TextErrorCategory::Value::generic);
         return;
     }
-    c = static_cast<unsigned char>(result);
+    number = static_cast<uint8_t>(result);
+}
+
+void ASCII::Convert(const std::string& str, int16_t& number, Error& error)
+{
+    Convert(str.begin(), str.end(), number, error);
+}
+
+void ASCII::Convert(string::const_iterator begin, string::const_iterator end, int16_t& number, Error& error)
+{
+    if (begin == end)
+    {
+        // TODO: better error
+        Fail(error, TextErrorCategory::Value::generic);
+        return;
+    }
+
+    bool negative = false;
+    if (*begin == '+')
+    {
+        ++begin;
+        if (begin == end)
+        {
+            // TODO: better error
+            Fail(error, TextErrorCategory::Value::generic);
+            return;
+        }
+    }
+    else if (*begin == '-')
+    {
+        negative = true;
+        ++begin;
+        if (begin == end)
+        {
+            // TODO: better error
+            Fail(error, TextErrorCategory::Value::generic);
+            return;
+        }
+    }
+    int result = 0;
+    while ((begin != end) && (result < 32768))
+    {
+        char c = *begin;
+        if (!IsNumeric(c))
+        {
+            // TODO: better error
+            Fail(error, TextErrorCategory::Value::generic);
+            return;
+        }
+        result = ((10 * result) + (c - '0'));
+        ++begin;
+    }
+    if (negative)
+    {
+        result = -result;
+    }
+    if ((result <= -32769) || (result >= 32768))
+    {
+        // TODO: better error
+        Fail(error, TextErrorCategory::Value::generic);
+        return;
+    }
+    number = static_cast<int16_t>(result);
+}
+
+void ASCII::Convert(const std::string& str, uint16_t& number, Error& error)
+{
+    Convert(str.begin(), str.end(), number, error);
+}
+
+void ASCII::Convert(string::const_iterator begin, string::const_iterator end, uint16_t& number, Error& error)
+{
+    if (begin == end)
+    {
+        // TODO: better error
+        Fail(error, TextErrorCategory::Value::generic);
+        return;
+    }
+
+    if (*begin == '+')
+    {
+        ++begin;
+        if (begin == end)
+        {
+            // TODO: better error
+            Fail(error, TextErrorCategory::Value::generic);
+            return;
+        }
+    }
+    else if (*begin == '-')
+    {
+        // TODO: better error
+        Fail(error, TextErrorCategory::Value::generic);
+        return;
+    }
+    unsigned int result = 0;
+    while ((begin != end) && (result < 65536))
+    {
+        char c = *begin;
+        if (!IsNumeric(c))
+        {
+            // TODO: better error
+            Fail(error, TextErrorCategory::Value::generic);
+            return;
+        }
+        result = ((10 * result) + (c - '0'));
+        ++begin;
+    }
+    if (result >= 65536)
+    {
+        // TODO: better error
+        Fail(error, TextErrorCategory::Value::generic);
+        return;
+    }
+    number = static_cast<uint16_t>(result);
 }
 
 }
