@@ -34,6 +34,10 @@ public:
         Error& error);
     static void Convert(std::string::const_iterator begin, std::string::const_iterator end, uint8_t& number,
         Error& error);
+    static void Convert(std::string::const_iterator begin, std::string::const_iterator end, int16_t& number,
+        Error& error);
+    static void Convert(std::string::const_iterator begin, std::string::const_iterator end, uint16_t& number,
+        Error& error);
 };
 
 }

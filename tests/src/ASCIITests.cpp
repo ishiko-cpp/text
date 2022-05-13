@@ -61,11 +61,16 @@ ASCIITests::ASCIITests(const TestNumber& number, const TestContext& context)
     append<HeapAllocationErrorsTest>("Trim test 9", TrimTest9);
     append<HeapAllocationErrorsTest>("Trim test 10", TrimTest10);
     append<HeapAllocationErrorsTest>("Trim test 11", TrimTest11);
-    append<HeapAllocationErrorsTest>("Convert test 1", ConvertTest1);
-    append<HeapAllocationErrorsTest>("Convert test 2", ConvertTest2);
-    append<HeapAllocationErrorsTest>("Convert test 3", ConvertTest3);
-    append<HeapAllocationErrorsTest>("Convert test 4", ConvertTest4);
-    append<HeapAllocationErrorsTest>("Convert test 5", ConvertTest5);
+    append<HeapAllocationErrorsTest>("Convert to int8_t test 1", ConvertInt8Test1);
+    append<HeapAllocationErrorsTest>("Convert to int8_t test 2", ConvertInt8Test2);
+    append<HeapAllocationErrorsTest>("Convert to int8_t test 3", ConvertInt8Test3);
+    append<HeapAllocationErrorsTest>("Convert to uint8_t test 1", ConvertUint8Test1);
+    append<HeapAllocationErrorsTest>("Convert to uint8_t test 2", ConvertUint8Test2);
+    append<HeapAllocationErrorsTest>("Convert to int16_t test 1", ConvertInt16Test1);
+    append<HeapAllocationErrorsTest>("Convert to int16_t test 2", ConvertInt16Test2);
+    append<HeapAllocationErrorsTest>("Convert to int16_t test 3", ConvertInt16Test3);
+    append<HeapAllocationErrorsTest>("Convert to uint16_t test 1", ConvertUint16Test1);
+    append<HeapAllocationErrorsTest>("Convert to uint16_t test 2", ConvertUint16Test2);
 }
 
 void ASCIITests::IsAlphaTest1(Test& test)
@@ -547,7 +552,7 @@ void ASCIITests::TrimTest11(Test& test)
     ISHIKO_TEST_PASS();
 }
 
-void ASCIITests::ConvertTest1(Test& test)
+void ASCIITests::ConvertInt8Test1(Test& test)
 {
     Error error;
     string number = "0";
@@ -559,7 +564,7 @@ void ASCIITests::ConvertTest1(Test& test)
     ISHIKO_TEST_PASS();
 }
 
-void ASCIITests::ConvertTest2(Test& test)
+void ASCIITests::ConvertInt8Test2(Test& test)
 {
     Error error;
     string number = "127";
@@ -571,7 +576,7 @@ void ASCIITests::ConvertTest2(Test& test)
     ISHIKO_TEST_PASS();
 }
 
-void ASCIITests::ConvertTest3(Test& test)
+void ASCIITests::ConvertInt8Test3(Test& test)
 {
     Error error;
     string number = "-128";
@@ -583,7 +588,7 @@ void ASCIITests::ConvertTest3(Test& test)
     ISHIKO_TEST_PASS();
 }
 
-void ASCIITests::ConvertTest4(Test& test)
+void ASCIITests::ConvertUint8Test1(Test& test)
 {
     Error error;
     string number = "0";
@@ -595,7 +600,7 @@ void ASCIITests::ConvertTest4(Test& test)
     ISHIKO_TEST_PASS();
 }
 
-void ASCIITests::ConvertTest5(Test& test)
+void ASCIITests::ConvertUint8Test2(Test& test)
 {
     Error error;
     string number = "255";
@@ -604,5 +609,65 @@ void ASCIITests::ConvertTest5(Test& test)
 
     ISHIKO_TEST_FAIL_IF(error);
     ISHIKO_TEST_FAIL_IF_NEQ(n, 255);
+    ISHIKO_TEST_PASS();
+}
+
+void ASCIITests::ConvertInt16Test1(Test& test)
+{
+    Error error;
+    string number = "0";
+    int16_t n = 0;
+    ASCII::Convert(number.begin(), number.end(), n, error);
+
+    ISHIKO_TEST_FAIL_IF(error);
+    ISHIKO_TEST_FAIL_IF_NEQ(n, 0);
+    ISHIKO_TEST_PASS();
+}
+
+void ASCIITests::ConvertInt16Test2(Test& test)
+{
+    Error error;
+    string number = "32767";
+    int16_t n = 0;
+    ASCII::Convert(number.begin(), number.end(), n, error);
+
+    ISHIKO_TEST_FAIL_IF(error);
+    ISHIKO_TEST_FAIL_IF_NEQ(n, 32767);
+    ISHIKO_TEST_PASS();
+}
+
+void ASCIITests::ConvertInt16Test3(Test& test)
+{
+    Error error;
+    string number = "-32768";
+    int16_t n = 0;
+    ASCII::Convert(number.begin(), number.end(), n, error);
+
+    ISHIKO_TEST_FAIL_IF(error);
+    ISHIKO_TEST_FAIL_IF_NEQ(n, -32768);
+    ISHIKO_TEST_PASS();
+}
+
+void ASCIITests::ConvertUint16Test1(Test& test)
+{
+    Error error;
+    string number = "0";
+    uint16_t n = 0;
+    ASCII::Convert(number.begin(), number.end(), n, error);
+
+    ISHIKO_TEST_FAIL_IF(error);
+    ISHIKO_TEST_FAIL_IF_NEQ(n, 0);
+    ISHIKO_TEST_PASS();
+}
+
+void ASCIITests::ConvertUint16Test2(Test& test)
+{
+    Error error;
+    string number = "65535";
+    uint16_t n = 0;
+    ASCII::Convert(number.begin(), number.end(), n, error);
+
+    ISHIKO_TEST_FAIL_IF(error);
+    ISHIKO_TEST_FAIL_IF_NEQ(n, 65535);
     ISHIKO_TEST_PASS();
 }
