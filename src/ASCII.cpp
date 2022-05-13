@@ -150,6 +150,11 @@ void ASCII::Trim(string& str)
     }
 }
 
+void ASCII::Convert(const std::string& str, int8_t& number, Error& error)
+{
+    Convert(str.begin(), str.end(), number, error);
+}
+
 void ASCII::Convert(string::const_iterator begin, string::const_iterator end, int8_t& number, Error& error)
 {
     if (begin == end)
@@ -207,6 +212,11 @@ void ASCII::Convert(string::const_iterator begin, string::const_iterator end, in
     number = static_cast<int8_t>(result);
 }
 
+void ASCII::Convert(const std::string& str, uint8_t& number, Error& error)
+{
+    Convert(str.begin(), str.end(), number, error);
+}
+
 void ASCII::Convert(string::const_iterator begin, string::const_iterator end, uint8_t& number, Error& error)
 {
     if (begin == end)
@@ -252,6 +262,11 @@ void ASCII::Convert(string::const_iterator begin, string::const_iterator end, ui
         return;
     }
     number = static_cast<uint8_t>(result);
+}
+
+void ASCII::Convert(const std::string& str, int16_t& number, Error& error)
+{
+    Convert(str.begin(), str.end(), number, error);
 }
 
 void ASCII::Convert(string::const_iterator begin, string::const_iterator end, int16_t& number, Error& error)
@@ -309,6 +324,11 @@ void ASCII::Convert(string::const_iterator begin, string::const_iterator end, in
         return;
     }
     number = static_cast<int16_t>(result);
+}
+
+void ASCII::Convert(const std::string& str, uint16_t& number, Error& error)
+{
+    Convert(str.begin(), str.end(), number, error);
 }
 
 void ASCII::Convert(string::const_iterator begin, string::const_iterator end, uint16_t& number, Error& error)
