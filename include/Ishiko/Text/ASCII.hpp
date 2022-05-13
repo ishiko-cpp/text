@@ -30,8 +30,9 @@ public:
     // allow to pass list of characters that can be trimmed, also allow to trim front or back
     static void Trim(std::string& str);
 
-    static void Convert(std::string::const_iterator begin, std::string::const_iterator end, char& c, Error& error);
-    static void Convert(std::string::const_iterator begin, std::string::const_iterator end, unsigned char& c,
+    static void Convert(std::string::const_iterator begin, std::string::const_iterator end, int8_t& number,
+        Error& error);
+    static void Convert(std::string::const_iterator begin, std::string::const_iterator end, uint8_t& number,
         Error& error);
 };
 

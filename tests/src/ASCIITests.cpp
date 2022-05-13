@@ -551,11 +551,11 @@ void ASCIITests::ConvertTest1(Test& test)
 {
     Error error;
     string number = "0";
-    char c = 0;
-    ASCII::Convert(number.begin(), number.end(), c, error);
+    int8_t n = 0;
+    ASCII::Convert(number.begin(), number.end(), n, error);
 
     ISHIKO_TEST_FAIL_IF(error);
-    ISHIKO_TEST_FAIL_IF_NEQ(c, 0);
+    ISHIKO_TEST_FAIL_IF_NEQ(n, 0);
     ISHIKO_TEST_PASS();
 }
 
@@ -563,11 +563,11 @@ void ASCIITests::ConvertTest2(Test& test)
 {
     Error error;
     string number = "127";
-    char c = 0;
-    ASCII::Convert(number.begin(), number.end(), c, error);
+    int8_t n = 0;
+    ASCII::Convert(number.begin(), number.end(), n, error);
 
     ISHIKO_TEST_FAIL_IF(error);
-    ISHIKO_TEST_FAIL_IF_NEQ(c, 127);
+    ISHIKO_TEST_FAIL_IF_NEQ(n, 127);
     ISHIKO_TEST_PASS();
 }
 
@@ -575,11 +575,11 @@ void ASCIITests::ConvertTest3(Test& test)
 {
     Error error;
     string number = "-128";
-    char c = 0;
-    ASCII::Convert(number.begin(), number.end(), c, error);
+    int8_t n = 0;
+    ASCII::Convert(number.begin(), number.end(), n, error);
 
     ISHIKO_TEST_FAIL_IF(error);
-    ISHIKO_TEST_FAIL_IF_NEQ(c, -128);
+    ISHIKO_TEST_FAIL_IF_NEQ(n, -128);
     ISHIKO_TEST_PASS();
 }
 
@@ -587,11 +587,11 @@ void ASCIITests::ConvertTest4(Test& test)
 {
     Error error;
     string number = "0";
-    unsigned char c = 0;
-    ASCII::Convert(number.begin(), number.end(), c, error);
+    uint8_t n = 0;
+    ASCII::Convert(number.begin(), number.end(), n, error);
 
     ISHIKO_TEST_FAIL_IF(error);
-    ISHIKO_TEST_FAIL_IF_NEQ(c, 0);
+    ISHIKO_TEST_FAIL_IF_NEQ(n, 0);
     ISHIKO_TEST_PASS();
 }
 
@@ -599,10 +599,10 @@ void ASCIITests::ConvertTest5(Test& test)
 {
     Error error;
     string number = "255";
-    unsigned char c = 0;
-    ASCII::Convert(number.begin(), number.end(), c, error);
+    uint8_t n = 0;
+    ASCII::Convert(number.begin(), number.end(), n, error);
 
     ISHIKO_TEST_FAIL_IF(error);
-    ISHIKO_TEST_FAIL_IF_NEQ(c, 255);
+    ISHIKO_TEST_FAIL_IF_NEQ(n, 255);
     ISHIKO_TEST_PASS();
 }

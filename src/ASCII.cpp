@@ -150,7 +150,7 @@ void ASCII::Trim(string& str)
     }
 }
 
-void ASCII::Convert(string::const_iterator begin, string::const_iterator end, char& c, Error& error)
+void ASCII::Convert(string::const_iterator begin, string::const_iterator end, int8_t& number, Error& error)
 {
     if (begin == end)
     {
@@ -204,10 +204,10 @@ void ASCII::Convert(string::const_iterator begin, string::const_iterator end, ch
         Fail(error, TextErrorCategory::Value::generic);
         return;
     }
-    c = static_cast<unsigned char>(result);
+    number = static_cast<unsigned char>(result);
 }
 
-void ASCII::Convert(string::const_iterator begin, string::const_iterator end, unsigned char& c, Error& error)
+void ASCII::Convert(string::const_iterator begin, string::const_iterator end, uint8_t& number, Error& error)
 {
     if (begin == end)
     {
@@ -251,7 +251,7 @@ void ASCII::Convert(string::const_iterator begin, string::const_iterator end, un
         Fail(error, TextErrorCategory::Value::generic);
         return;
     }
-    c = static_cast<unsigned char>(result);
+    number = static_cast<unsigned char>(result);
 }
 
 }
