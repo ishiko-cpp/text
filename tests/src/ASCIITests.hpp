@@ -63,11 +63,16 @@ private:
     static void TrimTest9(Ishiko::Test& test);
     static void TrimTest10(Ishiko::Test& test);
     static void TrimTest11(Ishiko::Test& test);
-    static void ConvertTest1(Ishiko::Test& test);
-    static void ConvertTest2(Ishiko::Test& test);
-    static void ConvertTest3(Ishiko::Test& test);
-    static void ConvertTest4(Ishiko::Test& test);
-    static void ConvertTest5(Ishiko::Test& test);
+    static void ConvertInt8Test1(Ishiko::Test& test);
+    static void ConvertInt8Test2(Ishiko::Test& test);
+    static void ConvertInt8Test3(Ishiko::Test& test);
+    static void ConvertUint8Test1(Ishiko::Test& test);
+    static void ConvertUint8Test2(Ishiko::Test& test);
+    static void ConvertInt16Test1(Ishiko::Test& test);
+    static void ConvertInt16Test2(Ishiko::Test& test);
+    static void ConvertInt16Test3(Ishiko::Test& test);
+    static void ConvertUint16Test1(Ishiko::Test& test);
+    static void ConvertUint16Test2(Ishiko::Test& test);
 };
 
 #endif
