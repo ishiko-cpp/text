@@ -17,6 +17,8 @@ namespace Ishiko
 class ASCII
 {
 public:
+    static const char* LineEnding;
+
     static bool IsAlpha(char c);
     static bool IsNumeric(char c);
     static bool IsAlphanumeric(char c);
