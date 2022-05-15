@@ -6,11 +6,19 @@
 
 #include "ASCII.hpp"
 #include "TextErrorCategory.hpp"
+#include <Ishiko/BasePlatform.h>
 
 using namespace std;
 
-namespace Ishiko
-{
+using namespace Ishiko;
+
+#if ISHIKO_OS == ISHIKO_OS_LINUX
+const char* ASCII::LineEnding = "\n";
+#elif ISHIKO_OS == ISHIKO_OS_WINDOWS
+const char* ASCII::LineEnding = "\r\n";
+#else
+#error Unsupported or unrecognized OS
+#endif
 
 bool ASCII::IsAlpha(char c)
 {
@@ -376,6 +384,4 @@ void ASCII::Convert(string::const_iterator begin, string::const_iterator end, ui
         return;
     }
     number = static_cast<uint16_t>(result);
-}
-
 }
