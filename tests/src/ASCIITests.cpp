@@ -693,7 +693,7 @@ void ASCIITests::ConvertUint64Test2(Test& test)
     uint64_t n = 0;
     ASCII::Convert(numberView.begin(), numberView.end(), n);
 
-    ISHIKO_TEST_FAIL_IF_NEQ(n, 18446744073709551615);
+    ISHIKO_TEST_FAIL_IF_NEQ(n, 18446744073709551615ull);
     ISHIKO_TEST_PASS();
 }
 
@@ -719,6 +719,6 @@ void ASCIITests::ConvertUint64Test4(Test& test)
     ASCII::Convert(numberView.begin(), numberView.end(), n, error);
 
     ISHIKO_TEST_FAIL_IF(error);
-    ISHIKO_TEST_FAIL_IF_NEQ(n, 18446744073709551615);
+    ISHIKO_TEST_FAIL_IF_NEQ(n, 18446744073709551615ull);
     ISHIKO_TEST_PASS();
 }
