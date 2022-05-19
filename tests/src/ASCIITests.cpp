@@ -8,7 +8,6 @@
 #include <Ishiko/Text/ASCII.hpp>
 
 using namespace Ishiko;
-using namespace std;
 
 ASCIITests::ASCIITests(const TestNumber& number, const TestContext& context)
     : TestSequence(number, "ASCII tests", context)
@@ -71,6 +70,10 @@ ASCIITests::ASCIITests(const TestNumber& number, const TestContext& context)
     append<HeapAllocationErrorsTest>("Convert to int16_t test 3", ConvertInt16Test3);
     append<HeapAllocationErrorsTest>("Convert to uint16_t test 1", ConvertUint16Test1);
     append<HeapAllocationErrorsTest>("Convert to uint16_t test 2", ConvertUint16Test2);
+    append<HeapAllocationErrorsTest>("Convert to uint64_t test 1", ConvertUint64Test1);
+    append<HeapAllocationErrorsTest>("Convert to uint64_t test 2", ConvertUint64Test2);
+    append<HeapAllocationErrorsTest>("Convert to uint64_t test 3", ConvertUint64Test3);
+    append<HeapAllocationErrorsTest>("Convert to uint64_t test 4", ConvertUint64Test4);
 }
 
 void ASCIITests::IsAlphaTest1(Test& test)
@@ -208,7 +211,7 @@ void ASCIITests::IsWhitespaceTest2(Test& test)
 
 void ASCIITests::SplitTest1(Test& test)
 {
-    vector<string> tokens = ASCII::Split("", ' ', true);
+    std::vector<std::string> tokens = ASCII::Split("", ' ', true);
 
     ISHIKO_TEST_FAIL_IF_NEQ(tokens.size(), 0);
     ISHIKO_TEST_PASS();
@@ -216,39 +219,39 @@ void ASCIITests::SplitTest1(Test& test)
 
 void ASCIITests::SplitTest2(Test& test)
 {
-    vector<string> tokens = ASCII::Split("a", ' ', true);
+    std::vector<std::string> tokens = ASCII::Split("a", ' ', true);
 
-    ISHIKO_TEST_FAIL_IF_NEQ(tokens, vector<string>({ "a" }));
+    ISHIKO_TEST_FAIL_IF_NEQ(tokens, std::vector<std::string>({ "a" }));
     ISHIKO_TEST_PASS();
 }
 
 void ASCIITests::SplitTest3(Test& test)
 {
-    vector<string> tokens = ASCII::Split("abc", ' ', true);
+    std::vector<std::string> tokens = ASCII::Split("abc", ' ', true);
 
-    ISHIKO_TEST_FAIL_IF_NEQ(tokens, vector<string>({ "abc" }));
+    ISHIKO_TEST_FAIL_IF_NEQ(tokens, std::vector<std::string>({ "abc" }));
     ISHIKO_TEST_PASS();
 }
 
 void ASCIITests::SplitTest4(Test& test)
 {
-    vector<string> tokens = ASCII::Split("one two", ' ', true);
+    std::vector<std::string> tokens = ASCII::Split("one two", ' ', true);
 
-    ISHIKO_TEST_FAIL_IF_NEQ(tokens, vector<string>({ "one", "two" }));
+    ISHIKO_TEST_FAIL_IF_NEQ(tokens, std::vector<std::string>({ "one", "two" }));
     ISHIKO_TEST_PASS();
 }
 
 void ASCIITests::SplitTest5(Test& test)
 {
-    vector<string> tokens = ASCII::Split("one two three", ' ', true);
+    std::vector<std::string> tokens = ASCII::Split("one two three", ' ', true);
 
-    ISHIKO_TEST_FAIL_IF_NEQ(tokens, vector<string>({ "one", "two", "three" }));
+    ISHIKO_TEST_FAIL_IF_NEQ(tokens, std::vector<std::string>({ "one", "two", "three" }));
     ISHIKO_TEST_PASS();
 }
 
 void ASCIITests::SplitTest6(Test& test)
 {
-    vector<string> tokens = ASCII::Split(" ", ' ', true);
+    std::vector<std::string> tokens = ASCII::Split(" ", ' ', true);
 
     ISHIKO_TEST_FAIL_IF_NEQ(tokens.size(), 0);
     ISHIKO_TEST_PASS();
@@ -256,7 +259,7 @@ void ASCIITests::SplitTest6(Test& test)
 
 void ASCIITests::SplitTest7(Test& test)
 {
-    vector<string> tokens = ASCII::Split("   ", ' ', true);
+    std::vector<std::string> tokens = ASCII::Split("   ", ' ', true);
 
     ISHIKO_TEST_FAIL_IF_NEQ(tokens.size(), 0);
     ISHIKO_TEST_PASS();
@@ -264,63 +267,63 @@ void ASCIITests::SplitTest7(Test& test)
 
 void ASCIITests::SplitTest8(Test& test)
 {
-    vector<string> tokens = ASCII::Split("a ", ' ', true);
+    std::vector<std::string> tokens = ASCII::Split("a ", ' ', true);
 
-    ISHIKO_TEST_FAIL_IF_NEQ(tokens, vector<string>({ "a" }));
+    ISHIKO_TEST_FAIL_IF_NEQ(tokens, std::vector<std::string>({ "a" }));
     ISHIKO_TEST_PASS();
 }
 
 void ASCIITests::SplitTest9(Test& test)
 {
-    vector<string> tokens = ASCII::Split("a   ", ' ', true);
+    std::vector<std::string> tokens = ASCII::Split("a   ", ' ', true);
 
-    ISHIKO_TEST_FAIL_IF_NEQ(tokens, vector<string>({ "a" }));
+    ISHIKO_TEST_FAIL_IF_NEQ(tokens, std::vector<std::string>({ "a" }));
     ISHIKO_TEST_PASS();
 }
 
 void ASCIITests::SplitTest10(Test& test)
 {
-    vector<string> tokens = ASCII::Split(" a ", ' ', true);
+    std::vector<std::string> tokens = ASCII::Split(" a ", ' ', true);
 
-    ISHIKO_TEST_FAIL_IF_NEQ(tokens, vector<string>({ "a" }));
+    ISHIKO_TEST_FAIL_IF_NEQ(tokens, std::vector<std::string>({ "a" }));
     ISHIKO_TEST_PASS();
 }
 
 void ASCIITests::SplitTest11(Test& test)
 {
-    vector<string> tokens = ASCII::Split(" one  two   three ", ' ', true);
+    std::vector<std::string> tokens = ASCII::Split(" one  two   three ", ' ', true);
 
-    ISHIKO_TEST_FAIL_IF_NEQ(tokens, vector<string>({ "one", "two", "three" }));
+    ISHIKO_TEST_FAIL_IF_NEQ(tokens, std::vector<std::string>({ "one", "two", "three" }));
     ISHIKO_TEST_PASS();
 }
 
 void ASCIITests::SplitTest12(Test& test)
 {
-    vector<string> tokens = ASCII::Split(",one", ',', false);
+    std::vector<std::string> tokens = ASCII::Split(",one", ',', false);
 
-    ISHIKO_TEST_FAIL_IF_NEQ(tokens, vector<string>({ "", "one" }));
+    ISHIKO_TEST_FAIL_IF_NEQ(tokens, std::vector<std::string>({ "", "one" }));
     ISHIKO_TEST_PASS();
 }
 
 void ASCIITests::SplitTest13(Test& test)
 {
-    vector<string> tokens = ASCII::Split("one,", ',', false);
+    std::vector<std::string> tokens = ASCII::Split("one,", ',', false);
 
-    ISHIKO_TEST_FAIL_IF_NEQ(tokens, vector<string>({ "one", "" }));
+    ISHIKO_TEST_FAIL_IF_NEQ(tokens, std::vector<std::string>({ "one", "" }));
     ISHIKO_TEST_PASS();
 }
 
 void ASCIITests::SplitTest14(Test& test)
 {
-    vector<string> tokens = ASCII::Split(",one,,two,,,three,", ',', false);
+    std::vector<std::string> tokens = ASCII::Split(",one,,two,,,three,", ',', false);
 
-    ISHIKO_TEST_FAIL_IF_NEQ(tokens, vector<string>({ "", "one", "", "two", "", "", "three", "" }));
+    ISHIKO_TEST_FAIL_IF_NEQ(tokens, std::vector<std::string>({ "", "one", "", "two", "", "", "three", "" }));
     ISHIKO_TEST_PASS();
 }
 
 void ASCIITests::GetLinesTest1(Test& test)
 {
-    vector<string> lines = ASCII::GetLines("");
+    std::vector<std::string> lines = ASCII::GetLines("");
 
     ISHIKO_TEST_FAIL_IF_NEQ(lines.size(), 0);
     ISHIKO_TEST_PASS();
@@ -328,103 +331,103 @@ void ASCIITests::GetLinesTest1(Test& test)
 
 void ASCIITests::GetLinesTest2(Test& test)
 {
-    vector<string> lines = ASCII::GetLines("a");
+    std::vector<std::string> lines = ASCII::GetLines("a");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(lines, vector<string>({ "a" }));
+    ISHIKO_TEST_FAIL_IF_NEQ(lines, std::vector<std::string>({ "a" }));
     ISHIKO_TEST_PASS();
 }
 
 void ASCIITests::GetLinesTest3(Test& test)
 {
-    vector<string> lines = ASCII::GetLines("a sentence");
+    std::vector<std::string> lines = ASCII::GetLines("a sentence");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(lines, vector<string>({ "a sentence" }));
+    ISHIKO_TEST_FAIL_IF_NEQ(lines, std::vector<std::string>({ "a sentence" }));
     ISHIKO_TEST_PASS();
 }
 
 void ASCIITests::GetLinesTest4(Test& test)
 {
-    vector<string> lines = ASCII::GetLines("\r\n");
+    std::vector<std::string> lines = ASCII::GetLines("\r\n");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(lines, vector<string>({ "" }));
+    ISHIKO_TEST_FAIL_IF_NEQ(lines, std::vector<std::string>({ "" }));
     ISHIKO_TEST_PASS();
 }
 
 void ASCIITests::GetLinesTest5(Test& test)
 {
-    vector<string> lines = ASCII::GetLines("\n");
+    std::vector<std::string> lines = ASCII::GetLines("\n");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(lines, vector<string>({ "" }));
+    ISHIKO_TEST_FAIL_IF_NEQ(lines, std::vector<std::string>({ "" }));
     ISHIKO_TEST_PASS();
 }
 
 void ASCIITests::GetLinesTest6(Test& test)
 {
-    vector<string> lines = ASCII::GetLines("\r\n\r\n");
+    std::vector<std::string> lines = ASCII::GetLines("\r\n\r\n");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(lines, vector<string>({ "", "" }));
+    ISHIKO_TEST_FAIL_IF_NEQ(lines, std::vector<std::string>({ "", "" }));
     ISHIKO_TEST_PASS();
 }
 
 void ASCIITests::GetLinesTest7(Test& test)
 {
-    vector<string> lines = ASCII::GetLines("\n\n");
+    std::vector<std::string> lines = ASCII::GetLines("\n\n");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(lines, vector<string>({ "", "" }));
+    ISHIKO_TEST_FAIL_IF_NEQ(lines, std::vector<std::string>({ "", "" }));
     ISHIKO_TEST_PASS();
 }
 
 void ASCIITests::GetLinesTest8(Test& test)
 {
-    vector<string> lines = ASCII::GetLines("a sentence\r\n");
+    std::vector<std::string> lines = ASCII::GetLines("a sentence\r\n");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(lines, vector<string>({ "a sentence" }));
+    ISHIKO_TEST_FAIL_IF_NEQ(lines, std::vector<std::string>({ "a sentence" }));
     ISHIKO_TEST_PASS();
 }
 
 void ASCIITests::GetLinesTest9(Test& test)
 {
-    vector<string> lines = ASCII::GetLines("a sentence\n");
+    std::vector<std::string> lines = ASCII::GetLines("a sentence\n");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(lines, vector<string>({ "a sentence" }));
+    ISHIKO_TEST_FAIL_IF_NEQ(lines, std::vector<std::string>({ "a sentence" }));
     ISHIKO_TEST_PASS();
 }
 
 void ASCIITests::GetLinesTest10(Test& test)
 {
-    vector<string> lines = ASCII::GetLines("one line\r\nanother line");
+    std::vector<std::string> lines = ASCII::GetLines("one line\r\nanother line");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(lines, vector<string>({ "one line", "another line" }));
+    ISHIKO_TEST_FAIL_IF_NEQ(lines, std::vector<std::string>({ "one line", "another line" }));
     ISHIKO_TEST_PASS();
 }
 
 void ASCIITests::GetLinesTest11(Test& test)
 {
-    vector<string> lines = ASCII::GetLines("one line\nanother line");
+    std::vector<std::string> lines = ASCII::GetLines("one line\nanother line");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(lines, vector<string>({ "one line", "another line" }));
+    ISHIKO_TEST_FAIL_IF_NEQ(lines, std::vector<std::string>({ "one line", "another line" }));
     ISHIKO_TEST_PASS();
 }
 
 void ASCIITests::GetLinesTest12(Test& test)
 {
-    vector<string> lines = ASCII::GetLines("one line\r\nanother line\r\n");
+    std::vector<std::string> lines = ASCII::GetLines("one line\r\nanother line\r\n");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(lines, vector<string>({ "one line", "another line" }));
+    ISHIKO_TEST_FAIL_IF_NEQ(lines, std::vector<std::string>({ "one line", "another line" }));
     ISHIKO_TEST_PASS();
 }
 
 void ASCIITests::GetLinesTest13(Test& test)
 {
-    vector<string> lines = ASCII::GetLines("one line\nanother line\n");
+    std::vector<std::string> lines = ASCII::GetLines("one line\nanother line\n");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(lines, vector<string>({ "one line", "another line" }));
+    ISHIKO_TEST_FAIL_IF_NEQ(lines, std::vector<std::string>({ "one line", "another line" }));
     ISHIKO_TEST_PASS();
 }
 
 void ASCIITests::ToLowerCaseTest1(Test& test)
 {
-    string str = "Hello World!";
+    std::string str = "Hello World!";
 
     ASCII::ToLowerCase(str);
 
@@ -434,7 +437,7 @@ void ASCIITests::ToLowerCaseTest1(Test& test)
 
 void ASCIITests::ToUpperCaseTest1(Test& test)
 {
-    string str = "Hello World!";
+    std::string str = "Hello World!";
 
     ASCII::ToUpperCase(str);
 
@@ -444,7 +447,7 @@ void ASCIITests::ToUpperCaseTest1(Test& test)
 
 void ASCIITests::TrimTest1(Test& test)
 {
-    string str = "";
+    std::string str = "";
 
     ASCII::Trim(str);
 
@@ -454,7 +457,7 @@ void ASCIITests::TrimTest1(Test& test)
 
 void ASCIITests::TrimTest2(Test& test)
 {
-    string str = "a";
+    std::string str = "a";
 
     ASCII::Trim(str);
 
@@ -464,7 +467,7 @@ void ASCIITests::TrimTest2(Test& test)
 
 void ASCIITests::TrimTest3(Test& test)
 {
-    string str = "abc";
+    std::string str = "abc";
 
     ASCII::Trim(str);
 
@@ -474,7 +477,7 @@ void ASCIITests::TrimTest3(Test& test)
 
 void ASCIITests::TrimTest4(Test& test)
 {
-    string str = " ";
+    std::string str = " ";
 
     ASCII::Trim(str);
 
@@ -484,7 +487,7 @@ void ASCIITests::TrimTest4(Test& test)
 
 void ASCIITests::TrimTest5(Test& test)
 {
-    string str = "   ";
+    std::string str = "   ";
 
     ASCII::Trim(str);
 
@@ -494,7 +497,7 @@ void ASCIITests::TrimTest5(Test& test)
 
 void ASCIITests::TrimTest6(Test& test)
 {
-    string str = " a";
+    std::string str = " a";
 
     ASCII::Trim(str);
 
@@ -504,7 +507,7 @@ void ASCIITests::TrimTest6(Test& test)
 
 void ASCIITests::TrimTest7(Test& test)
 {
-    string str = "   a";
+    std::string str = "   a";
 
     ASCII::Trim(str);
 
@@ -514,7 +517,7 @@ void ASCIITests::TrimTest7(Test& test)
 
 void ASCIITests::TrimTest8(Test& test)
 {
-    string str = "a ";
+    std::string str = "a ";
 
     ASCII::Trim(str);
 
@@ -524,7 +527,7 @@ void ASCIITests::TrimTest8(Test& test)
 
 void ASCIITests::TrimTest9(Test& test)
 {
-    string str = "a   ";
+    std::string str = "a   ";
 
     ASCII::Trim(str);
 
@@ -534,7 +537,7 @@ void ASCIITests::TrimTest9(Test& test)
 
 void ASCIITests::TrimTest10(Test& test)
 {
-    string str = " a ";
+    std::string str = " a ";
 
     ASCII::Trim(str);
 
@@ -544,7 +547,7 @@ void ASCIITests::TrimTest10(Test& test)
 
 void ASCIITests::TrimTest11(Test& test)
 {
-    string str = "  a   ";
+    std::string str = "  a   ";
 
     ASCII::Trim(str);
 
@@ -555,7 +558,7 @@ void ASCIITests::TrimTest11(Test& test)
 void ASCIITests::ConvertInt8Test1(Test& test)
 {
     Error error;
-    string number = "0";
+    std::string number = "0";
     int8_t n = 0;
     ASCII::Convert(number.begin(), number.end(), n, error);
 
@@ -567,7 +570,7 @@ void ASCIITests::ConvertInt8Test1(Test& test)
 void ASCIITests::ConvertInt8Test2(Test& test)
 {
     Error error;
-    string number = "127";
+    std::string number = "127";
     int8_t n = 0;
     ASCII::Convert(number.begin(), number.end(), n, error);
 
@@ -579,7 +582,7 @@ void ASCIITests::ConvertInt8Test2(Test& test)
 void ASCIITests::ConvertInt8Test3(Test& test)
 {
     Error error;
-    string number = "-128";
+    std::string number = "-128";
     int8_t n = 0;
     ASCII::Convert(number.begin(), number.end(), n, error);
 
@@ -591,7 +594,7 @@ void ASCIITests::ConvertInt8Test3(Test& test)
 void ASCIITests::ConvertUint8Test1(Test& test)
 {
     Error error;
-    string number = "0";
+    std::string number = "0";
     uint8_t n = 0;
     ASCII::Convert(number.begin(), number.end(), n, error);
 
@@ -603,7 +606,7 @@ void ASCIITests::ConvertUint8Test1(Test& test)
 void ASCIITests::ConvertUint8Test2(Test& test)
 {
     Error error;
-    string number = "255";
+    std::string number = "255";
     uint8_t n = 0;
     ASCII::Convert(number.begin(), number.end(), n, error);
 
@@ -615,7 +618,7 @@ void ASCIITests::ConvertUint8Test2(Test& test)
 void ASCIITests::ConvertInt16Test1(Test& test)
 {
     Error error;
-    string number = "0";
+    std::string number = "0";
     int16_t n = 0;
     ASCII::Convert(number.begin(), number.end(), n, error);
 
@@ -627,7 +630,7 @@ void ASCIITests::ConvertInt16Test1(Test& test)
 void ASCIITests::ConvertInt16Test2(Test& test)
 {
     Error error;
-    string number = "32767";
+    std::string number = "32767";
     int16_t n = 0;
     ASCII::Convert(number.begin(), number.end(), n, error);
 
@@ -639,7 +642,7 @@ void ASCIITests::ConvertInt16Test2(Test& test)
 void ASCIITests::ConvertInt16Test3(Test& test)
 {
     Error error;
-    string number = "-32768";
+    std::string number = "-32768";
     int16_t n = 0;
     ASCII::Convert(number.begin(), number.end(), n, error);
 
@@ -651,7 +654,7 @@ void ASCIITests::ConvertInt16Test3(Test& test)
 void ASCIITests::ConvertUint16Test1(Test& test)
 {
     Error error;
-    string number = "0";
+    std::string number = "0";
     uint16_t n = 0;
     ASCII::Convert(number.begin(), number.end(), n, error);
 
@@ -663,11 +666,59 @@ void ASCIITests::ConvertUint16Test1(Test& test)
 void ASCIITests::ConvertUint16Test2(Test& test)
 {
     Error error;
-    string number = "65535";
+    std::string number = "65535";
     uint16_t n = 0;
     ASCII::Convert(number.begin(), number.end(), n, error);
 
     ISHIKO_TEST_FAIL_IF(error);
     ISHIKO_TEST_FAIL_IF_NEQ(n, 65535);
+    ISHIKO_TEST_PASS();
+}
+
+void ASCIITests::ConvertUint64Test1(Test& test)
+{
+    std::string number = "0";
+    boost::string_view numberView(number);
+    uint64_t n = 0;
+    ASCII::Convert(numberView.begin(), numberView.end(), n);
+
+    ISHIKO_TEST_FAIL_IF_NEQ(n, 0);
+    ISHIKO_TEST_PASS();
+}
+
+void ASCIITests::ConvertUint64Test2(Test& test)
+{
+    std::string number = "18446744073709551615";
+    boost::string_view numberView(number);
+    uint64_t n = 0;
+    ASCII::Convert(numberView.begin(), numberView.end(), n);
+
+    ISHIKO_TEST_FAIL_IF_NEQ(n, 18446744073709551615ull);
+    ISHIKO_TEST_PASS();
+}
+
+void ASCIITests::ConvertUint64Test3(Test& test)
+{
+    Error error;
+    std::string number = "0";
+    boost::string_view numberView(number);
+    uint64_t n = 0;
+    ASCII::Convert(numberView.begin(), numberView.end(), n, error);
+
+    ISHIKO_TEST_FAIL_IF(error);
+    ISHIKO_TEST_FAIL_IF_NEQ(n, 0);
+    ISHIKO_TEST_PASS();
+}
+
+void ASCIITests::ConvertUint64Test4(Test& test)
+{
+    Error error;
+    std::string number = "18446744073709551615";
+    boost::string_view numberView(number);
+    uint64_t n = 0;
+    ASCII::Convert(numberView.begin(), numberView.end(), n, error);
+
+    ISHIKO_TEST_FAIL_IF(error);
+    ISHIKO_TEST_FAIL_IF_NEQ(n, 18446744073709551615ull);
     ISHIKO_TEST_PASS();
 }

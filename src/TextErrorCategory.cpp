@@ -20,6 +20,11 @@ const char* TextErrorCategory::name() const noexcept
     return "Ishiko::TextErrorCategory";
 }
 
+void Throw(TextErrorCategory::Value value, const char* file, int line)
+{
+    throw Exception(static_cast<int>(value), TextErrorCategory::Get(), file, line);
+}
+
 void Fail(Error& error, TextErrorCategory::Value value) noexcept
 {
     error.fail(static_cast<int>(value), TextErrorCategory::Get());
