@@ -385,3 +385,88 @@ void ASCII::Convert(string::const_iterator begin, string::const_iterator end, ui
     }
     number = static_cast<uint16_t>(result);
 }
+
+void ASCII::Convert(boost::string_view::const_iterator begin, boost::string_view::const_iterator end, uint64_t& number)
+{
+    if (begin == end)
+    {
+        // TODO: better error
+        Throw(TextErrorCategory::Value::generic, __FILE__, __LINE__);
+        return;
+    }
+
+    if (*begin == '+')
+    {
+        ++begin;
+        if (begin == end)
+        {
+            // TODO: better error
+            Throw(TextErrorCategory::Value::generic, __FILE__, __LINE__);
+            return;
+        }
+    }
+    else if (*begin == '-')
+    {
+        // TODO: better error
+        Throw(TextErrorCategory::Value::generic, __FILE__, __LINE__);
+        return;
+    }
+    // TODO: handle overflow
+    uint64_t result = 0;
+    while (begin != end)
+    {
+        char c = *begin;
+        if (!IsNumeric(c))
+        {
+            // TODO: better error
+            Throw(TextErrorCategory::Value::generic, __FILE__, __LINE__);
+            return;
+        }
+        result = ((10 * result) + (c - '0'));
+        ++begin;
+    }
+    number = static_cast<uint64_t>(result);
+}
+
+void ASCII::Convert(boost::string_view::const_iterator begin, boost::string_view::const_iterator end, uint64_t& number,
+    Error& error)
+{
+    if (begin == end)
+    {
+        // TODO: better error
+        Fail(error, TextErrorCategory::Value::generic);
+        return;
+    }
+
+    if (*begin == '+')
+    {
+        ++begin;
+        if (begin == end)
+        {
+            // TODO: better error
+            Fail(error, TextErrorCategory::Value::generic);
+            return;
+        }
+    }
+    else if (*begin == '-')
+    {
+        // TODO: better error
+        Fail(error, TextErrorCategory::Value::generic);
+        return;
+    }
+    // TODO: handle overflow
+    uint64_t result = 0;
+    while (begin != end)
+    {
+        char c = *begin;
+        if (!IsNumeric(c))
+        {
+            // TODO: better error
+            Fail(error, TextErrorCategory::Value::generic);
+            return;
+        }
+        result = ((10 * result) + (c - '0'));
+        ++begin;
+    }
+    number = static_cast<uint64_t>(result);
+}

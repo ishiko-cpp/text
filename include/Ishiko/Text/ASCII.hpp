@@ -8,6 +8,7 @@
 #define _ISHIKO_CPP_TEXT_ASCII_HPP_
 
 #include <Ishiko/Errors.hpp>
+#include <boost/utility/string_view.hpp>
 #include <string>
 #include <vector>
 
@@ -44,6 +45,10 @@ public:
     static void Convert(const std::string& str, uint16_t& number, Error& error);
     static void Convert(std::string::const_iterator begin, std::string::const_iterator end, uint16_t& number,
         Error& error);
+    static void Convert(boost::string_view::const_iterator begin, boost::string_view::const_iterator end,
+        uint64_t& number);
+    static void Convert(boost::string_view::const_iterator begin, boost::string_view::const_iterator end,
+        uint64_t& number, Error& error);
 };
 
 }

@@ -1,6 +1,7 @@
 ishikopath = envvar("ISHIKO_CPP");
 import $(ishikopath)/base-platform/include/Ishiko/BasePlatform.bkl;
 import $(ishikopath)/errors/include/Ishiko/Errors.bkl;
+import $(ishikopath)/third-party-glue/include/Ishiko/ThirdParty/Boost.bkl;
 
 setting ISHIKO_CPP_TEXT_ROOT
 {
@@ -8,7 +9,7 @@ setting ISHIKO_CPP_TEXT_ROOT
     default = '$(ISHIKO_CPP)/text';
 }
 
-template IshikoText : IshikoErrors, IshikoBasePlatform
+template IshikoText : IshikoErrors, IshikoBasePlatform, Boost
 {
     includedirs += $(ISHIKO_CPP_TEXT_ROOT)/include;
 

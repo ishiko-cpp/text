@@ -28,6 +28,7 @@ private:
     TextErrorCategory() noexcept = default;
 };
 
+void Throw(TextErrorCategory::Value value, const char* file, int line);
 void Fail(Error& error, TextErrorCategory::Value value) noexcept;
 
 }
