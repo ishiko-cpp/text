@@ -20,22 +20,22 @@ const char* ASCII::LineEnding = "\r\n";
 #error Unsupported or unrecognized OS
 #endif
 
-bool ASCII::IsAlpha(char c)
+bool ASCII::IsAlpha(char c) noexcept
 {
     return ((c >= 'a') && (c <= 'z')) || ((c >= 'A') && (c <= 'Z'));
 }
 
-bool ASCII::IsNumeric(char c)
+bool ASCII::IsNumeric(char c) noexcept
 {
     return ((c >= '0') && (c <= '9'));
 }
 
-bool ASCII::IsAlphanumeric(char c)
+bool ASCII::IsAlphanumeric(char c) noexcept
 {
     return (IsAlpha(c) || IsNumeric(c));
 }
 
-bool ASCII::IsWhitespace(char c)
+bool ASCII::IsWhitespace(char c) noexcept
 {
     return ((c == ' ') || (c == '\r') || (c == '\n') || (c == '\t') || (c == '\v'));
 }
@@ -158,12 +158,12 @@ void ASCII::Trim(string& str)
     }
 }
 
-void ASCII::Convert(const std::string& str, int8_t& number, Error& error)
+void ASCII::Convert(const std::string& str, int8_t& number, Error& error) noexcept
 {
     Convert(str.begin(), str.end(), number, error);
 }
 
-void ASCII::Convert(string::const_iterator begin, string::const_iterator end, int8_t& number, Error& error)
+void ASCII::Convert(string::const_iterator begin, string::const_iterator end, int8_t& number, Error& error) noexcept
 {
     if (begin == end)
     {
@@ -220,12 +220,12 @@ void ASCII::Convert(string::const_iterator begin, string::const_iterator end, in
     number = static_cast<int8_t>(result);
 }
 
-void ASCII::Convert(const std::string& str, uint8_t& number, Error& error)
+void ASCII::Convert(const std::string& str, uint8_t& number, Error& error) noexcept
 {
     Convert(str.begin(), str.end(), number, error);
 }
 
-void ASCII::Convert(string::const_iterator begin, string::const_iterator end, uint8_t& number, Error& error)
+void ASCII::Convert(string::const_iterator begin, string::const_iterator end, uint8_t& number, Error& error) noexcept
 {
     if (begin == end)
     {
@@ -272,12 +272,12 @@ void ASCII::Convert(string::const_iterator begin, string::const_iterator end, ui
     number = static_cast<uint8_t>(result);
 }
 
-void ASCII::Convert(const std::string& str, int16_t& number, Error& error)
+void ASCII::Convert(const std::string& str, int16_t& number, Error& error) noexcept
 {
     Convert(str.begin(), str.end(), number, error);
 }
 
-void ASCII::Convert(string::const_iterator begin, string::const_iterator end, int16_t& number, Error& error)
+void ASCII::Convert(string::const_iterator begin, string::const_iterator end, int16_t& number, Error& error) noexcept
 {
     if (begin == end)
     {
@@ -334,12 +334,12 @@ void ASCII::Convert(string::const_iterator begin, string::const_iterator end, in
     number = static_cast<int16_t>(result);
 }
 
-void ASCII::Convert(const std::string& str, uint16_t& number, Error& error)
+void ASCII::Convert(const std::string& str, uint16_t& number, Error& error) noexcept
 {
     Convert(str.begin(), str.end(), number, error);
 }
 
-void ASCII::Convert(string::const_iterator begin, string::const_iterator end, uint16_t& number, Error& error)
+void ASCII::Convert(string::const_iterator begin, string::const_iterator end, uint16_t& number, Error& error) noexcept
 {
     if (begin == end)
     {
@@ -386,6 +386,105 @@ void ASCII::Convert(string::const_iterator begin, string::const_iterator end, ui
     number = static_cast<uint16_t>(result);
 }
 
+// TODO: add tests
+void ASCII::Convert(const std::string& str, uint64_t& number)
+{
+    Convert(str.begin(), str.end(), number);
+}
+
+// TODO: add tests
+void ASCII::Convert(const std::string& str, uint64_t& number, Error& error) noexcept
+{
+    Convert(str.begin(), str.end(), number, error);
+}
+
+// TODO: add tests
+void ASCII::Convert(std::string::const_iterator begin, std::string::const_iterator end, uint64_t& number)
+{
+    if (begin == end)
+    {
+        // TODO: better error
+        Throw(TextErrorCategory::Value::generic, __FILE__, __LINE__);
+        return;
+    }
+
+    if (*begin == '+')
+    {
+        ++begin;
+        if (begin == end)
+        {
+            // TODO: better error
+            Throw(TextErrorCategory::Value::generic, __FILE__, __LINE__);
+            return;
+        }
+    }
+    else if (*begin == '-')
+    {
+        // TODO: better error
+        Throw(TextErrorCategory::Value::generic, __FILE__, __LINE__);
+        return;
+    }
+    // TODO: handle overflow
+    uint64_t result = 0;
+    while (begin != end)
+    {
+        char c = *begin;
+        if (!IsNumeric(c))
+        {
+            // TODO: better error
+            Throw(TextErrorCategory::Value::generic, __FILE__, __LINE__);
+            return;
+        }
+        result = ((10 * result) + (c - '0'));
+        ++begin;
+    }
+    number = static_cast<uint64_t>(result);
+}
+
+// TODO: add tests
+void ASCII::Convert(std::string::const_iterator begin, std::string::const_iterator end, uint64_t& number,
+    Error& error) noexcept
+{
+    if (begin == end)
+    {
+        // TODO: better error
+        Fail(error, TextErrorCategory::Value::generic);
+        return;
+    }
+
+    if (*begin == '+')
+    {
+        ++begin;
+        if (begin == end)
+        {
+            // TODO: better error
+            Fail(error, TextErrorCategory::Value::generic);
+            return;
+        }
+    }
+    else if (*begin == '-')
+    {
+        // TODO: better error
+        Fail(error, TextErrorCategory::Value::generic);
+        return;
+    }
+    // TODO: handle overflow
+    uint64_t result = 0;
+    while (begin != end)
+    {
+        char c = *begin;
+        if (!IsNumeric(c))
+        {
+            // TODO: better error
+            Fail(error, TextErrorCategory::Value::generic);
+            return;
+        }
+        result = ((10 * result) + (c - '0'));
+        ++begin;
+    }
+    number = static_cast<uint64_t>(result);
+}
+
 void ASCII::Convert(boost::string_view::const_iterator begin, boost::string_view::const_iterator end, uint64_t& number)
 {
     if (begin == end)
@@ -429,7 +528,7 @@ void ASCII::Convert(boost::string_view::const_iterator begin, boost::string_view
 }
 
 void ASCII::Convert(boost::string_view::const_iterator begin, boost::string_view::const_iterator end, uint64_t& number,
-    Error& error)
+    Error& error) noexcept
 {
     if (begin == end)
     {
