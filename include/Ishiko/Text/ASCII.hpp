@@ -20,10 +20,10 @@ class ASCII
 public:
     static const char* LineEnding;
 
-    static bool IsAlpha(char c);
-    static bool IsNumeric(char c);
-    static bool IsAlphanumeric(char c);
-    static bool IsWhitespace(char c);
+    static bool IsAlpha(char c) noexcept;
+    static bool IsNumeric(char c) noexcept;
+    static bool IsAlphanumeric(char c) noexcept;
+    static bool IsWhitespace(char c) noexcept;
 
     static std::vector<std::string> GetLines(const std::string& str);
     static std::vector<std::string> Split(const std::string& str, char separator, bool conflateAdjacentSeparators);
@@ -33,22 +33,27 @@ public:
     // allow to pass list of characters that can be trimmed, also allow to trim front or back
     static void Trim(std::string& str);
 
-    static void Convert(const std::string& str, int8_t& number, Error& error);
+    static void Convert(const std::string& str, int8_t& number, Error& error) noexcept;
     static void Convert(std::string::const_iterator begin, std::string::const_iterator end, int8_t& number,
-        Error& error);
-    static void Convert(const std::string& str, uint8_t& number, Error& error);
+        Error& error) noexcept;
+    static void Convert(const std::string& str, uint8_t& number, Error& error) noexcept;
     static void Convert(std::string::const_iterator begin, std::string::const_iterator end, uint8_t& number,
-        Error& error);
-    static void Convert(const std::string& str, int16_t& number, Error& error);
+        Error& error) noexcept;
+    static void Convert(const std::string& str, int16_t& number, Error& error) noexcept;
     static void Convert(std::string::const_iterator begin, std::string::const_iterator end, int16_t& number,
-        Error& error);
-    static void Convert(const std::string& str, uint16_t& number, Error& error);
+        Error& error) noexcept;
+    static void Convert(const std::string& str, uint16_t& number, Error& error) noexcept;
     static void Convert(std::string::const_iterator begin, std::string::const_iterator end, uint16_t& number,
-        Error& error);
+        Error& error) noexcept;
+    static void Convert(const std::string& str, uint64_t& number);
+    static void Convert(const std::string& str, uint64_t& number, Error& error) noexcept;
+    static void Convert(std::string::const_iterator begin, std::string::const_iterator end, uint64_t& number);
+    static void Convert(std::string::const_iterator begin, std::string::const_iterator end, uint64_t& number,
+        Error& error) noexcept;
     static void Convert(boost::string_view::const_iterator begin, boost::string_view::const_iterator end,
         uint64_t& number);
     static void Convert(boost::string_view::const_iterator begin, boost::string_view::const_iterator end,
-        uint64_t& number, Error& error);
+        uint64_t& number, Error& error) noexcept;
 };
 
 }
