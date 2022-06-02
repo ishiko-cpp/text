@@ -60,6 +60,16 @@ ASCIITests::ASCIITests(const TestNumber& number, const TestContext& context)
     append<HeapAllocationErrorsTest>("Trim test 9", TrimTest9);
     append<HeapAllocationErrorsTest>("Trim test 10", TrimTest10);
     append<HeapAllocationErrorsTest>("Trim test 11", TrimTest11);
+    append<HeapAllocationErrorsTest>("RemovePrefix test 1", RemovePrefixTest1);
+    append<HeapAllocationErrorsTest>("RemovePrefix test 2", RemovePrefixTest2);
+    append<HeapAllocationErrorsTest>("RemovePrefix test 3", RemovePrefixTest3);
+    append<HeapAllocationErrorsTest>("RemovePrefix test 4", RemovePrefixTest4);
+    append<HeapAllocationErrorsTest>("RemovePrefix test 5", RemovePrefixTest5);
+    append<HeapAllocationErrorsTest>("RemoveSuffix test 1", RemoveSuffixTest1);
+    append<HeapAllocationErrorsTest>("RemoveSuffix test 2", RemoveSuffixTest2);
+    append<HeapAllocationErrorsTest>("RemoveSuffix test 3", RemoveSuffixTest3);
+    append<HeapAllocationErrorsTest>("RemoveSuffix test 4", RemoveSuffixTest4);
+    append<HeapAllocationErrorsTest>("RemoveSuffix test 5", RemoveSuffixTest5);
     append<HeapAllocationErrorsTest>("Convert to int8_t test 1", ConvertInt8Test1);
     append<HeapAllocationErrorsTest>("Convert to int8_t test 2", ConvertInt8Test2);
     append<HeapAllocationErrorsTest>("Convert to int8_t test 3", ConvertInt8Test3);
@@ -552,6 +562,116 @@ void ASCIITests::TrimTest11(Test& test)
     ASCII::Trim(str);
 
     ISHIKO_TEST_FAIL_IF_NEQ(str, "a");
+    ISHIKO_TEST_PASS();
+}
+
+void ASCIITests::RemovePrefixTest1(Test& test)
+{
+    std::string str = "abcdef";
+
+    bool removed = ASCII::RemovePrefix("ab", str);
+
+    ISHIKO_TEST_FAIL_IF_NOT(removed);
+    ISHIKO_TEST_FAIL_IF_NEQ(str, "cdef");
+    ISHIKO_TEST_PASS();
+}
+
+void ASCIITests::RemovePrefixTest2(Test& test)
+{
+    std::string str = "abcdef";
+
+    bool removed = ASCII::RemovePrefix("bcd", str);
+
+    ISHIKO_TEST_FAIL_IF(removed);
+    ISHIKO_TEST_FAIL_IF_NEQ(str, "abcdef");
+    ISHIKO_TEST_PASS();
+}
+
+void ASCIITests::RemovePrefixTest3(Test& test)
+{
+    std::string str = "abcdef";
+
+    bool removed = ASCII::RemovePrefix("", str);
+
+    ISHIKO_TEST_FAIL_IF_NOT(removed);
+    ISHIKO_TEST_FAIL_IF_NEQ(str, "abcdef");
+    ISHIKO_TEST_PASS();
+}
+
+void ASCIITests::RemovePrefixTest4(Test& test)
+{
+    std::string str = "abcdef";
+
+    bool removed = ASCII::RemovePrefix("abcdef", str);
+
+    ISHIKO_TEST_FAIL_IF_NOT(removed);
+    ISHIKO_TEST_FAIL_IF_NEQ(str, "");
+    ISHIKO_TEST_PASS();
+}
+
+void ASCIITests::RemovePrefixTest5(Test& test)
+{
+    std::string str = "abcdef";
+
+    bool removed = ASCII::RemovePrefix("abcdefg", str);
+
+    ISHIKO_TEST_FAIL_IF(removed);
+    ISHIKO_TEST_FAIL_IF_NEQ(str, "abcdef");
+    ISHIKO_TEST_PASS();
+}
+
+void ASCIITests::RemoveSuffixTest1(Test& test)
+{
+    std::string str = "abcdef";
+
+    bool removed = ASCII::RemoveSuffix("ef", str);
+
+    ISHIKO_TEST_FAIL_IF_NOT(removed);
+    ISHIKO_TEST_FAIL_IF_NEQ(str, "abcd");
+    ISHIKO_TEST_PASS();
+}
+
+void ASCIITests::RemoveSuffixTest2(Test& test)
+{
+    std::string str = "abcdef";
+
+    bool removed = ASCII::RemoveSuffix("cde", str);
+
+    ISHIKO_TEST_FAIL_IF(removed);
+    ISHIKO_TEST_FAIL_IF_NEQ(str, "abcdef");
+    ISHIKO_TEST_PASS();
+}
+
+void ASCIITests::RemoveSuffixTest3(Test& test)
+{
+    std::string str = "abcdef";
+
+    bool removed = ASCII::RemoveSuffix("", str);
+
+    ISHIKO_TEST_FAIL_IF_NOT(removed);
+    ISHIKO_TEST_FAIL_IF_NEQ(str, "abcdef");
+    ISHIKO_TEST_PASS();
+}
+
+void ASCIITests::RemoveSuffixTest4(Test& test)
+{
+    std::string str = "abcdef";
+
+    bool removed = ASCII::RemoveSuffix("abcdef", str);
+
+    ISHIKO_TEST_FAIL_IF_NOT(removed);
+    ISHIKO_TEST_FAIL_IF_NEQ(str, "");
+    ISHIKO_TEST_PASS();
+}
+
+void ASCIITests::RemoveSuffixTest5(Test& test)
+{
+    std::string str = "abcdef";
+
+    bool removed = ASCII::RemoveSuffix("abcdefg", str);
+
+    ISHIKO_TEST_FAIL_IF(removed);
+    ISHIKO_TEST_FAIL_IF_NEQ(str, "abcdef");
     ISHIKO_TEST_PASS();
 }
 
