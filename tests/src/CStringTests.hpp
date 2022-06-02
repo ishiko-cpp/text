@@ -20,6 +20,7 @@ private:
     static void SubstringTest2(Ishiko::Test& test);
     static void FindTest1(Ishiko::Test& test);
     static void StartsWithTest1(Ishiko::Test& test);
+    static void EndsWithTest1(Ishiko::Test& test);
 };
 
 #endif

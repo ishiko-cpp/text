@@ -50,4 +50,18 @@ bool CString::StartsWith(const char* str, const char* prefix)
     return (strncmp(str, prefix, strlen(prefix)) == 0);
 }
 
+bool CString::EndsWith(const char* str, const char* suffix)
+{
+    size_t strLength = strlen(str);
+    size_t suffixLength = strlen(suffix);
+    if (suffixLength > strLength)
+    {
+        return false;
+    }
+    else
+    {
+        return (strncmp((str + strLength - suffixLength), suffix, suffixLength) == 0);
+    }
+}
+
 }
