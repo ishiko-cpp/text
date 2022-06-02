@@ -60,6 +60,11 @@ ASCIITests::ASCIITests(const TestNumber& number, const TestContext& context)
     append<HeapAllocationErrorsTest>("Trim test 9", TrimTest9);
     append<HeapAllocationErrorsTest>("Trim test 10", TrimTest10);
     append<HeapAllocationErrorsTest>("Trim test 11", TrimTest11);
+    append<HeapAllocationErrorsTest>("RemovePrefix test 1", RemovePrefixTest1);
+    append<HeapAllocationErrorsTest>("RemovePrefix test 2", RemovePrefixTest2);
+    append<HeapAllocationErrorsTest>("RemovePrefix test 3", RemovePrefixTest3);
+    append<HeapAllocationErrorsTest>("RemovePrefix test 4", RemovePrefixTest4);
+    append<HeapAllocationErrorsTest>("RemovePrefix test 5", RemovePrefixTest5);
     append<HeapAllocationErrorsTest>("Convert to int8_t test 1", ConvertInt8Test1);
     append<HeapAllocationErrorsTest>("Convert to int8_t test 2", ConvertInt8Test2);
     append<HeapAllocationErrorsTest>("Convert to int8_t test 3", ConvertInt8Test3);
@@ -542,6 +547,61 @@ void ASCIITests::TrimTest10(Test& test)
     ASCII::Trim(str);
 
     ISHIKO_TEST_FAIL_IF_NEQ(str, "a");
+    ISHIKO_TEST_PASS();
+}
+
+void ASCIITests::RemovePrefixTest1(Test& test)
+{
+    std::string str = "abcdef";
+
+    bool removed = ASCII::RemovePrefix("ab", str);
+
+    ISHIKO_TEST_FAIL_IF_NOT(removed);
+    ISHIKO_TEST_FAIL_IF_NEQ(str, "cdef");
+    ISHIKO_TEST_PASS();
+}
+
+void ASCIITests::RemovePrefixTest2(Test& test)
+{
+    std::string str = "abcdef";
+
+    bool removed = ASCII::RemovePrefix("bcd", str);
+
+    ISHIKO_TEST_FAIL_IF(removed);
+    ISHIKO_TEST_FAIL_IF_NEQ(str, "abcdef");
+    ISHIKO_TEST_PASS();
+}
+
+void ASCIITests::RemovePrefixTest3(Test& test)
+{
+    std::string str = "abcdef";
+
+    bool removed = ASCII::RemovePrefix("", str);
+
+    ISHIKO_TEST_FAIL_IF_NOT(removed);
+    ISHIKO_TEST_FAIL_IF_NEQ(str, "abcdef");
+    ISHIKO_TEST_PASS();
+}
+
+void ASCIITests::RemovePrefixTest4(Test& test)
+{
+    std::string str = "abcdef";
+
+    bool removed = ASCII::RemovePrefix("abcdef", str);
+
+    ISHIKO_TEST_FAIL_IF_NOT(removed);
+    ISHIKO_TEST_FAIL_IF_NEQ(str, "");
+    ISHIKO_TEST_PASS();
+}
+
+void ASCIITests::RemovePrefixTest5(Test& test)
+{
+    std::string str = "abcdef";
+
+    bool removed = ASCII::RemovePrefix("abcdefg", str);
+
+    ISHIKO_TEST_FAIL_IF(removed);
+    ISHIKO_TEST_FAIL_IF_NEQ(str, "abcdef");
     ISHIKO_TEST_PASS();
 }
 
