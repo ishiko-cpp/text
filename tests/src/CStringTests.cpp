@@ -17,6 +17,7 @@ CStringTests::CStringTests(const TestNumber& number, const TestContext& context)
     append<HeapAllocationErrorsTest>("Substring test 2", SubstringTest2);
     append<HeapAllocationErrorsTest>("Find test 1", FindTest1);
     append<HeapAllocationErrorsTest>("StartsWith test 1", StartsWithTest1);
+    append<HeapAllocationErrorsTest>("EndsWith test 1", EndsWithTest1);
 }
 
 void CStringTests::DuplicateTest1(Test& test)
@@ -76,5 +77,17 @@ void CStringTests::StartsWithTest1(Test& test)
     ISHIKO_TEST_FAIL_IF_NOT(CString::StartsWith(str, "s"));
     ISHIKO_TEST_FAIL_IF_NOT(CString::StartsWith(str, "string"));
     ISHIKO_TEST_FAIL_IF(CString::StartsWith(str, "t"));
+    ISHIKO_TEST_FAIL_IF(CString::StartsWith(str, "stringent"));
+    ISHIKO_TEST_PASS();
+}
+
+void CStringTests::EndsWithTest1(Test& test)
+{
+    const char* str = "string";
+
+    ISHIKO_TEST_FAIL_IF_NOT(CString::EndsWith(str, "g"));
+    ISHIKO_TEST_FAIL_IF_NOT(CString::EndsWith(str, "string"));
+    ISHIKO_TEST_FAIL_IF(CString::EndsWith(str, "n"));
+    ISHIKO_TEST_FAIL_IF(CString::EndsWith(str, "stringent"));
     ISHIKO_TEST_PASS();
 }

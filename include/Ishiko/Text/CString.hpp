@@ -20,6 +20,7 @@ public:
     static std::string Substring(const char* str, size_t begin, size_t end);
     static size_t Find(const char* str, const char* substring);
     static bool StartsWith(const char* str, const char* prefix);
+    static bool EndsWith(const char* str, const char* suffix);
 };
 
 }
