@@ -5,6 +5,7 @@
 */
 
 #include "ASCII.hpp"
+#include "CString.hpp"
 #include "TextErrorCategory.hpp"
 #include <Ishiko/BasePlatform.h>
 
@@ -155,6 +156,33 @@ void ASCII::Trim(string& str)
         }
         str.erase(it, end);
         str.erase(begin, startIt);
+    }
+}
+
+bool ASCII::RemovePrefix(const std::string& prefix, std::string& str) noexcept
+{
+    if (CString::StartsWith(str.c_str(), prefix.c_str()))
+    {
+        str.erase(0, prefix.length());
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+bool ASCII::RemoveSuffix(const std::string& suffix, std::string& str) noexcept
+{
+    // TODO: we know the string length so we can do better than use EndsWidth
+    if (CString::EndsWith(str.c_str(), suffix.c_str()))
+    {
+        str.erase(str.size() - suffix.size());
+        return true;
+    }
+    else
+    {
+        return false;
     }
 }
 

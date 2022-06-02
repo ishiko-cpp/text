@@ -32,6 +32,10 @@ public:
     // TODO: at the moment this only trims spaces and not other whitespace characters,
     // allow to pass list of characters that can be trimmed, also allow to trim front or back
     static void Trim(std::string& str);
+    // TODO: this removes the prefix if it matches the start of the string, does nothing otherwise. Returns true if
+    // prefix was found and removed.
+    static bool RemovePrefix(const std::string& prefix, std::string& str) noexcept;
+    static bool RemoveSuffix(const std::string& suffix, std::string& str) noexcept;
 
     static void Convert(const std::string& str, int8_t& number, Error& error) noexcept;
     static void Convert(std::string::const_iterator begin, std::string::const_iterator end, int8_t& number,
