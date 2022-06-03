@@ -38,6 +38,7 @@ library IshikoText : IshikoErrors, IshikoBasePlatform, Boost
         ../../include/Ishiko/Text.hpp
         ../../include/Ishiko/Text/ASCII.hpp
         ../../include/Ishiko/Text/CString.hpp
+        ../../include/Ishiko/Text/InterpolatedString.hpp
         ../../include/Ishiko/Text/linkoptions.hpp
         ../../include/Ishiko/Text/TextErrorCategory.hpp
     }
@@ -46,6 +47,7 @@ library IshikoText : IshikoErrors, IshikoBasePlatform, Boost
     {
         ../../src/ASCII.cpp
         ../../src/CString.cpp
+        ../../src/InterpolatedString.cpp
         ../../src/TextErrorCategory.cpp
     }
 }

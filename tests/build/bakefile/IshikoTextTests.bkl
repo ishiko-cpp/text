@@ -27,12 +27,14 @@ program IshikoTextTests : IshikoText, IshikoTestFrameworkCore
     {
         ../../src/ASCIITests.hpp
         ../../src/CStringTests.hpp
+        ../../src/InterpolatedStringTests.hpp
     }
 
     sources
     {
         ../../src/ASCIITests.cpp
         ../../src/CStringTests.cpp
+        ../../src/InterpolatedStringTests.cpp
         ../../src/main.cpp
     }
 }
