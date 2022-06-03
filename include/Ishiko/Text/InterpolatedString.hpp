@@ -41,6 +41,7 @@ public:
     };
 
     InterpolatedString();
+    InterpolatedString(const char* str);
     InterpolatedString(std::string str);
 
     std::string expand(const Callbacks& callbacks, Error& error) const;

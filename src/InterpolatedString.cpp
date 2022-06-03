@@ -31,6 +31,11 @@ InterpolatedString::InterpolatedString()
 {
 }
 
+InterpolatedString::InterpolatedString(const char* str)
+    : m_string(str)
+{
+}
+
 InterpolatedString::InterpolatedString(std::string str)
     : m_string(str)
 {
