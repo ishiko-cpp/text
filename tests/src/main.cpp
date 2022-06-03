@@ -6,6 +6,7 @@
 
 #include "ASCIITests.hpp"
 #include "CStringTests.hpp"
+#include "InterpolatedStringTests.hpp"
 #include <Ishiko/TestFramework/Core.hpp>
 #include <Ishiko/Text/linkoptions.hpp>
 
@@ -18,6 +19,7 @@ int main(int argc, char* argv[])
     TestSequence& theTests = theTestHarness.tests();
     theTests.append<ASCIITests>();
     theTests.append<CStringTests>();
+    theTests.append<InterpolatedStringTests>();
 
     return theTestHarness.run();
 }
