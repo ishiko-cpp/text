@@ -9,8 +9,8 @@
 
 using namespace Ishiko;
 
-InterpolatedString::MapCallbacks::MapCallbacks(const std::map<std::string, std::string>& map)
-    : m_map(map)
+InterpolatedString::MapCallbacks::MapCallbacks(const std::map<std::string, std::string>& map, bool allowMissing)
+    : m_map(map), m_allowMissing(allowMissing)
 {
 }
 
@@ -21,7 +21,7 @@ void InterpolatedString::MapCallbacks::expand(boost::string_view variable, std::
     {
         result.append(it->second);
     }
-    else
+    else if (!m_allowMissing)
     {
         Fail(error, TextErrorCategory::Value::generic);
     }

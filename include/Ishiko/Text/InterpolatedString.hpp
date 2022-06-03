@@ -29,12 +29,13 @@ public:
     class MapCallbacks : public Callbacks
     {
     public:
-        MapCallbacks(const std::map<std::string, std::string>& map);
+        MapCallbacks(const std::map<std::string, std::string>& map, bool allowMissing);
 
         void expand(boost::string_view variable, std::string& result, Error& error) const override;
 
     private:
         const std::map<std::string, std::string>& m_map;
+        bool m_allowMissing;
     };
 
     InterpolatedString();

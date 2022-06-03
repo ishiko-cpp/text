@@ -23,6 +23,9 @@ private:
     static void ExpandTest4(Ishiko::Test& test);
     static void ExpandTest5(Ishiko::Test& test);
     static void ExpandTest6(Ishiko::Test& test);
+    static void ExpandTest7(Ishiko::Test& test);
+    static void ExpandTest8(Ishiko::Test& test);
+    static void ExpandErrorTest1(Ishiko::Test& test);
 };
 
 #endif

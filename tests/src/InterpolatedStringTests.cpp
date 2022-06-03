@@ -21,6 +21,9 @@ InterpolatedStringTests::InterpolatedStringTests(const TestNumber& number, const
     append<HeapAllocationErrorsTest>("expand test 4", ExpandTest4);
     append<HeapAllocationErrorsTest>("expand test 5", ExpandTest5);
     append<HeapAllocationErrorsTest>("expand test 6", ExpandTest6);
+    append<HeapAllocationErrorsTest>("expand test 7", ExpandTest7);
+    append<HeapAllocationErrorsTest>("expand test 8", ExpandTest8);
+    append<HeapAllocationErrorsTest>("expand error test 1", ExpandErrorTest1);
 }
 
 void InterpolatedStringTests::ConstructorTest1(Test& test)
@@ -42,7 +45,7 @@ void InterpolatedStringTests::ExpandTest1(Test& test)
     InterpolatedString string;
 
     std::map<std::string, std::string> map;
-    InterpolatedString::MapCallbacks callbacks(map);
+    InterpolatedString::MapCallbacks callbacks(map, false);
 
     Error error;
     std::string expandedString = string.expand(callbacks, error);
@@ -57,7 +60,7 @@ void InterpolatedStringTests::ExpandTest2(Test& test)
     InterpolatedString string("text");
 
     std::map<std::string, std::string> map;
-    InterpolatedString::MapCallbacks callbacks(map);
+    InterpolatedString::MapCallbacks callbacks(map, false);
 
     Error error;
     std::string expandedString = string.expand(callbacks, error);
@@ -73,7 +76,7 @@ void InterpolatedStringTests::ExpandTest3(Test& test)
 
     std::map<std::string, std::string> map1;
     map1["var1"] = "value1";
-    InterpolatedString::MapCallbacks callbacks1(map1);
+    InterpolatedString::MapCallbacks callbacks1(map1, false);
 
     Error error;
     std::string expandedString1 = string.expand(callbacks1, error);
@@ -83,7 +86,7 @@ void InterpolatedStringTests::ExpandTest3(Test& test)
 
     std::map<std::string, std::string> map2;
     map2["var1"] = "";
-    InterpolatedString::MapCallbacks callbacks2(map2);
+    InterpolatedString::MapCallbacks callbacks2(map2, false);
 
     std::string expandedString2 = string.expand(callbacks2, error);
 
@@ -99,7 +102,7 @@ void InterpolatedStringTests::ExpandTest4(Test& test)
 
     std::map<std::string, std::string> map1;
     map1["var1"] = "value1";
-    InterpolatedString::MapCallbacks callbacks1(map1);
+    InterpolatedString::MapCallbacks callbacks1(map1, false);
 
     Error error;
     std::string expandedString1 = string.expand(callbacks1, error);
@@ -109,7 +112,7 @@ void InterpolatedStringTests::ExpandTest4(Test& test)
 
     std::map<std::string, std::string> map2;
     map2["var1"] = "";
-    InterpolatedString::MapCallbacks callbacks2(map2);
+    InterpolatedString::MapCallbacks callbacks2(map2, false);
 
     std::string expandedString2 = string.expand(callbacks2, error);
 
@@ -125,7 +128,7 @@ void InterpolatedStringTests::ExpandTest5(Test& test)
 
     std::map<std::string, std::string> map1;
     map1["var1"] = "value1";
-    InterpolatedString::MapCallbacks callbacks1(map1);
+    InterpolatedString::MapCallbacks callbacks1(map1, false);
 
     Error error;
     std::string expandedString1 = string.expand(callbacks1, error);
@@ -135,7 +138,7 @@ void InterpolatedStringTests::ExpandTest5(Test& test)
 
     std::map<std::string, std::string> map2;
     map2["var1"] = "";
-    InterpolatedString::MapCallbacks callbacks2(map2);
+    InterpolatedString::MapCallbacks callbacks2(map2, false);
 
     std::string expandedString2 = string.expand(callbacks2, error);
 
@@ -152,12 +155,59 @@ void InterpolatedStringTests::ExpandTest6(Test& test)
     std::map<std::string, std::string> map;
     map["var1"] = "value1";
     map["var2"] = "value2";
-    InterpolatedString::MapCallbacks callbacks(map);
+    InterpolatedString::MapCallbacks callbacks(map, false);
 
     Error error;
     std::string expandedString = string.expand(callbacks, error);
 
     ISHIKO_TEST_FAIL_IF(error);
     ISHIKO_TEST_FAIL_IF_NEQ(expandedString, "value1value2");
+    ISHIKO_TEST_PASS();
+}
+
+void InterpolatedStringTests::ExpandTest7(Test& test)
+{
+    InterpolatedString string("start${var1}middle${var2}end");
+
+    std::map<std::string, std::string> map;
+    map["var1"] = "value1";
+    map["var2"] = "value2";
+    InterpolatedString::MapCallbacks callbacks(map, false);
+
+    Error error;
+    std::string expandedString = string.expand(callbacks, error);
+
+    ISHIKO_TEST_FAIL_IF(error);
+    ISHIKO_TEST_FAIL_IF_NEQ(expandedString, "startvalue1middlevalue2end");
+    ISHIKO_TEST_PASS();
+}
+
+void InterpolatedStringTests::ExpandTest8(Test& test)
+{
+    InterpolatedString string("start${var1}middle${var2}end");
+
+    std::map<std::string, std::string> map;
+    map["var1"] = "value1";
+    InterpolatedString::MapCallbacks callbacks(map, true);
+
+    Error error;
+    std::string expandedString = string.expand(callbacks, error);
+
+    ISHIKO_TEST_FAIL_IF(error);
+    ISHIKO_TEST_FAIL_IF_NEQ(expandedString, "startvalue1middleend");
+    ISHIKO_TEST_PASS();
+}
+
+void InterpolatedStringTests::ExpandErrorTest1(Test& test)
+{
+    InterpolatedString string("${var1}");
+
+    std::map<std::string, std::string> map;
+    InterpolatedString::MapCallbacks callbacks(map, false);
+
+    Error error;
+    std::string expandedString = string.expand(callbacks, error);
+
+    ISHIKO_TEST_FAIL_IF_NOT(error);
     ISHIKO_TEST_PASS();
 }
