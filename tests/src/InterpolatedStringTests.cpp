@@ -5,6 +5,7 @@
 */
 
 #include "InterpolatedStringTests.hpp"
+#include "Ishiko/Text/InterpolatedString.hpp"
 
 using namespace Ishiko;
 
@@ -16,4 +17,7 @@ InterpolatedStringTests::InterpolatedStringTests(const TestNumber& number, const
 
 void InterpolatedStringTests::ConstructorTest1(Test& test)
 {
+    InterpolatedString string;
+
+    ISHIKO_TEST_PASS();
 }
