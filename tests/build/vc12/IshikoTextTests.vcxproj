@@ -154,11 +154,13 @@
   <ItemGroup>
     <ClCompile Include="..\..\src\ASCIITests.cpp" />
     <ClCompile Include="..\..\src\CStringTests.cpp" />
+    <ClCompile Include="..\..\src\InterpolatedStringTests.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\ASCIITests.hpp" />
     <ClInclude Include="..\..\src\CStringTests.hpp" />
+    <ClInclude Include="..\..\src\InterpolatedStringTests.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
