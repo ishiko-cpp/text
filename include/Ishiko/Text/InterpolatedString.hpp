@@ -22,6 +22,8 @@ public:
     class Callbacks
     {
     public:
+        virtual ~Callbacks() = default;
+
         // TODO: it is up to the callback to decide whether to return an error when a variable is not found or not.
         virtual void expand(boost::string_view variable, std::string& result, Error& error) const = 0;
     };
