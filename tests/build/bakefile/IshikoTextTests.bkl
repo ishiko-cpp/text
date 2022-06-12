@@ -28,6 +28,7 @@ program IshikoTextTests : IshikoText, IshikoTestFrameworkCore
         ../../src/ASCIITests.hpp
         ../../src/CStringTests.hpp
         ../../src/InterpolatedStringTests.hpp
+        ../../src/TruncatedStringTests.hpp
     }
 
     sources
@@ -36,5 +37,6 @@ program IshikoTextTests : IshikoText, IshikoTestFrameworkCore
         ../../src/CStringTests.cpp
         ../../src/InterpolatedStringTests.cpp
         ../../src/main.cpp
+        ../../src/TruncatedStringTests.cpp
     }
 }
