@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: ishiko/gcc-ishiko-cpp-build-prerequisites:0.2.0
+      - image: ishiko/gcc-ishiko-cpp-build-prerequisites:0.3.0
     steps:
       - run: 
           name: "Set ISHIKO_CPP environment variable and create workspace directory"
@@ -31,8 +31,14 @@ jobs:
           name: "Install test dependency: Ishiko/C++ FileSystem"
           command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/filesystem.git && cd filesystem/build/gnumake && make
       - run:
+          name: "Install test dependency: Ishiko/C++ XML"
+          command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/xml.git && cd xml/build/gnumake && make
+      - run:
           name: "Install test dependency: Ishiko/C++ Diff"
           command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/diff.git && cd diff/build/gnumake && make
+      - run:
+          name: "Install test dependency: Ishiko/C++ Configuration"
+          command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/configuration.git && cd configuration/build/gnumake && make
       - run:
           name: "Install test dependency: Ishiko/C++ Tests/Core"
           command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/test-framework.git && cd test-framework/core/build/gnumake && make

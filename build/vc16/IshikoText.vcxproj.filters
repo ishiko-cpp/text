@@ -35,6 +35,9 @@
     <ClInclude Include="..\..\include\Ishiko\Text\TextErrorCategory.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\Ishiko\Text\TruncatedString.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\ASCII.cpp">
@@ -47,6 +50,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\TextErrorCategory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\TruncatedString.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
