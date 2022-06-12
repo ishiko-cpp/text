@@ -7,11 +7,26 @@
 #ifndef _ISHIKO_CPP_TEXT_TRUNCATEDSTRING_HPP_
 #define _ISHIKO_CPP_TEXT_TRUNCATEDSTRING_HPP_
 
+#include <string>
+
 namespace Ishiko
 {
 
 class TruncatedString
 {
+public:
+    TruncatedString(size_t maxSize);
+    TruncatedString(const std::string& str, size_t maxSize);
+
+    size_t size() const noexcept;
+    size_t maxSize() const noexcept;
+
+    const std::string& asString() const noexcept;
+
+private:
+    std::string m_string;
+    size_t m_maxSize;
+    std::string m_ellipsis;
 };
 
 }
