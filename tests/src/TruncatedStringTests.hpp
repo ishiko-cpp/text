@@ -18,6 +18,13 @@ private:
     static void ConstructorTest1(Ishiko::Test& test);
     static void ConstructorTest2(Ishiko::Test& test);
     static void ConstructorTest3(Ishiko::Test& test);
+    static void AppendTest1(Ishiko::Test& test);
+    static void AppendTest2(Ishiko::Test& test);
+    static void AppendTest3(Ishiko::Test& test);
+    static void AppendTest4(Ishiko::Test& test);
+    static void AppendTest5(Ishiko::Test& test);
+    static void AppendTest6(Ishiko::Test& test);
+    static void AppendTest7(Ishiko::Test& test);
 };
 
 #endif

@@ -20,6 +20,9 @@ public:
 
     size_t size() const noexcept;
     size_t maxSize() const noexcept;
+    bool isTruncated() const noexcept;
+
+    void append(const std::string& str);
 
     const std::string& asString() const noexcept;
 
@@ -27,6 +30,7 @@ private:
     std::string m_string;
     size_t m_maxSize;
     std::string m_ellipsis;
+    bool m_hasEllipsis;
 };
 
 }
