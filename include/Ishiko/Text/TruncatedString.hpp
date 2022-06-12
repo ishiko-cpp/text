@@ -7,4 +7,13 @@
 #ifndef _ISHIKO_CPP_TEXT_TRUNCATEDSTRING_HPP_
 #define _ISHIKO_CPP_TEXT_TRUNCATEDSTRING_HPP_
 
+namespace Ishiko
+{
+
+class TruncatedString
+{
+};
+
+}
+
 #endif

@@ -5,6 +5,7 @@
 */
 
 #include "TruncatedStringTests.hpp"
+#include "Ishiko/Text/TruncatedString.hpp"
 
 using namespace Ishiko;
 
@@ -16,4 +17,7 @@ TruncatedStringTests::TruncatedStringTests(const TestNumber& number, const TestC
 
 void TruncatedStringTests::ConstructorTest1(Test& test)
 {
+    TruncatedString string;
+
+    ISHIKO_TEST_PASS();
 }
