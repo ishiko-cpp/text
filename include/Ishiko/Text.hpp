@@ -10,8 +10,8 @@
 #include "Text/ASCII.hpp"
 #include "Text/CString.hpp"
 #include "Text/InterpolatedString.hpp"
-#include "Text/TextErrorCategory.hpp"
-
 #include "Text/linkoptions.hpp"
+#include "Text/TextErrorCategory.hpp"
+#include "Text/TruncatedString.hpp"
 
 #endif
