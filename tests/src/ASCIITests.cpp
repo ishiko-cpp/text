@@ -776,7 +776,7 @@ void ASCIITests::ConvertUint16Test1(Test& test)
     Error error;
     std::string number = "0";
     uint16_t n = 0;
-    ASCII::Convert(number.begin(), number.end(), n, error);
+    ASCII::Convert(number.begin(), number.end(), std::ios::dec, n, error);
 
     ISHIKO_TEST_FAIL_IF(error);
     ISHIKO_TEST_FAIL_IF_NEQ(n, 0);
@@ -788,7 +788,7 @@ void ASCIITests::ConvertUint16Test2(Test& test)
     Error error;
     std::string number = "65535";
     uint16_t n = 0;
-    ASCII::Convert(number.begin(), number.end(), n, error);
+    ASCII::Convert(number.begin(), number.end(), std::ios::dec, n, error);
 
     ISHIKO_TEST_FAIL_IF(error);
     ISHIKO_TEST_FAIL_IF_NEQ(n, 65535);
