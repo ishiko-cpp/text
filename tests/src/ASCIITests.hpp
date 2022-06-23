@@ -83,6 +83,8 @@ private:
     static void ConvertInt16Test3(Ishiko::Test& test);
     static void ConvertUint16Test1(Ishiko::Test& test);
     static void ConvertUint16Test2(Ishiko::Test& test);
+    static void ConvertUint16Test3(Ishiko::Test& test);
+    static void ConvertUint16Test4(Ishiko::Test& test);
     static void ConvertUint64Test1(Ishiko::Test& test);
     static void ConvertUint64Test2(Ishiko::Test& test);
     static void ConvertUint64Test3(Ishiko::Test& test);
