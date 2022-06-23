@@ -34,6 +34,11 @@ bool ASCII::IsAlphanumeric(char c) noexcept
     return (IsAlpha(c) || IsNumeric(c));
 }
 
+bool ASCII::IsHexDigit(char c) noexcept
+{
+    return (IsNumeric(c) || ((c >= 'a') && (c <= 'f')) || ((c >= 'A') && (c <= 'F')));
+}
+
 bool ASCII::IsWhitespace(char c) noexcept
 {
     return ((c == ' ') || (c == '\r') || (c == '\n') || (c == '\t') || (c == '\v'));
@@ -410,17 +415,46 @@ void ASCII::Convert(std::string::const_iterator begin, std::string::const_iterat
         return;
     }
     unsigned int result = 0;
-    while ((begin != end) && (result < 65536))
+    if (base == std::ios::dec)
     {
-        char c = *begin;
-        if (!IsNumeric(c))
+        while ((begin != end) && (result < 65536))
         {
-            // TODO: better error
-            Fail(error, TextErrorCategory::Value::generic);
-            return;
+            char c = *begin;
+            if (!IsNumeric(c))
+            {
+                // TODO: better error
+                Fail(error, TextErrorCategory::Value::generic);
+                return;
+            }
+            result = ((10 * result) + (c - '0'));
+            ++begin;
         }
-        result = ((10 * result) + (c - '0'));
-        ++begin;
+    }
+    else if (base == std::ios::hex)
+    {
+        while ((begin != end) && (result < 65536))
+        {
+            char c = *begin;
+            if (IsNumeric(c))
+            {
+                result = ((16 * result) + (c - '0'));
+            }
+            else if ((c >= 'a') && (c <= 'f'))
+            {
+                result = ((16 * result) + (c - 'a' + 10));
+            }
+            else if ((c >= 'A') && (c <= 'F'))
+            {
+                result = ((16 * result) + (c - 'A' + 10));
+            }
+            else
+            {
+                // TODO: better error
+                Fail(error, TextErrorCategory::Value::generic);
+                return;
+            }
+            ++begin;
+        }
     }
     if (result >= 65536)
     {

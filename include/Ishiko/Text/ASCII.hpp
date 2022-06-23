@@ -24,6 +24,7 @@ public:
     static bool IsAlpha(char c) noexcept;
     static bool IsNumeric(char c) noexcept;
     static bool IsAlphanumeric(char c) noexcept;
+    static bool IsHexDigit(char c) noexcept;
     static bool IsWhitespace(char c) noexcept;
 
     static std::vector<std::string> GetLines(const std::string& str);

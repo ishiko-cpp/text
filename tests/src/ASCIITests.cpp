@@ -80,6 +80,8 @@ ASCIITests::ASCIITests(const TestNumber& number, const TestContext& context)
     append<HeapAllocationErrorsTest>("Convert to int16_t test 3", ConvertInt16Test3);
     append<HeapAllocationErrorsTest>("Convert to uint16_t test 1", ConvertUint16Test1);
     append<HeapAllocationErrorsTest>("Convert to uint16_t test 2", ConvertUint16Test2);
+    append<HeapAllocationErrorsTest>("Convert to uint16_t test 3", ConvertUint16Test3);
+    append<HeapAllocationErrorsTest>("Convert to uint16_t test 4", ConvertUint16Test4);
     append<HeapAllocationErrorsTest>("Convert to uint64_t test 1", ConvertUint64Test1);
     append<HeapAllocationErrorsTest>("Convert to uint64_t test 2", ConvertUint64Test2);
     append<HeapAllocationErrorsTest>("Convert to uint64_t test 3", ConvertUint64Test3);
@@ -789,6 +791,30 @@ void ASCIITests::ConvertUint16Test2(Test& test)
     std::string number = "65535";
     uint16_t n = 0;
     ASCII::Convert(number.begin(), number.end(), std::ios::dec, n, error);
+
+    ISHIKO_TEST_FAIL_IF(error);
+    ISHIKO_TEST_FAIL_IF_NEQ(n, 65535);
+    ISHIKO_TEST_PASS();
+}
+
+void ASCIITests::ConvertUint16Test3(Test& test)
+{
+    Error error;
+    std::string number = "0";
+    uint16_t n = 0;
+    ASCII::Convert(number.begin(), number.end(), std::ios::hex, n, error);
+
+    ISHIKO_TEST_FAIL_IF(error);
+    ISHIKO_TEST_FAIL_IF_NEQ(n, 0);
+    ISHIKO_TEST_PASS();
+}
+
+void ASCIITests::ConvertUint16Test4(Test& test)
+{
+    Error error;
+    std::string number = "FFFF";
+    uint16_t n = 0;
+    ASCII::Convert(number.begin(), number.end(), std::ios::hex, n, error);
 
     ISHIKO_TEST_FAIL_IF(error);
     ISHIKO_TEST_FAIL_IF_NEQ(n, 65535);
