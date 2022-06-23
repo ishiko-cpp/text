@@ -9,8 +9,6 @@
 #include "TextErrorCategory.hpp"
 #include <Ishiko/BasePlatform.h>
 
-using namespace std;
-
 using namespace Ishiko;
 
 #if ISHIKO_OS == ISHIKO_OS_LINUX
@@ -36,18 +34,23 @@ bool ASCII::IsAlphanumeric(char c) noexcept
     return (IsAlpha(c) || IsNumeric(c));
 }
 
+bool ASCII::IsHexDigit(char c) noexcept
+{
+    return (IsNumeric(c) || ((c >= 'a') && (c <= 'f')) || ((c >= 'A') && (c <= 'F')));
+}
+
 bool ASCII::IsWhitespace(char c) noexcept
 {
     return ((c == ' ') || (c == '\r') || (c == '\n') || (c == '\t') || (c == '\v'));
 }
 
-vector<string> ASCII::GetLines(const std::string& str)
+std::vector<std::string> ASCII::GetLines(const std::string& str)
 {
-    vector<string> result;
+    std::vector<std::string> result;
 
-    string::const_iterator it = str.begin();
-    string::const_iterator end = str.end();
-    string::const_iterator previousIt = it;
+    std::string::const_iterator it = str.begin();
+    std::string::const_iterator end = str.end();
+    std::string::const_iterator previousIt = it;
     while (it != end)
     {
         if ((*it != '\r') && (*it != '\n'))
@@ -82,13 +85,13 @@ vector<string> ASCII::GetLines(const std::string& str)
     return result;
 }
 
-vector<string> ASCII::Split(const std::string& str, char separator, bool conflateAdjacentSeparators)
+std::vector<std::string> ASCII::Split(const std::string& str, char separator, bool conflateAdjacentSeparators)
 {
-    vector<string> result;
+    std::vector<std::string> result;
 
-    string::const_iterator it = str.begin();
-    string::const_iterator end = str.end();
-    string::const_iterator previousIt = it;
+    std::string::const_iterator it = str.begin();
+    std::string::const_iterator end = str.end();
+    std::string::const_iterator previousIt = it;
     while (it != end)
     {
         if (*it != separator)
@@ -115,7 +118,7 @@ vector<string> ASCII::Split(const std::string& str, char separator, bool conflat
     return result;
 }
 
-void ASCII::ToLowerCase(string& str)
+void ASCII::ToLowerCase(std::string& str)
 {
     for (char& c : str)
     {
@@ -126,7 +129,7 @@ void ASCII::ToLowerCase(string& str)
     }
 }
 
-void ASCII::ToUpperCase(string& str)
+void ASCII::ToUpperCase(std::string& str)
 {
     for (char& c : str)
     {
@@ -137,18 +140,18 @@ void ASCII::ToUpperCase(string& str)
     }
 }
 
-void ASCII::Trim(string& str)
+void ASCII::Trim(std::string& str)
 {
     if (!str.empty())
     {
-        string::const_iterator begin = str.begin();
-        string::const_iterator it = str.begin();
-        string::const_iterator end = str.end();
+        std::string::const_iterator begin = str.begin();
+        std::string::const_iterator it = str.begin();
+        std::string::const_iterator end = str.end();
         while ((it != end) && (*it == ' '))
         {
             ++it;
         }
-        string::const_iterator startIt = it;
+        std::string::const_iterator startIt = it;
         it = end;
         while ((it != startIt) && (*(it - 1) == ' '))
         {
@@ -186,12 +189,28 @@ bool ASCII::RemoveSuffix(const std::string& suffix, std::string& str) noexcept
     }
 }
 
+std::string ASCII::ToHexString(uint16_t number)
+{
+    std::string result;
+    result.resize(4);
+    char c = ((number >> 12) & 0x000F);
+    result[0] = ((c < 10) ? (c + '0') : (c + 'a' - 10));
+    c = ((number >> 8) & 0x000F);
+    result[1] = ((c < 10) ? (c + '0') : (c + 'a' - 10));
+    c = ((number >> 4) & 0x000F);
+    result[2] = ((c < 10) ? (c + '0') : (c + 'a' - 10));
+    c = (number & 0x000F);
+    result[3] = ((c < 10) ? (c + '0') : (c + 'a' - 10));
+    return result;
+}
+
 void ASCII::Convert(const std::string& str, int8_t& number, Error& error) noexcept
 {
     Convert(str.begin(), str.end(), number, error);
 }
 
-void ASCII::Convert(string::const_iterator begin, string::const_iterator end, int8_t& number, Error& error) noexcept
+void ASCII::Convert(std::string::const_iterator begin, std::string::const_iterator end, int8_t& number,
+    Error& error) noexcept
 {
     if (begin == end)
     {
@@ -253,7 +272,8 @@ void ASCII::Convert(const std::string& str, uint8_t& number, Error& error) noexc
     Convert(str.begin(), str.end(), number, error);
 }
 
-void ASCII::Convert(string::const_iterator begin, string::const_iterator end, uint8_t& number, Error& error) noexcept
+void ASCII::Convert(std::string::const_iterator begin, std::string::const_iterator end, uint8_t& number,
+    Error& error) noexcept
 {
     if (begin == end)
     {
@@ -305,7 +325,8 @@ void ASCII::Convert(const std::string& str, int16_t& number, Error& error) noexc
     Convert(str.begin(), str.end(), number, error);
 }
 
-void ASCII::Convert(string::const_iterator begin, string::const_iterator end, int16_t& number, Error& error) noexcept
+void ASCII::Convert(std::string::const_iterator begin, std::string::const_iterator end, int16_t& number,
+    Error& error) noexcept
 {
     if (begin == end)
     {
@@ -362,12 +383,13 @@ void ASCII::Convert(string::const_iterator begin, string::const_iterator end, in
     number = static_cast<int16_t>(result);
 }
 
-void ASCII::Convert(const std::string& str, uint16_t& number, Error& error) noexcept
+void ASCII::Convert(const std::string& str, std::ios_base::fmtflags base, uint16_t& number, Error& error) noexcept
 {
-    Convert(str.begin(), str.end(), number, error);
+    Convert(str.begin(), str.end(), base, number, error);
 }
 
-void ASCII::Convert(string::const_iterator begin, string::const_iterator end, uint16_t& number, Error& error) noexcept
+void ASCII::Convert(std::string::const_iterator begin, std::string::const_iterator end, std::ios_base::fmtflags base,
+    uint16_t& number, Error& error) noexcept
 {
     if (begin == end)
     {
@@ -393,17 +415,46 @@ void ASCII::Convert(string::const_iterator begin, string::const_iterator end, ui
         return;
     }
     unsigned int result = 0;
-    while ((begin != end) && (result < 65536))
+    if (base == std::ios::dec)
     {
-        char c = *begin;
-        if (!IsNumeric(c))
+        while ((begin != end) && (result < 65536))
         {
-            // TODO: better error
-            Fail(error, TextErrorCategory::Value::generic);
-            return;
+            char c = *begin;
+            if (!IsNumeric(c))
+            {
+                // TODO: better error
+                Fail(error, TextErrorCategory::Value::generic);
+                return;
+            }
+            result = ((10 * result) + (c - '0'));
+            ++begin;
         }
-        result = ((10 * result) + (c - '0'));
-        ++begin;
+    }
+    else if (base == std::ios::hex)
+    {
+        while ((begin != end) && (result < 65536))
+        {
+            char c = *begin;
+            if (IsNumeric(c))
+            {
+                result = ((16 * result) + (c - '0'));
+            }
+            else if ((c >= 'a') && (c <= 'f'))
+            {
+                result = ((16 * result) + (c - 'a' + 10));
+            }
+            else if ((c >= 'A') && (c <= 'F'))
+            {
+                result = ((16 * result) + (c - 'A' + 10));
+            }
+            else
+            {
+                // TODO: better error
+                Fail(error, TextErrorCategory::Value::generic);
+                return;
+            }
+            ++begin;
+        }
     }
     if (result >= 65536)
     {

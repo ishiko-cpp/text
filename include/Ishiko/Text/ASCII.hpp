@@ -9,6 +9,7 @@
 
 #include <Ishiko/Errors.hpp>
 #include <boost/utility/string_view.hpp>
+#include <ios>
 #include <string>
 #include <vector>
 
@@ -23,6 +24,7 @@ public:
     static bool IsAlpha(char c) noexcept;
     static bool IsNumeric(char c) noexcept;
     static bool IsAlphanumeric(char c) noexcept;
+    static bool IsHexDigit(char c) noexcept;
     static bool IsWhitespace(char c) noexcept;
 
     static std::vector<std::string> GetLines(const std::string& str);
@@ -37,6 +39,10 @@ public:
     static bool RemovePrefix(const std::string& prefix, std::string& str) noexcept;
     static bool RemoveSuffix(const std::string& suffix, std::string& str) noexcept;
 
+    // TODO: should have uppercase and lowercase options, always lower case for now
+    static std::string ToHexString(uint16_t number);
+
+    // TODO: all these conversion functions assume base 10
     static void Convert(const std::string& str, int8_t& number, Error& error) noexcept;
     static void Convert(std::string::const_iterator begin, std::string::const_iterator end, int8_t& number,
         Error& error) noexcept;
@@ -46,9 +52,9 @@ public:
     static void Convert(const std::string& str, int16_t& number, Error& error) noexcept;
     static void Convert(std::string::const_iterator begin, std::string::const_iterator end, int16_t& number,
         Error& error) noexcept;
-    static void Convert(const std::string& str, uint16_t& number, Error& error) noexcept;
-    static void Convert(std::string::const_iterator begin, std::string::const_iterator end, uint16_t& number,
-        Error& error) noexcept;
+    static void Convert(const std::string& str, std::ios_base::fmtflags base, uint16_t& number, Error& error) noexcept;
+    static void Convert(std::string::const_iterator begin, std::string::const_iterator end,
+        std::ios_base::fmtflags base, uint16_t& number, Error& error) noexcept;
     static void Convert(const std::string& str, uint64_t& number);
     static void Convert(const std::string& str, uint64_t& number, Error& error) noexcept;
     static void Convert(std::string::const_iterator begin, std::string::const_iterator end, uint64_t& number);
