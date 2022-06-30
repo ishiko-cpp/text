@@ -215,6 +215,23 @@ std::string ASCII::ToHexString(uint16_t number)
     return result;
 }
 
+std::string ASCII::ToHexString(const Byte* bytes, size_t count)
+{
+    std::string result;
+    result.resize(2 * count);
+    const Byte* end = (bytes + count);
+    size_t i = 0;
+    while (bytes != end)
+    {
+        char c = ((*bytes >> 4) & 0x0F);
+        result[i++] = ((c < 10) ? (c + '0') : (c + 'a' - 10));
+        c = (*bytes & 0x0F);
+        result[i++] = ((c < 10) ? (c + '0') : (c + 'a' - 10));
+        ++bytes;
+    }
+    return result;
+}
+
 void ASCII::Convert(const std::string& str, int8_t& number, Error& error) noexcept
 {
     Convert(str.begin(), str.end(), number, error);

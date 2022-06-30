@@ -43,6 +43,7 @@ public:
     // TODO: should have uppercase and lowercase options, always lower case for now
     static std::string ToHexString(Byte byte);
     static std::string ToHexString(uint16_t number);
+    static std::string ToHexString(const Byte* bytes, size_t count);
 
     // TODO: all these conversion functions assume base 10
     static void Convert(const std::string& str, int8_t& number, Error& error) noexcept;

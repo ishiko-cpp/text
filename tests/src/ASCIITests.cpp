@@ -72,6 +72,7 @@ ASCIITests::ASCIITests(const TestNumber& number, const TestContext& context)
     append<HeapAllocationErrorsTest>("RemoveSuffix test 5", RemoveSuffixTest5);
     append<HeapAllocationErrorsTest>("ToHexString test 1", ToHexStringTest1);
     append<HeapAllocationErrorsTest>("ToHexString test 2", ToHexStringTest2);
+    append<HeapAllocationErrorsTest>("ToHexString test 3", ToHexStringTest3);
     append<HeapAllocationErrorsTest>("Convert to int8_t test 1", ConvertInt8Test1);
     append<HeapAllocationErrorsTest>("Convert to int8_t test 2", ConvertInt8Test2);
     append<HeapAllocationErrorsTest>("Convert to int8_t test 3", ConvertInt8Test3);
@@ -694,6 +695,15 @@ void ASCIITests::ToHexStringTest2(Test& test)
     std::string hexString = ASCII::ToHexString(number);
 
     ISHIKO_TEST_FAIL_IF_NEQ(hexString, "ffff");
+    ISHIKO_TEST_PASS();
+}
+
+void ASCIITests::ToHexStringTest3(Test& test)
+{
+    Byte bytes[] = "\x01\x0F\x10\xF0";
+    std::string hexString = ASCII::ToHexString(bytes, 4);
+
+    ISHIKO_TEST_FAIL_IF_NEQ(hexString, "010f10f0");
     ISHIKO_TEST_PASS();
 }
 
