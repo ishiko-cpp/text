@@ -73,6 +73,9 @@ private:
     static void RemoveSuffixTest3(Ishiko::Test& test);
     static void RemoveSuffixTest4(Ishiko::Test& test);
     static void RemoveSuffixTest5(Ishiko::Test& test);
+    static void ToHexStringTest1(Ishiko::Test& test);
+    static void ToHexStringTest2(Ishiko::Test& test);
+    static void ToHexStringTest3(Ishiko::Test& test);
     static void ConvertInt8Test1(Ishiko::Test& test);
     static void ConvertInt8Test2(Ishiko::Test& test);
     static void ConvertInt8Test3(Ishiko::Test& test);
