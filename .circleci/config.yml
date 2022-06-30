@@ -13,6 +13,9 @@ jobs:
       - run:
           name: "Install build dependency: Ishiko/C++ Errors"
           command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/errors.git && cd errors/build/gnumake && make
+      - run:
+          name: "Install build dependency: Ishiko/C++ Memory"
+          command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/memory.git && cd memory/build/gnumake && make
       - checkout:
           path: /projects/ishiko/cpp/text
       - run:
