@@ -8,6 +8,7 @@
 #define _ISHIKO_CPP_TEXT_ASCII_HPP_
 
 #include <Ishiko/Errors.hpp>
+#include <Ishiko/Memory.hpp>
 #include <boost/utility/string_view.hpp>
 #include <ios>
 #include <string>
@@ -40,6 +41,7 @@ public:
     static bool RemoveSuffix(const std::string& suffix, std::string& str) noexcept;
 
     // TODO: should have uppercase and lowercase options, always lower case for now
+    static std::string ToHexString(Byte byte);
     static std::string ToHexString(uint16_t number);
 
     // TODO: all these conversion functions assume base 10

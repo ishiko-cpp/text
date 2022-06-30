@@ -189,6 +189,17 @@ bool ASCII::RemoveSuffix(const std::string& suffix, std::string& str) noexcept
     }
 }
 
+std::string ASCII::ToHexString(Byte byte)
+{
+    std::string result;
+    result.resize(2);
+    char c = ((byte >> 4) & 0x0F);
+    result[0] = ((c < 10) ? (c + '0') : (c + 'a' - 10));
+    c = (byte & 0x0F);
+    result[1] = ((c < 10) ? (c + '0') : (c + 'a' - 10));
+    return result;
+}
+
 std::string ASCII::ToHexString(uint16_t number)
 {
     std::string result;
