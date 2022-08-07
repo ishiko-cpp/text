@@ -243,7 +243,7 @@ void ASCII::Convert(std::string::const_iterator begin, std::string::const_iterat
     if (begin == end)
     {
         // TODO: better error
-        Fail(error, TextErrorCategory::Value::generic);
+        Fail(TextErrorCategory::Value::generic, error);
         return;
     }
 
@@ -254,7 +254,7 @@ void ASCII::Convert(std::string::const_iterator begin, std::string::const_iterat
         if (begin == end)
         {
             // TODO: better error
-            Fail(error, TextErrorCategory::Value::generic);
+            Fail(TextErrorCategory::Value::generic, error);
             return;
         }
     }
@@ -265,7 +265,7 @@ void ASCII::Convert(std::string::const_iterator begin, std::string::const_iterat
         if (begin == end)
         {
             // TODO: better error
-            Fail(error, TextErrorCategory::Value::generic);
+            Fail(TextErrorCategory::Value::generic, error);
             return;
         }
     }
@@ -276,7 +276,7 @@ void ASCII::Convert(std::string::const_iterator begin, std::string::const_iterat
         if (!IsNumeric(c))
         {
             // TODO: better error
-            Fail(error, TextErrorCategory::Value::generic);
+            Fail(TextErrorCategory::Value::generic, error);
             return;
         }
         result = ((10 * result) + (c - '0'));
@@ -289,7 +289,7 @@ void ASCII::Convert(std::string::const_iterator begin, std::string::const_iterat
     if ((result <= -129) || (result >= 128))
     {
         // TODO: better error
-        Fail(error, TextErrorCategory::Value::generic);
+        Fail(TextErrorCategory::Value::generic, error);
         return;
     }
     number = static_cast<int8_t>(result);
@@ -306,7 +306,7 @@ void ASCII::Convert(std::string::const_iterator begin, std::string::const_iterat
     if (begin == end)
     {
         // TODO: better error
-        Fail(error, TextErrorCategory::Value::generic);
+        Fail(TextErrorCategory::Value::generic, error);
         return;
     }
 
@@ -316,14 +316,14 @@ void ASCII::Convert(std::string::const_iterator begin, std::string::const_iterat
         if (begin == end)
         {
             // TODO: better error
-            Fail(error, TextErrorCategory::Value::generic);
+            Fail(TextErrorCategory::Value::generic, error);
             return;
         }
     }
     else if (*begin == '-')
     {
         // TODO: better error
-        Fail(error, TextErrorCategory::Value::generic);
+        Fail(TextErrorCategory::Value::generic, error);
         return;
     }
     unsigned int result = 0;
@@ -333,7 +333,7 @@ void ASCII::Convert(std::string::const_iterator begin, std::string::const_iterat
         if (!IsNumeric(c))
         {
             // TODO: better error
-            Fail(error, TextErrorCategory::Value::generic);
+            Fail(TextErrorCategory::Value::generic, error);
             return;
         }
         result = ((10 * result) + (c - '0'));
@@ -342,7 +342,7 @@ void ASCII::Convert(std::string::const_iterator begin, std::string::const_iterat
     if (result >= 256)
     {
         // TODO: better error
-        Fail(error, TextErrorCategory::Value::generic);
+        Fail(TextErrorCategory::Value::generic, error);
         return;
     }
     number = static_cast<uint8_t>(result);
@@ -359,7 +359,7 @@ void ASCII::Convert(std::string::const_iterator begin, std::string::const_iterat
     if (begin == end)
     {
         // TODO: better error
-        Fail(error, TextErrorCategory::Value::generic);
+        Fail(TextErrorCategory::Value::generic, error);
         return;
     }
 
@@ -370,7 +370,7 @@ void ASCII::Convert(std::string::const_iterator begin, std::string::const_iterat
         if (begin == end)
         {
             // TODO: better error
-            Fail(error, TextErrorCategory::Value::generic);
+            Fail(TextErrorCategory::Value::generic, error);
             return;
         }
     }
@@ -381,7 +381,7 @@ void ASCII::Convert(std::string::const_iterator begin, std::string::const_iterat
         if (begin == end)
         {
             // TODO: better error
-            Fail(error, TextErrorCategory::Value::generic);
+            Fail(TextErrorCategory::Value::generic, error);
             return;
         }
     }
@@ -392,7 +392,7 @@ void ASCII::Convert(std::string::const_iterator begin, std::string::const_iterat
         if (!IsNumeric(c))
         {
             // TODO: better error
-            Fail(error, TextErrorCategory::Value::generic);
+            Fail(TextErrorCategory::Value::generic, error);
             return;
         }
         result = ((10 * result) + (c - '0'));
@@ -405,7 +405,7 @@ void ASCII::Convert(std::string::const_iterator begin, std::string::const_iterat
     if ((result <= -32769) || (result >= 32768))
     {
         // TODO: better error
-        Fail(error, TextErrorCategory::Value::generic);
+        Fail(TextErrorCategory::Value::generic, error);
         return;
     }
     number = static_cast<int16_t>(result);
@@ -422,7 +422,7 @@ void ASCII::Convert(std::string::const_iterator begin, std::string::const_iterat
     if (begin == end)
     {
         // TODO: better error
-        Fail(error, TextErrorCategory::Value::generic);
+        Fail(TextErrorCategory::Value::generic, error);
         return;
     }
 
@@ -432,14 +432,14 @@ void ASCII::Convert(std::string::const_iterator begin, std::string::const_iterat
         if (begin == end)
         {
             // TODO: better error
-            Fail(error, TextErrorCategory::Value::generic);
+            Fail(TextErrorCategory::Value::generic, error);
             return;
         }
     }
     else if (*begin == '-')
     {
         // TODO: better error
-        Fail(error, TextErrorCategory::Value::generic);
+        Fail(TextErrorCategory::Value::generic, error);
         return;
     }
     unsigned int result = 0;
@@ -451,7 +451,7 @@ void ASCII::Convert(std::string::const_iterator begin, std::string::const_iterat
             if (!IsNumeric(c))
             {
                 // TODO: better error
-                Fail(error, TextErrorCategory::Value::generic);
+                Fail(TextErrorCategory::Value::generic, error);
                 return;
             }
             result = ((10 * result) + (c - '0'));
@@ -478,7 +478,7 @@ void ASCII::Convert(std::string::const_iterator begin, std::string::const_iterat
             else
             {
                 // TODO: better error
-                Fail(error, TextErrorCategory::Value::generic);
+                Fail(TextErrorCategory::Value::generic, error);
                 return;
             }
             ++begin;
@@ -487,7 +487,7 @@ void ASCII::Convert(std::string::const_iterator begin, std::string::const_iterat
     if (result >= 65536)
     {
         // TODO: better error
-        Fail(error, TextErrorCategory::Value::generic);
+        Fail(TextErrorCategory::Value::generic, error);
         return;
     }
     number = static_cast<uint16_t>(result);
@@ -555,7 +555,7 @@ void ASCII::Convert(std::string::const_iterator begin, std::string::const_iterat
     if (begin == end)
     {
         // TODO: better error
-        Fail(error, TextErrorCategory::Value::generic);
+        Fail(TextErrorCategory::Value::generic, error);
         return;
     }
 
@@ -565,14 +565,14 @@ void ASCII::Convert(std::string::const_iterator begin, std::string::const_iterat
         if (begin == end)
         {
             // TODO: better error
-            Fail(error, TextErrorCategory::Value::generic);
+            Fail(TextErrorCategory::Value::generic, error);
             return;
         }
     }
     else if (*begin == '-')
     {
         // TODO: better error
-        Fail(error, TextErrorCategory::Value::generic);
+        Fail(TextErrorCategory::Value::generic, error);
         return;
     }
     // TODO: handle overflow
@@ -583,7 +583,7 @@ void ASCII::Convert(std::string::const_iterator begin, std::string::const_iterat
         if (!IsNumeric(c))
         {
             // TODO: better error
-            Fail(error, TextErrorCategory::Value::generic);
+            Fail(TextErrorCategory::Value::generic, error);
             return;
         }
         result = ((10 * result) + (c - '0'));
@@ -640,7 +640,7 @@ void ASCII::Convert(boost::string_view::const_iterator begin, boost::string_view
     if (begin == end)
     {
         // TODO: better error
-        Fail(error, TextErrorCategory::Value::generic);
+        Fail(TextErrorCategory::Value::generic, error);
         return;
     }
 
@@ -650,14 +650,14 @@ void ASCII::Convert(boost::string_view::const_iterator begin, boost::string_view
         if (begin == end)
         {
             // TODO: better error
-            Fail(error, TextErrorCategory::Value::generic);
+            Fail(TextErrorCategory::Value::generic, error);
             return;
         }
     }
     else if (*begin == '-')
     {
         // TODO: better error
-        Fail(error, TextErrorCategory::Value::generic);
+        Fail(TextErrorCategory::Value::generic, error);
         return;
     }
     // TODO: handle overflow
@@ -668,7 +668,7 @@ void ASCII::Convert(boost::string_view::const_iterator begin, boost::string_view
         if (!IsNumeric(c))
         {
             // TODO: better error
-            Fail(error, TextErrorCategory::Value::generic);
+            Fail(TextErrorCategory::Value::generic, error);
             return;
         }
         result = ((10 * result) + (c - '0'));
