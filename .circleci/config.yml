@@ -34,6 +34,9 @@ jobs:
           name: "Install test dependency: Ishiko/C++ Process"
           command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/process.git && cd process/build/gnumake && make
       - run:
+          name: "Install test dependency: Ishiko/C++ IO"
+          command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/io.git && cd io/build/gnumake && make
+      - run:
           name: "Install test dependency: Ishiko/C++ FileSystem"
           command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/filesystem.git && cd filesystem/build/gnumake && make
       - run:
