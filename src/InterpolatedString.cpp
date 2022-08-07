@@ -23,7 +23,7 @@ void InterpolatedString::MapCallbacks::expand(boost::string_view variable, std::
     }
     else if (!m_allowMissing)
     {
-        Fail(error, TextErrorCategory::Value::generic);
+        Fail(TextErrorCategory::Value::generic, error);
     }
 }
 
