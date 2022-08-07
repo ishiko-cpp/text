@@ -4,8 +4,8 @@
     See https://github.com/ishiko-cpp/text/blob/main/LICENSE.txt
 */
 
-#ifndef _ISHIKO_CPP_TEXT_TEXTERRORCATEGORY_HPP_
-#define _ISHIKO_CPP_TEXT_TEXTERRORCATEGORY_HPP_
+#ifndef GUARD_ISHIKO_CPP_TEXT_TEXTERRORCATEGORY_HPP
+#define GUARD_ISHIKO_CPP_TEXT_TEXTERRORCATEGORY_HPP
 
 #include <Ishiko/Errors.hpp>
 
@@ -29,7 +29,7 @@ private:
 };
 
 void Throw(TextErrorCategory::Value value, const char* file, int line);
-void Fail(Error& error, TextErrorCategory::Value value) noexcept;
+void Fail(TextErrorCategory::Value value, Error& error) noexcept;
 
 }
 

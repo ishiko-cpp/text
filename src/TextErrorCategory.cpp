@@ -6,8 +6,7 @@
 
 #include "TextErrorCategory.hpp"
 
-namespace Ishiko
-{
+using namespace Ishiko;
 
 const TextErrorCategory& TextErrorCategory::Get() noexcept
 {
@@ -20,14 +19,12 @@ const char* TextErrorCategory::name() const noexcept
     return "Ishiko::TextErrorCategory";
 }
 
-void Throw(TextErrorCategory::Value value, const char* file, int line)
+void Ishiko::Throw(TextErrorCategory::Value value, const char* file, int line)
 {
     throw Exception(static_cast<int>(value), TextErrorCategory::Get(), file, line);
 }
 
-void Fail(Error& error, TextErrorCategory::Value value) noexcept
+void Ishiko::Fail(TextErrorCategory::Value value, Error& error) noexcept
 {
-    error.fail(static_cast<int>(value), TextErrorCategory::Get());
-}
-
+    error.fail(TextErrorCategory::Get(), static_cast<int>(value));
 }
