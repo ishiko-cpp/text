@@ -86,7 +86,7 @@
       <PreprocessorDefinitions>PUGIXML_HEADER_ONLY;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
-      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/memory\include;$(ISHIKO_CPP)/errors\include;$(ISHIKO_CPP)/base-platform\include;$(ISHIKO_CPP_THIRD_PARTY_BOOST);$(ISHIKO_CPP)/text\include;$(ISHIKO_CPP)/configuration\include;$(ISHIKO_CPP)/io\include;$(ISHIKO_CPP)/filesystem\include;$(ISHIKO_CPP)/types\include;$(ISHIKO_CPP)/diff\include;$(ISHIKO_CPP_THIRD_PARTY_PUGIXML)\src;$(ISHIKO_CPP)/xml\include;$(ISHIKO_CPP)/process\include;$(ISHIKO_CPP_THIRD_PARTY_FMT)\include;$(ISHIKO_CPP)/time\include;$(ISHIKO_CPP)/test-framework\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/memory\include;$(ISHIKO_CPP)/base-platform\include;$(ISHIKO_CPP)/errors\include;$(ISHIKO_CPP_THIRD_PARTY_BOOST);$(ISHIKO_CPP)/text\include;$(ISHIKO_CPP)/configuration\include;$(ISHIKO_CPP)/io\include;$(ISHIKO_CPP)/filesystem\include;$(ISHIKO_CPP)/types\include;$(ISHIKO_CPP)/diff\include;$(ISHIKO_CPP_THIRD_PARTY_PUGIXML)\src;$(ISHIKO_CPP)/xml\include;$(ISHIKO_CPP)/process\include;$(ISHIKO_CPP_THIRD_PARTY_FMT)\include;$(ISHIKO_CPP)/time\include;$(ISHIKO_CPP)/test-framework\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -103,7 +103,7 @@
       <PreprocessorDefinitions>PUGIXML_HEADER_ONLY;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
-      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/memory\include;$(ISHIKO_CPP)/errors\include;$(ISHIKO_CPP)/base-platform\include;$(ISHIKO_CPP_THIRD_PARTY_BOOST);$(ISHIKO_CPP)/text\include;$(ISHIKO_CPP)/configuration\include;$(ISHIKO_CPP)/io\include;$(ISHIKO_CPP)/filesystem\include;$(ISHIKO_CPP)/types\include;$(ISHIKO_CPP)/diff\include;$(ISHIKO_CPP_THIRD_PARTY_PUGIXML)\src;$(ISHIKO_CPP)/xml\include;$(ISHIKO_CPP)/process\include;$(ISHIKO_CPP_THIRD_PARTY_FMT)\include;$(ISHIKO_CPP)/time\include;$(ISHIKO_CPP)/test-framework\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/memory\include;$(ISHIKO_CPP)/base-platform\include;$(ISHIKO_CPP)/errors\include;$(ISHIKO_CPP_THIRD_PARTY_BOOST);$(ISHIKO_CPP)/text\include;$(ISHIKO_CPP)/configuration\include;$(ISHIKO_CPP)/io\include;$(ISHIKO_CPP)/filesystem\include;$(ISHIKO_CPP)/types\include;$(ISHIKO_CPP)/diff\include;$(ISHIKO_CPP_THIRD_PARTY_PUGIXML)\src;$(ISHIKO_CPP)/xml\include;$(ISHIKO_CPP)/process\include;$(ISHIKO_CPP_THIRD_PARTY_FMT)\include;$(ISHIKO_CPP)/time\include;$(ISHIKO_CPP)/test-framework\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -122,7 +122,7 @@
       <PreprocessorDefinitions>PUGIXML_HEADER_ONLY;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
-      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/memory\include;$(ISHIKO_CPP)/errors\include;$(ISHIKO_CPP)/base-platform\include;$(ISHIKO_CPP_THIRD_PARTY_BOOST);$(ISHIKO_CPP)/text\include;$(ISHIKO_CPP)/configuration\include;$(ISHIKO_CPP)/io\include;$(ISHIKO_CPP)/filesystem\include;$(ISHIKO_CPP)/types\include;$(ISHIKO_CPP)/diff\include;$(ISHIKO_CPP_THIRD_PARTY_PUGIXML)\src;$(ISHIKO_CPP)/xml\include;$(ISHIKO_CPP)/process\include;$(ISHIKO_CPP_THIRD_PARTY_FMT)\include;$(ISHIKO_CPP)/time\include;$(ISHIKO_CPP)/test-framework\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/memory\include;$(ISHIKO_CPP)/base-platform\include;$(ISHIKO_CPP)/errors\include;$(ISHIKO_CPP_THIRD_PARTY_BOOST);$(ISHIKO_CPP)/text\include;$(ISHIKO_CPP)/configuration\include;$(ISHIKO_CPP)/io\include;$(ISHIKO_CPP)/filesystem\include;$(ISHIKO_CPP)/types\include;$(ISHIKO_CPP)/diff\include;$(ISHIKO_CPP_THIRD_PARTY_PUGIXML)\src;$(ISHIKO_CPP)/xml\include;$(ISHIKO_CPP)/process\include;$(ISHIKO_CPP_THIRD_PARTY_FMT)\include;$(ISHIKO_CPP)/time\include;$(ISHIKO_CPP)/test-framework\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -143,7 +143,7 @@
       <PreprocessorDefinitions>PUGIXML_HEADER_ONLY;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
-      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/memory\include;$(ISHIKO_CPP)/errors\include;$(ISHIKO_CPP)/base-platform\include;$(ISHIKO_CPP_THIRD_PARTY_BOOST);$(ISHIKO_CPP)/text\include;$(ISHIKO_CPP)/configuration\include;$(ISHIKO_CPP)/io\include;$(ISHIKO_CPP)/filesystem\include;$(ISHIKO_CPP)/types\include;$(ISHIKO_CPP)/diff\include;$(ISHIKO_CPP_THIRD_PARTY_PUGIXML)\src;$(ISHIKO_CPP)/xml\include;$(ISHIKO_CPP)/process\include;$(ISHIKO_CPP_THIRD_PARTY_FMT)\include;$(ISHIKO_CPP)/time\include;$(ISHIKO_CPP)/test-framework\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/memory\include;$(ISHIKO_CPP)/base-platform\include;$(ISHIKO_CPP)/errors\include;$(ISHIKO_CPP_THIRD_PARTY_BOOST);$(ISHIKO_CPP)/text\include;$(ISHIKO_CPP)/configuration\include;$(ISHIKO_CPP)/io\include;$(ISHIKO_CPP)/filesystem\include;$(ISHIKO_CPP)/types\include;$(ISHIKO_CPP)/diff\include;$(ISHIKO_CPP_THIRD_PARTY_PUGIXML)\src;$(ISHIKO_CPP)/xml\include;$(ISHIKO_CPP)/process\include;$(ISHIKO_CPP_THIRD_PARTY_FMT)\include;$(ISHIKO_CPP)/time\include;$(ISHIKO_CPP)/test-framework\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
