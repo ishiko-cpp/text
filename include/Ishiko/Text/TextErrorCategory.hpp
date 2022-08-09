@@ -12,7 +12,7 @@
 namespace Ishiko
 {
 
-class TextErrorCategory : public Ishiko::ErrorCategory
+class TextErrorCategory : public ErrorCategory
 {
 public:
     enum class Value
@@ -23,6 +23,7 @@ public:
     static const TextErrorCategory& Get() noexcept;
 
     const char* name() const noexcept override;
+    std::ostream& streamOut(int value, std::ostream& os) const override;
 
 private:
     TextErrorCategory() noexcept = default;
