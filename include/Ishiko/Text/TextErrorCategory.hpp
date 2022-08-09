@@ -15,7 +15,7 @@ namespace Ishiko
 class TextErrorCategory : public ErrorCategory
 {
 public:
-    enum class Value : int
+    enum class Value
     {
         generic = -1
     };
