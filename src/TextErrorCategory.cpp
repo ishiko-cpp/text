@@ -19,6 +19,21 @@ const char* TextErrorCategory::name() const noexcept
     return "Ishiko::TextErrorCategory";
 }
 
+std::ostream& TextErrorCategory::streamOut(int value, std::ostream& os) const
+{
+    switch (static_cast<Value>(value))
+    {
+    case Value::generic:
+        os << "generic error";
+        break;
+
+    default:
+        os << "unknown value";
+        break;
+    }
+    return os;
+}
+
 void Ishiko::Throw(TextErrorCategory::Value value, const char* file, int line)
 {
     throw Exception(static_cast<int>(value), TextErrorCategory::Get(), file, line);
