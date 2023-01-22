@@ -43,6 +43,8 @@ library IshikoText : IshikoMemory, IshikoErrors, IshikoBasePlatform, Boost
         ../../include/Ishiko/Text/linkoptions.hpp
         ../../include/Ishiko/Text/TextErrorCategory.hpp
         ../../include/Ishiko/Text/TruncatedString.hpp
+        ../../include/Ishiko/Text/UTF8Char.hpp
+        ../../include/Ishiko/Text/UTF8String.hpp
     }
 
     sources
@@ -52,5 +54,7 @@ library IshikoText : IshikoMemory, IshikoErrors, IshikoBasePlatform, Boost
         ../../src/InterpolatedString.cpp
         ../../src/TextErrorCategory.cpp
         ../../src/TruncatedString.cpp
+        ../../src/UTF8Char.cpp
+        ../../src/UTF8String.cpp
     }
 }
