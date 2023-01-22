@@ -8,6 +8,7 @@
 #include "CStringTests.hpp"
 #include "InterpolatedStringTests.hpp"
 #include "TruncatedStringTests.hpp"
+#include "UnicodeCodePointTests.hpp"
 #include "UTF8CharTests.hpp"
 #include "UTF8StringTests.hpp"
 #include <Ishiko/TestFramework/Core.hpp>
@@ -24,6 +25,7 @@ int main(int argc, char* argv[])
     theTests.append<CStringTests>();
     theTests.append<InterpolatedStringTests>();
     theTests.append<TruncatedStringTests>();
+    theTests.append<UnicodeCodePointTests>();
     theTests.append<UTF8CharTests>();
     theTests.append<UTF8StringTests>();
 
