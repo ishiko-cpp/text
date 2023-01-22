@@ -18,6 +18,8 @@ namespace Ishiko
     public:
         struct ConstIterator
         {
+            friend class UTF8String;
+
         public:
             ConstIterator(std::string::const_iterator it);
 
@@ -25,6 +27,7 @@ namespace Ishiko
             const UTF8Char* operator->() const;
 
             ConstIterator& operator++();
+            ConstIterator operator+(size_t n) const;
 
             bool operator!=(const ConstIterator& other) const;
 
@@ -34,6 +37,7 @@ namespace Ishiko
         };
 
         UTF8String();
+        UTF8String(const char* str);
         UTF8String(std::string str);
 
         size_t size() const;
@@ -41,7 +45,12 @@ namespace Ishiko
         ConstIterator cbegin() const;
         ConstIterator cend() const;
 
+        bool operator!=(const UTF8String& other) const;
+
+        UTF8String substr(ConstIterator begin, ConstIterator end) const;
+
     private:
+        size_t m_size;
         std::string m_data;
     };
 }

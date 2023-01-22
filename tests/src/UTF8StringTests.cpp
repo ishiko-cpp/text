@@ -14,10 +14,12 @@ UTF8StringTests::UTF8StringTests(const TestNumber& number, const TestContext& co
 {
     append<HeapAllocationErrorsTest>("Constructor test 1", ConstructorTest1);
     append<HeapAllocationErrorsTest>("Constructor test 2", ConstructorTest2);
+    append<HeapAllocationErrorsTest>("Constructor test 3", ConstructorTest3);
     append<HeapAllocationErrorsTest>("ConstIterator test 1", ConstIteratorTest1);
     append<HeapAllocationErrorsTest>("ConstIterator test 2", ConstIteratorTest2);
     append<HeapAllocationErrorsTest>("ConstIterator test 3", ConstIteratorTest3);
     append<HeapAllocationErrorsTest>("ConstIterator test 4", ConstIteratorTest4);
+    append<HeapAllocationErrorsTest>("substr test 1", SubstrTest1);
 }
 
 void UTF8StringTests::ConstructorTest1(Test& test)
@@ -33,6 +35,14 @@ void UTF8StringTests::ConstructorTest2(Test& test)
     UTF8String str{"ASCII string"};
 
     ISHIKO_TEST_FAIL_IF_NEQ(str.size(), 12);
+    ISHIKO_TEST_PASS();
+}
+
+void UTF8StringTests::ConstructorTest3(Test& test)
+{
+    UTF8String str{u8"£123.45"};
+
+    ISHIKO_TEST_FAIL_IF_NEQ(str.size(), 7);
     ISHIKO_TEST_PASS();
 }
 
@@ -100,5 +110,15 @@ void UTF8StringTests::ConstIteratorTest4(Test& test)
     ISHIKO_TEST_FAIL_IF_NEQ(*(++it), '5');
     ISHIKO_TEST_FAIL_IF_NOT(it->isASCIIDigit());
     ISHIKO_TEST_FAIL_IF_NEQ(++it, str.cend());
+    ISHIKO_TEST_PASS();
+}
+
+void UTF8StringTests::SubstrTest1(Test& test)
+{
+    UTF8String str{"ASCII string"};
+
+    UTF8String substr = str.substr(str.cbegin(), str.cbegin() + 5);
+
+    ISHIKO_TEST_FAIL_IF_NEQ(substr, "ASCII");
     ISHIKO_TEST_PASS();
 }
