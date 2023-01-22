@@ -16,6 +16,11 @@ public:
 
 private:
     static void ConstructorTest1(Ishiko::Test& test);
+    static void ConstructorTest2(Ishiko::Test& test);
+    static void ConstIteratorTest1(Ishiko::Test& test);
+    static void ConstIteratorTest2(Ishiko::Test& test);
+    static void ConstIteratorTest3(Ishiko::Test& test);
+    static void ConstIteratorTest4(Ishiko::Test& test);
 };
 
 #endif
