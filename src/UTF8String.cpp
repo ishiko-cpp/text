@@ -140,3 +140,8 @@ UTF8String UTF8String::substr(ConstIterator begin, ConstIterator end) const
     result.m_data = std::string(begin.m_it, end.m_it);
     return result;
 }
+
+std::string UTF8String::toString() const
+{
+    return m_data;
+}

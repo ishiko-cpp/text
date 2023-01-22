@@ -47,7 +47,10 @@ namespace Ishiko
 
         bool operator!=(const UTF8String& other) const;
 
+        // TODO: should be a constructor to be more similar to std::string
         UTF8String substr(ConstIterator begin, ConstIterator end) const;
+
+        std::string toString() const;
 
     private:
         size_t m_size;
