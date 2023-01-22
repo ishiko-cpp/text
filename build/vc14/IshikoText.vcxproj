@@ -155,6 +155,9 @@
     <ClCompile Include="..\..\src\InterpolatedString.cpp" />
     <ClCompile Include="..\..\src\TextErrorCategory.cpp" />
     <ClCompile Include="..\..\src\TruncatedString.cpp" />
+    <ClCompile Include="..\..\src\UnicodeCodePoint.cpp" />
+    <ClCompile Include="..\..\src\UTF8Char.cpp" />
+    <ClCompile Include="..\..\src\UTF8String.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Ishiko\Text.hpp" />
@@ -164,6 +167,9 @@
     <ClInclude Include="..\..\include\Ishiko\Text\linkoptions.hpp" />
     <ClInclude Include="..\..\include\Ishiko\Text\TextErrorCategory.hpp" />
     <ClInclude Include="..\..\include\Ishiko\Text\TruncatedString.hpp" />
+    <ClInclude Include="..\..\include\Ishiko\Text\UnicodeCodePoint.hpp" />
+    <ClInclude Include="..\..\include\Ishiko\Text\UTF8Char.hpp" />
+    <ClInclude Include="..\..\include\Ishiko\Text\UTF8String.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
