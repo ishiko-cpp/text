@@ -91,7 +91,7 @@ void UTF8StringTests::ConstIteratorTest3(Test& test)
 
 void UTF8StringTests::ConstIteratorTest4(Test& test)
 {
-    UTF8String str{u8"€123.45"};
+    UTF8String str{"\xE2\x82\xAC" "123.45"};
 
     UTF8String::ConstIterator it = str.cbegin();
 
