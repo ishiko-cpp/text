@@ -40,7 +40,7 @@ void UTF8StringTests::ConstructorTest2(Test& test)
 
 void UTF8StringTests::ConstructorTest3(Test& test)
 {
-    UTF8String str{u8"£123.45"};
+    UTF8String str{u8"\xA3" "123.45"};
 
     ISHIKO_TEST_FAIL_IF_NEQ(str.size(), 7);
     ISHIKO_TEST_PASS();
