@@ -8,7 +8,17 @@
 
 using namespace Ishiko;
 
+UTF8Char::UTF8Char()
+{
+}
+
 UTF8Char::UTF8Char(UnicodeCodePoint code_point)
     : UnicodeCodePoint(code_point)
 {
+}
+
+UTF8Char& UTF8Char::operator=(UnicodeCodePoint code_point)
+{
+    UnicodeCodePoint::operator=(code_point);
+    return *this;
 }

@@ -14,7 +14,10 @@ namespace Ishiko
     class UTF8Char : public UnicodeCodePoint
     {
     public:
+        UTF8Char();
         UTF8Char(UnicodeCodePoint code_point);
+
+        UTF8Char& operator=(UnicodeCodePoint code_point);
     };
 }
 

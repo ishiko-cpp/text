@@ -14,9 +14,15 @@ namespace Ishiko
     class UnicodeCodePoint
     {
     public:
+        UnicodeCodePoint();
         UnicodeCodePoint(uint32_t value);
 
+        UnicodeCodePoint& operator=(UnicodeCodePoint code_point);
+
         bool isASCIIDigit() const;
+
+        bool operator==(UnicodeCodePoint code_point) const;
+        bool operator!=(UnicodeCodePoint code_point) const;
 
     private:
         uint32_t m_value;
