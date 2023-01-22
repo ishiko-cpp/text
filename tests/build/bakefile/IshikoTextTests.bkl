@@ -30,6 +30,8 @@ program IshikoTextTests : IshikoText, IshikoTestFrameworkCore
         ../../src/CStringTests.hpp
         ../../src/InterpolatedStringTests.hpp
         ../../src/TruncatedStringTests.hpp
+        ../../src/UTF8CharTests.hpp
+        ../../src/UTF8StringTests.hpp
     }
 
     sources
@@ -39,5 +41,7 @@ program IshikoTextTests : IshikoText, IshikoTestFrameworkCore
         ../../src/InterpolatedStringTests.cpp
         ../../src/main.cpp
         ../../src/TruncatedStringTests.cpp
+        ../../src/UTF8CharTests.cpp
+        ../../src/UTF8StringTests.cpp
     }
 }

@@ -161,12 +161,16 @@
     <ClCompile Include="..\..\src\InterpolatedStringTests.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
     <ClCompile Include="..\..\src\TruncatedStringTests.cpp" />
+    <ClCompile Include="..\..\src\UTF8CharTests.cpp" />
+    <ClCompile Include="..\..\src\UTF8StringTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\ASCIITests.hpp" />
     <ClInclude Include="..\..\src\CStringTests.hpp" />
     <ClInclude Include="..\..\src\InterpolatedStringTests.hpp" />
     <ClInclude Include="..\..\src\TruncatedStringTests.hpp" />
+    <ClInclude Include="..\..\src\UTF8CharTests.hpp" />
+    <ClInclude Include="..\..\src\UTF8StringTests.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
