@@ -38,6 +38,9 @@
     <ClInclude Include="..\..\include\Ishiko\Text\TruncatedString.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\Ishiko\Text\UnicodeCodePoint.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\include\Ishiko\Text\UTF8Char.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -59,6 +62,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\TruncatedString.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\UnicodeCodePoint.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\UTF8Char.cpp">

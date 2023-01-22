@@ -13,6 +13,7 @@
 #include "Text/linkoptions.hpp"
 #include "Text/TextErrorCategory.hpp"
 #include "Text/TruncatedString.hpp"
+#include "Text/UnicodeCodePoint.hpp"
 #include "Text/UTF8Char.hpp"
 #include "Text/UTF8String.hpp"
 
