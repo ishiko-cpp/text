@@ -5,3 +5,10 @@
 */
 
 #include "UTF8Char.hpp"
+
+using namespace Ishiko;
+
+UTF8Char::UTF8Char(UnicodeCodePoint code_point)
+    : UnicodeCodePoint(code_point)
+{
+}

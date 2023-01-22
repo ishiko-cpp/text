@@ -17,7 +17,7 @@ UTF8CharTests::UTF8CharTests(const TestNumber& number, const TestContext& contex
 
 void UTF8CharTests::ConstructorTest1(Test& test)
 {
-    UTF8Char c;
+    UTF8Char c{'a'};
 
     ISHIKO_TEST_PASS();
 }
