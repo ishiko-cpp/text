@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2020-2022 Xavier Leclercq
+    Copyright (c) 2020-2023 Xavier Leclercq
     Released under the MIT License
     See https://github.com/ishiko-cpp/text/blob/main/LICENSE.txt
 */
@@ -8,6 +8,8 @@
 #include "CStringTests.hpp"
 #include "InterpolatedStringTests.hpp"
 #include "TruncatedStringTests.hpp"
+#include "UTF8CharTests.hpp"
+#include "UTF8StringTests.hpp"
 #include <Ishiko/TestFramework/Core.hpp>
 #include <Ishiko/Text/linkoptions.hpp>
 
@@ -22,6 +24,8 @@ int main(int argc, char* argv[])
     theTests.append<CStringTests>();
     theTests.append<InterpolatedStringTests>();
     theTests.append<TruncatedStringTests>();
+    theTests.append<UTF8CharTests>();
+    theTests.append<UTF8StringTests>();
 
     return theTestHarness.run();
 }
