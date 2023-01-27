@@ -28,6 +28,11 @@ UTF8Char UTF8String::ConstIterator::operator*() const
     {
         m_item = ((c & 0x1F) << 12) + ((*(m_it + 1) & 0x3F) << 6) + (*(m_it + 2) & 0x3F);
     }
+    else if ((c & 0xF8) == 0xF0)
+    {
+        m_item =
+            ((c & 0x07) << 18) + ((*(m_it + 1) & 0x3F) << 12) + ((*(m_it + 2) & 0x3F) << 6) + (*(m_it + 3) & 0x3F);
+    }
     return m_item;
 }
 
@@ -46,6 +51,11 @@ const UTF8Char* UTF8String::ConstIterator::operator->() const
     {
         m_item = ((c & 0x1F) << 12) + ((*(m_it + 1) & 0x3F) << 6) + (*(m_it + 2) & 0x3F);
     }
+    else if ((c & 0xF8) == 0xF0)
+    {
+        m_item =
+            ((c & 0x07) << 18) + ((*(m_it + 1) & 0x3F) << 12) + ((*(m_it + 2) & 0x3F) << 6) + (*(m_it + 3) & 0x3F);
+    }
     return &m_item;
 }
 
@@ -63,6 +73,10 @@ UTF8String::ConstIterator& UTF8String::ConstIterator::operator++()
     else if ((c & 0xF0) == 0xE0)
     {
         m_it += 3;
+    }
+    else if ((c & 0xF8) == 0xF0)
+    {
+        m_it += 4;
     }
     return *this;
 }
@@ -108,6 +122,10 @@ UTF8String::UTF8String(std::string str)
             ++m_size;
         }
         else if ((c & 0xF0) == 0xE0)
+        {
+            ++m_size;
+        }
+        else if ((c & 0xF8) == 0xF0)
         {
             ++m_size;
         }
