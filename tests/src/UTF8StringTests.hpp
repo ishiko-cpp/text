@@ -18,10 +18,13 @@ private:
     static void ConstructorTest1(Ishiko::Test& test);
     static void ConstructorTest2(Ishiko::Test& test);
     static void ConstructorTest3(Ishiko::Test& test);
+    static void ConstructorTest4(Ishiko::Test& test);
+    static void ConstructorTest5(Ishiko::Test& test);
     static void ConstIteratorTest1(Ishiko::Test& test);
     static void ConstIteratorTest2(Ishiko::Test& test);
     static void ConstIteratorTest3(Ishiko::Test& test);
     static void ConstIteratorTest4(Ishiko::Test& test);
+    static void ConstIteratorTest5(Ishiko::Test& test);
     static void SubstrTest1(Ishiko::Test& test);
 };
 
