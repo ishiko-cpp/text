@@ -27,6 +27,6 @@ None.
 
 ## License
 
-Copyright (c) 2020-2023 Xavier Leclercq\
+Copyright (c) 2020-2024 Xavier Leclercq\
 Released under the MIT License\
 See https://github.com/ishiko-cpp/text/blob/main/LICENSE.txt
