@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2022 Xavier Leclercq
+    Copyright (c) 2022-2024 Xavier Leclercq
     Released under the MIT License
     See https://github.com/ishiko-cpp/text/blob/main/LICENSE.txt
 */
@@ -19,19 +19,16 @@ const char* TextErrorCategory::name() const noexcept
     return "Ishiko::TextErrorCategory";
 }
 
-std::ostream& TextErrorCategory::streamOut(int value, std::ostream& os) const
+const char* TextErrorCategory::message(int ev, char* buffer, size_t len) const noexcept
 {
-    switch (static_cast<Value>(value))
+    switch (static_cast<Value>(ev))
     {
     case Value::generic:
-        os << "generic error";
-        break;
+        return "generic error";
 
     default:
-        os << "unknown value";
-        break;
+        return "unknown value";
     }
-    return os;
 }
 
 void Ishiko::Throw(TextErrorCategory::Value value, const char* file, int line)
