@@ -38,7 +38,7 @@ jobs:
           command: cd /workspace/projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/io.git && cd io/build/gnumake && make
       - run:
           name: "Install test dependency: Ishiko/C++ FileSystem"
-          command: cd /workspace/projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/filesystem.git && cd filesystem/build/gnumake && make
+          command: cd /workspace/projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/filesystem.git && cd filesystem/build-files/gnumake && make
       - run:
           name: "Install test dependency: Ishiko/C++ XML"
           command: cd /workspace/projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/xml.git && cd xml/build/gnumake && make
