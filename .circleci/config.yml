@@ -20,7 +20,7 @@ jobs:
           path: /workspace/projects/ishiko/cpp/text
       - run:
           name: Build
-          command: cd /workspace/projects/ishiko/cpp/text/build/gnumake && make
+          command: cd /workspace/projects/ishiko/cpp/text/build-files/gnumake && make
       - run:
           name: "Install test dependency: Ishiko/C++ Types"
           command: cd /workspace/projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/types.git && cd types/build-files/gnumake && make
