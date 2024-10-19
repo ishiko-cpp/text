@@ -44,10 +44,10 @@ jobs:
           command: cd /workspace/projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/xml.git && cd xml/build/gnumake && make
       - run:
           name: "Install test dependency: Ishiko/C++ Diff"
-          command: cd /workspace/projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/diff.git && cd diff/build/gnumake && make
+          command: cd /workspace/projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/diff.git && cd diff/build-files/gnumake && make
       - run:
           name: "Install test dependency: Ishiko/C++ Configuration"
-          command: cd /workspace/projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/configuration.git && cd configuration/build/gnumake && make
+          command: cd /workspace/projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/configuration.git && cd configuration/build-files/gnumake && make
       - run:
           name: "Install test dependency: Ishiko/C++ Tests/Core"
           command: cd /workspace/projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/test-framework.git && cd test-framework/core/build/gnumake && make
