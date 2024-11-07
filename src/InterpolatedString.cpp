@@ -1,8 +1,5 @@
-/*
-    Copyright (c) 2022 Xavier Leclercq
-    Released under the MIT License
-    See https://github.com/ishiko-cpp/text/blob/main/LICENSE.txt
-*/
+// SPDX-FileCopyrightText: 2000-2024 Xavier Leclercq
+// SPDX-License-Identifier: BSL-1.0
 
 #include "InterpolatedString.hpp"
 #include "TextErrorCategory.hpp"
@@ -39,6 +36,14 @@ InterpolatedString::InterpolatedString(const char* str)
 InterpolatedString::InterpolatedString(std::string str)
     : m_string(str)
 {
+}
+
+std::string InterpolatedString::expand(const Callbacks& callbacks) const
+{
+    Ishiko::Error error;
+    std::string result = expand(callbacks, error);
+    ThrowIf(error);
+    return result;
 }
 
 std::string InterpolatedString::expand(const Callbacks& callbacks, Error& error) const
