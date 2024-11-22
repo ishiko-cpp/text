@@ -1,11 +1,8 @@
-/*
-    Copyright (c) 2020-2022 Xavier Leclercq
-    Released under the MIT License
-    See https://github.com/ishiko-cpp/text/blob/main/LICENSE.txt
-*/
+// SPDX-FileCopyrightText: 2000-2024 Xavier Leclercq
+// SPDX-License-Identifier: BSL-1.0
 
-#ifndef _ISHIKO_CPP_TEXT_LINKOPTIONS_HPP_
-#define _ISHIKO_CPP_TEXT_LINKOPTIONS_HPP_
+#ifndef GUARD_ISHIKO_CPP_TEXT_LINKOPTIONS_HPP
+#define GUARD_ISHIKO_CPP_TEXT_LINKOPTIONS_HPP
 
 #ifdef _DEBUG
 #pragma comment(lib, "IshikoText-d.lib")
