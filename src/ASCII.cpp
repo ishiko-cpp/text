@@ -1,8 +1,5 @@
-/*
-    Copyright (c) 2021-2023 Xavier Leclercq
-    Released under the MIT License
-    See https://github.com/ishiko-cpp/text/blob/main/LICENSE.txt
-*/
+// SPDX-FileCopyrightText: 2000-2024 Xavier Leclercq
+// SPDX-License-Identifier: BSL-1.0
 
 #include "ASCII.hpp"
 #include "CString.hpp"
