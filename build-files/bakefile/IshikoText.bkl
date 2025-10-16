@@ -20,12 +20,13 @@ library IshikoText : IshikoMemory, IshikoErrors, IshikoBasePlatform, Boost
 
     if ($(toolset) == gnu)
     {
-        cxx-compiler-options = "-std=c++11";
+        cxx-compiler-options = "-std=c++14";
         outputdir = ../../lib;
     }
 
     if ($(toolset) != gnu)
     {
+        cxx-compiler-options = "/utf-8";
         outputdir = ../../lib/$(arch);
     }
 
