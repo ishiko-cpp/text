@@ -86,14 +86,14 @@
       <PreprocessorDefinitions>PUGIXML_HEADER_ONLY;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
-      <AdditionalIncludeDirectories>$(ISHIKO_CPP_ROOT)/base-platform\include;$(ISHIKO_CPP_ROOT)/errors\include;$(FMT_ROOT)\include;$(ISHIKO_CPP_ROOT)/memory\include;$(BOOST_ROOT);$(ISHIKO_CPP_ROOT)/text\include;$(ISHIKO_CPP_ROOT)/configuration\include;$(ISHIKO_CPP_ROOT)/io\include;$(ISHIKO_CPP_ROOT)/filesystem\include;$(ISHIKO_CPP_ROOT)/types\include;$(ISHIKO_CPP_ROOT)/diff\include;$(PUGIXML_ROOT)\src;$(ISHIKO_CPP_ROOT)/xml\include;$(ISHIKO_CPP_ROOT)/process\include;$(ISHIKO_CPP_ROOT)/time\include;$(ISHIKO_CPP_ROOT)/test-framework\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ISHIKO_CPP_ROOT)/base-platform\include;$(ISHIKO_CPP_ROOT)/errors\include;$(FMT_ROOT)\include;$(ISHIKO_CPP_ROOT)/memory\include;$(BOOST_ROOT)\include\boost-1_90;$(ISHIKO_CPP_ROOT)/text\include;$(ISHIKO_CPP_ROOT)/configuration\include;$(ISHIKO_CPP_ROOT)/io\include;$(ISHIKO_CPP_ROOT)/filesystem\include;$(ISHIKO_CPP_ROOT)/types\include;$(ISHIKO_CPP_ROOT)/diff\include;$(PUGIXML_ROOT)\src;$(ISHIKO_CPP_ROOT)/xml\include;$(ISHIKO_CPP_ROOT)/process\include;$(ISHIKO_CPP_ROOT)/time\include;$(ISHIKO_CPP_ROOT)/test-framework\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ISHIKO_CPP_ROOT)/base-platform\lib\$(Platform);$(ISHIKO_CPP_ROOT)/errors\lib\$(Platform);$(FMT_ROOT)\lib;$(ISHIKO_CPP_ROOT)/memory\lib\$(Platform);$(BOOST_ROOT)\stage\lib;$(ISHIKO_CPP_ROOT)/text\lib\$(Platform);$(ISHIKO_CPP_ROOT)/configuration\lib\$(Platform);$(ISHIKO_CPP_ROOT)/io\lib\$(Platform);$(ISHIKO_CPP_ROOT)/filesystem\lib\$(Platform);$(ISHIKO_CPP_ROOT)/types\lib\$(Platform);$(ISHIKO_CPP_ROOT)/diff\lib\$(Platform);$(ISHIKO_CPP_ROOT)/xml\lib\$(Platform);$(ISHIKO_CPP_ROOT)/process\lib\$(Platform);$(ISHIKO_CPP_ROOT)/time\lib\$(Platform);$(ISHIKO_CPP_ROOT)/test-framework\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ISHIKO_CPP_ROOT)/base-platform\lib\$(Platform);$(ISHIKO_CPP_ROOT)/errors\lib\$(Platform);$(FMT_ROOT)\lib;$(ISHIKO_CPP_ROOT)/memory\lib\$(Platform);$(BOOST_ROOT)\lib;$(ISHIKO_CPP_ROOT)/text\lib\$(Platform);$(ISHIKO_CPP_ROOT)/configuration\lib\$(Platform);$(ISHIKO_CPP_ROOT)/io\lib\$(Platform);$(ISHIKO_CPP_ROOT)/filesystem\lib\$(Platform);$(ISHIKO_CPP_ROOT)/types\lib\$(Platform);$(ISHIKO_CPP_ROOT)/diff\lib\$(Platform);$(ISHIKO_CPP_ROOT)/xml\lib\$(Platform);$(ISHIKO_CPP_ROOT)/process\lib\$(Platform);$(ISHIKO_CPP_ROOT)/time\lib\$(Platform);$(ISHIKO_CPP_ROOT)/test-framework\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>fmt-d-x64.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -104,14 +104,14 @@
       <PreprocessorDefinitions>PUGIXML_HEADER_ONLY;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
-      <AdditionalIncludeDirectories>$(ISHIKO_CPP_ROOT)/base-platform\include;$(ISHIKO_CPP_ROOT)/errors\include;$(FMT_ROOT)\include;$(ISHIKO_CPP_ROOT)/memory\include;$(BOOST_ROOT);$(ISHIKO_CPP_ROOT)/text\include;$(ISHIKO_CPP_ROOT)/configuration\include;$(ISHIKO_CPP_ROOT)/io\include;$(ISHIKO_CPP_ROOT)/filesystem\include;$(ISHIKO_CPP_ROOT)/types\include;$(ISHIKO_CPP_ROOT)/diff\include;$(PUGIXML_ROOT)\src;$(ISHIKO_CPP_ROOT)/xml\include;$(ISHIKO_CPP_ROOT)/process\include;$(ISHIKO_CPP_ROOT)/time\include;$(ISHIKO_CPP_ROOT)/test-framework\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ISHIKO_CPP_ROOT)/base-platform\include;$(ISHIKO_CPP_ROOT)/errors\include;$(FMT_ROOT)\include;$(ISHIKO_CPP_ROOT)/memory\include;$(BOOST_ROOT)\include\boost-1_90;$(ISHIKO_CPP_ROOT)/text\include;$(ISHIKO_CPP_ROOT)/configuration\include;$(ISHIKO_CPP_ROOT)/io\include;$(ISHIKO_CPP_ROOT)/filesystem\include;$(ISHIKO_CPP_ROOT)/types\include;$(ISHIKO_CPP_ROOT)/diff\include;$(PUGIXML_ROOT)\src;$(ISHIKO_CPP_ROOT)/xml\include;$(ISHIKO_CPP_ROOT)/process\include;$(ISHIKO_CPP_ROOT)/time\include;$(ISHIKO_CPP_ROOT)/test-framework\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ISHIKO_CPP_ROOT)/base-platform\lib\$(Platform);$(ISHIKO_CPP_ROOT)/errors\lib\$(Platform);$(FMT_ROOT)\lib;$(ISHIKO_CPP_ROOT)/memory\lib\$(Platform);$(BOOST_ROOT)\stage\lib;$(ISHIKO_CPP_ROOT)/text\lib\$(Platform);$(ISHIKO_CPP_ROOT)/configuration\lib\$(Platform);$(ISHIKO_CPP_ROOT)/io\lib\$(Platform);$(ISHIKO_CPP_ROOT)/filesystem\lib\$(Platform);$(ISHIKO_CPP_ROOT)/types\lib\$(Platform);$(ISHIKO_CPP_ROOT)/diff\lib\$(Platform);$(ISHIKO_CPP_ROOT)/xml\lib\$(Platform);$(ISHIKO_CPP_ROOT)/process\lib\$(Platform);$(ISHIKO_CPP_ROOT)/time\lib\$(Platform);$(ISHIKO_CPP_ROOT)/test-framework\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ISHIKO_CPP_ROOT)/base-platform\lib\$(Platform);$(ISHIKO_CPP_ROOT)/errors\lib\$(Platform);$(FMT_ROOT)\lib;$(ISHIKO_CPP_ROOT)/memory\lib\$(Platform);$(BOOST_ROOT)\lib;$(ISHIKO_CPP_ROOT)/text\lib\$(Platform);$(ISHIKO_CPP_ROOT)/configuration\lib\$(Platform);$(ISHIKO_CPP_ROOT)/io\lib\$(Platform);$(ISHIKO_CPP_ROOT)/filesystem\lib\$(Platform);$(ISHIKO_CPP_ROOT)/types\lib\$(Platform);$(ISHIKO_CPP_ROOT)/diff\lib\$(Platform);$(ISHIKO_CPP_ROOT)/xml\lib\$(Platform);$(ISHIKO_CPP_ROOT)/process\lib\$(Platform);$(ISHIKO_CPP_ROOT)/time\lib\$(Platform);$(ISHIKO_CPP_ROOT)/test-framework\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>fmt-d-x64.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -124,7 +124,7 @@
       <PreprocessorDefinitions>PUGIXML_HEADER_ONLY;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
-      <AdditionalIncludeDirectories>$(ISHIKO_CPP_ROOT)/base-platform\include;$(ISHIKO_CPP_ROOT)/errors\include;$(FMT_ROOT)\include;$(ISHIKO_CPP_ROOT)/memory\include;$(BOOST_ROOT);$(ISHIKO_CPP_ROOT)/text\include;$(ISHIKO_CPP_ROOT)/configuration\include;$(ISHIKO_CPP_ROOT)/io\include;$(ISHIKO_CPP_ROOT)/filesystem\include;$(ISHIKO_CPP_ROOT)/types\include;$(ISHIKO_CPP_ROOT)/diff\include;$(PUGIXML_ROOT)\src;$(ISHIKO_CPP_ROOT)/xml\include;$(ISHIKO_CPP_ROOT)/process\include;$(ISHIKO_CPP_ROOT)/time\include;$(ISHIKO_CPP_ROOT)/test-framework\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ISHIKO_CPP_ROOT)/base-platform\include;$(ISHIKO_CPP_ROOT)/errors\include;$(FMT_ROOT)\include;$(ISHIKO_CPP_ROOT)/memory\include;$(BOOST_ROOT)\include\boost-1_90;$(ISHIKO_CPP_ROOT)/text\include;$(ISHIKO_CPP_ROOT)/configuration\include;$(ISHIKO_CPP_ROOT)/io\include;$(ISHIKO_CPP_ROOT)/filesystem\include;$(ISHIKO_CPP_ROOT)/types\include;$(ISHIKO_CPP_ROOT)/diff\include;$(PUGIXML_ROOT)\src;$(ISHIKO_CPP_ROOT)/xml\include;$(ISHIKO_CPP_ROOT)/process\include;$(ISHIKO_CPP_ROOT)/time\include;$(ISHIKO_CPP_ROOT)/test-framework\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
@@ -133,7 +133,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(ISHIKO_CPP_ROOT)/base-platform\lib\$(Platform);$(ISHIKO_CPP_ROOT)/errors\lib\$(Platform);$(FMT_ROOT)\lib;$(ISHIKO_CPP_ROOT)/memory\lib\$(Platform);$(BOOST_ROOT)\stage\lib;$(ISHIKO_CPP_ROOT)/text\lib\$(Platform);$(ISHIKO_CPP_ROOT)/configuration\lib\$(Platform);$(ISHIKO_CPP_ROOT)/io\lib\$(Platform);$(ISHIKO_CPP_ROOT)/filesystem\lib\$(Platform);$(ISHIKO_CPP_ROOT)/types\lib\$(Platform);$(ISHIKO_CPP_ROOT)/diff\lib\$(Platform);$(ISHIKO_CPP_ROOT)/xml\lib\$(Platform);$(ISHIKO_CPP_ROOT)/process\lib\$(Platform);$(ISHIKO_CPP_ROOT)/time\lib\$(Platform);$(ISHIKO_CPP_ROOT)/test-framework\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ISHIKO_CPP_ROOT)/base-platform\lib\$(Platform);$(ISHIKO_CPP_ROOT)/errors\lib\$(Platform);$(FMT_ROOT)\lib;$(ISHIKO_CPP_ROOT)/memory\lib\$(Platform);$(BOOST_ROOT)\lib;$(ISHIKO_CPP_ROOT)/text\lib\$(Platform);$(ISHIKO_CPP_ROOT)/configuration\lib\$(Platform);$(ISHIKO_CPP_ROOT)/io\lib\$(Platform);$(ISHIKO_CPP_ROOT)/filesystem\lib\$(Platform);$(ISHIKO_CPP_ROOT)/types\lib\$(Platform);$(ISHIKO_CPP_ROOT)/diff\lib\$(Platform);$(ISHIKO_CPP_ROOT)/xml\lib\$(Platform);$(ISHIKO_CPP_ROOT)/process\lib\$(Platform);$(ISHIKO_CPP_ROOT)/time\lib\$(Platform);$(ISHIKO_CPP_ROOT)/test-framework\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>fmt-d-x64.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -146,7 +146,7 @@
       <PreprocessorDefinitions>PUGIXML_HEADER_ONLY;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
-      <AdditionalIncludeDirectories>$(ISHIKO_CPP_ROOT)/base-platform\include;$(ISHIKO_CPP_ROOT)/errors\include;$(FMT_ROOT)\include;$(ISHIKO_CPP_ROOT)/memory\include;$(BOOST_ROOT);$(ISHIKO_CPP_ROOT)/text\include;$(ISHIKO_CPP_ROOT)/configuration\include;$(ISHIKO_CPP_ROOT)/io\include;$(ISHIKO_CPP_ROOT)/filesystem\include;$(ISHIKO_CPP_ROOT)/types\include;$(ISHIKO_CPP_ROOT)/diff\include;$(PUGIXML_ROOT)\src;$(ISHIKO_CPP_ROOT)/xml\include;$(ISHIKO_CPP_ROOT)/process\include;$(ISHIKO_CPP_ROOT)/time\include;$(ISHIKO_CPP_ROOT)/test-framework\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ISHIKO_CPP_ROOT)/base-platform\include;$(ISHIKO_CPP_ROOT)/errors\include;$(FMT_ROOT)\include;$(ISHIKO_CPP_ROOT)/memory\include;$(BOOST_ROOT)\include\boost-1_90;$(ISHIKO_CPP_ROOT)/text\include;$(ISHIKO_CPP_ROOT)/configuration\include;$(ISHIKO_CPP_ROOT)/io\include;$(ISHIKO_CPP_ROOT)/filesystem\include;$(ISHIKO_CPP_ROOT)/types\include;$(ISHIKO_CPP_ROOT)/diff\include;$(PUGIXML_ROOT)\src;$(ISHIKO_CPP_ROOT)/xml\include;$(ISHIKO_CPP_ROOT)/process\include;$(ISHIKO_CPP_ROOT)/time\include;$(ISHIKO_CPP_ROOT)/test-framework\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
@@ -155,7 +155,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(ISHIKO_CPP_ROOT)/base-platform\lib\$(Platform);$(ISHIKO_CPP_ROOT)/errors\lib\$(Platform);$(FMT_ROOT)\lib;$(ISHIKO_CPP_ROOT)/memory\lib\$(Platform);$(BOOST_ROOT)\stage\lib;$(ISHIKO_CPP_ROOT)/text\lib\$(Platform);$(ISHIKO_CPP_ROOT)/configuration\lib\$(Platform);$(ISHIKO_CPP_ROOT)/io\lib\$(Platform);$(ISHIKO_CPP_ROOT)/filesystem\lib\$(Platform);$(ISHIKO_CPP_ROOT)/types\lib\$(Platform);$(ISHIKO_CPP_ROOT)/diff\lib\$(Platform);$(ISHIKO_CPP_ROOT)/xml\lib\$(Platform);$(ISHIKO_CPP_ROOT)/process\lib\$(Platform);$(ISHIKO_CPP_ROOT)/time\lib\$(Platform);$(ISHIKO_CPP_ROOT)/test-framework\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ISHIKO_CPP_ROOT)/base-platform\lib\$(Platform);$(ISHIKO_CPP_ROOT)/errors\lib\$(Platform);$(FMT_ROOT)\lib;$(ISHIKO_CPP_ROOT)/memory\lib\$(Platform);$(BOOST_ROOT)\lib;$(ISHIKO_CPP_ROOT)/text\lib\$(Platform);$(ISHIKO_CPP_ROOT)/configuration\lib\$(Platform);$(ISHIKO_CPP_ROOT)/io\lib\$(Platform);$(ISHIKO_CPP_ROOT)/filesystem\lib\$(Platform);$(ISHIKO_CPP_ROOT)/types\lib\$(Platform);$(ISHIKO_CPP_ROOT)/diff\lib\$(Platform);$(ISHIKO_CPP_ROOT)/xml\lib\$(Platform);$(ISHIKO_CPP_ROOT)/process\lib\$(Platform);$(ISHIKO_CPP_ROOT)/time\lib\$(Platform);$(ISHIKO_CPP_ROOT)/test-framework\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>fmt-d-x64.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
