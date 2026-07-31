@@ -5,6 +5,11 @@
 
 using namespace Ishiko;
 
+TextErrorCategory::TextErrorCategory() noexcept
+    : ErrorCategory(ID(0x5380b66ebff44e10ULL, 0xb25d03d0b2f1d7e1ULL)) // 5380b66e-bff4-4e10-b25d-03d0b2f1d7e1
+{
+}
+
 const TextErrorCategory& TextErrorCategory::Get() noexcept
 {
     static TextErrorCategory theCategory;

@@ -22,7 +22,7 @@ namespace Ishiko
         const char* message(int ev, char* buffer, size_t len) const noexcept override;
 
     private:
-        TextErrorCategory() noexcept = default;
+        TextErrorCategory() noexcept;
     };
 
     void Throw(TextErrorCategory::Value value, const char* file, int line);
